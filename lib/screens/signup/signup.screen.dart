@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Myregister extends StatelessWidget {
-  const Myregister({super.key});
+class SignupScreen extends StatelessWidget {
+  const SignupScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -152,7 +152,9 @@ class Myregister extends StatelessWidget {
                                 children: [
                                   Text("Already have an account ?"),
                                   TextButton(
-                                      onPressed: () {},
+                                      onPressed: () {
+                                        Navigator.pushNamed(context, "/login");
+                                      },
                                       child: Text(
                                         "Sign In",
                                         style: TextStyle(
