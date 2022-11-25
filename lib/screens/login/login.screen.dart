@@ -85,10 +85,24 @@ class LoginScreen extends StatelessWidget {
                       const SizedBox(
                         height: 10,
                       ),
-                      ElevatedButton(
-                        onPressed: () {},
-                        child: Text("Sign In"),
-                      ),
+                      OutlinedButton(
+                          style: ButtonStyle(
+                              side: MaterialStateProperty.all(
+                                  const BorderSide(color: Colors.red)),
+                              shape: MaterialStateProperty.all<
+                                      RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(18.0),
+                              ))),
+                          onPressed: () {
+                            Navigator.pushNamed(context, '/head');
+                          },
+                          child: const Text(
+                            "Sign In",
+                            style: TextStyle(
+                              color: Colors.red,
+                            ),
+                          )),
                       SizedBox(
                         height: 15,
                       ),
