@@ -1,5 +1,8 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
 import 'package:ubsprofessional/screens/login/login.header.dart';
+import 'package:http/http.dart' as http;
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -86,7 +89,9 @@ class LoginScreen extends StatelessWidget {
                         height: 10,
                       ),
                       ElevatedButton(
-                        onPressed: () {},
+                        onPressed: ()async {
+                          Navigator.pushNamed(context, "/signin");
+                        },
                         child: Text("Sign In"),
                       ),
                       SizedBox(
