@@ -18,8 +18,7 @@ class LoginScreen extends StatelessWidget {
             Flexible(
                 flex: 2,
                 child: Padding(
-                  padding:
-                      const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
+                  padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
@@ -31,8 +30,7 @@ class LoginScreen extends StatelessWidget {
                               Text("Full Name"),
                               Text(
                                 "*",
-                                style:
-                                    TextStyle(color: Colors.red, fontSize: 22),
+                                style: TextStyle(color: Colors.red, fontSize: 22),
                               )
                             ],
                           ),
@@ -56,16 +54,13 @@ class LoginScreen extends StatelessWidget {
                               Text("Date of Birth"),
                               Text(
                                 "*",
-                                style:
-                                    TextStyle(color: Colors.red, fontSize: 20),
+                                style: TextStyle(color: Colors.red, fontSize: 20),
                               )
                             ],
                           ),
                           TextFormField(
-                            decoration: InputDecoration(
-                                border: OutlineInputBorder(
-                                    borderRadius: BorderRadius.circular(30)),
-                                hintText: "Password"),
+                            decoration:
+                                InputDecoration(border: OutlineInputBorder(borderRadius: BorderRadius.circular(30)), hintText: "Password"),
                           ),
                         ],
                       ),
@@ -87,15 +82,12 @@ class LoginScreen extends StatelessWidget {
                       ),
                       OutlinedButton(
                           style: ButtonStyle(
-                              side: MaterialStateProperty.all(
-                                  const BorderSide(color: Colors.red)),
-                              shape: MaterialStateProperty.all<
-                                      RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
+                              side: MaterialStateProperty.all(const BorderSide(color: Colors.red)),
+                              shape: MaterialStateProperty.all<RoundedRectangleBorder>(RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(18.0),
                               ))),
                           onPressed: () {
-                            Navigator.pushNamed(context, '/head');
+                            Navigator.pushNamed(context, '/dashboard');
                           },
                           child: const Text(
                             "Sign In",
