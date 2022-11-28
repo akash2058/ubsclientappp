@@ -13,6 +13,12 @@ class Post {
     required this.body,
   });
 
+  get postId => null;
+
+  get name => null;
+
+  get email => null;
+
   Post copyWith({
     int? userId,
     int? id,

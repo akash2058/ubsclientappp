@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:ubsprofessional/screens/home/dashboard.screen.dart';
 import 'package:ubsprofessional/screens/login/login.screen.dart';
 import 'package:ubsprofessional/screens/signup/signup.screen.dart';
-import 'package:ubsprofessional/http.dart';
-import 'package:ubsprofessional/models/comments_model.dart';
+
+import 'package:ubsprofessional/models/comment.models.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -12,6 +12,8 @@ void main() {
       '/login': (context) => const LoginScreen(),
       '/dashboard': (context) => const DashboardScreen(),
       // '/post': (context) => New(),
+
+      
     },
   ));
 }

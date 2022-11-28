@@ -1,7 +1,12 @@
+
+
 import 'package:flutter/material.dart';
+import 'package:ubsprofessional/screens/home/analytics/analytic.screen.dart';
 import 'package:ubsprofessional/screens/home/expertise/expertise.screen.dart';
-import 'package:ubsprofessional/screens/home/history/history.screen.dart';
+import 'package:ubsprofessional/screens/home/history/history.dart';
+
 import 'package:ubsprofessional/screens/home/post/post.screen.dart';
+import 'package:ubsprofessional/screens/home/user/user.screen.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -11,12 +16,12 @@ class DashboardScreen extends StatefulWidget {
 }
 
 class _DashboardScreenState extends State<DashboardScreen> {
-  Widget currentDashboardPage = const ExpertisePage();
+  Widget currentDashboardPage =  AlbumPage();
 
   @override
   void initState() {
     super.initState();
-    currentDashboardPage = const ExpertisePage();
+    currentDashboardPage =  AlbumPage();
   }
 
   @override
@@ -49,7 +54,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     IconButton(
                       onPressed: () {
                         setState(() {
-                          currentDashboardPage = ExpertisePage();
+                          currentDashboardPage =  AlbumPage();
                         });
                       },
                       icon: const Icon(Icons.auto_awesome),
@@ -64,7 +69,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     IconButton(
                       onPressed: () {
                         setState(() {
-                          currentDashboardPage = HistoryPage();
+                          currentDashboardPage = const PhotoPage();
                         });
                       },
                       icon: const Icon(Icons.history),
@@ -79,7 +84,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     IconButton(
                       onPressed: () {
                         setState(() {
-                          currentDashboardPage = const PostPage();
+                          currentDashboardPage = const PhotoPage();
                         });
                       },
                       icon: const Icon(Icons.check_box_outline_blank),
@@ -93,7 +98,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 Column(
                   children: [
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        setState(() {
+                          currentDashboardPage = const CommentPage();
+                        });
+                      },
                       icon: const Icon(Icons.bar_chart),
                     ),
                     const Text(
@@ -104,7 +113,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 Column(
                   children: [
                     IconButton(
-                      onPressed: () {},
+                      onPressed: () {
+                        setState(() {
+                          currentDashboardPage = const UserPage();
+                        });
+                      },
                       icon: const Icon(Icons.menu),
                     ),
                     const Text(

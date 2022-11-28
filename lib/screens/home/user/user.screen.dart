@@ -1,0 +1,96 @@
+import 'dart:convert';
+
+import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'package:ubsprofessional/models/post.model.dart';
+
+class UserPage extends StatelessWidget {
+  const UserPage({super.key});
+
+  Future<List<Post>> getPostData() async {
+    try {
+      List<Post> post = [];
+
+      final response = await http.get((Uri.parse('https://jsonplaceholder.typicode.com/posts')));
+      var responseData = jsonDecode(response.body);
+
+      if (response.statusCode == 200) {
+        for (int i = 0; i < responseData.length; i++) {
+          Post temp = Post.fromMap(responseData[i]);
+          post.add(temp);
+        }
+        return post;
+      } else {
+        return post;
+      }
+    } catch (err) {
+      rethrow;
+    }
+  }
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      color: Colors.yellow,
+      child: FutureBuilder(
+          future: getPostData(),
+          builder: (context, snapshot) {
+            if (snapshot.hasError) {
+              return Text(snapshot.error.toString());
+            }
+
+            if (snapshot.hasData) {
+              List<Post> posts = snapshot.data!;
+
+              return ListView.builder(
+                  itemCount: posts.length,
+                  itemBuilder: (context, index) {
+                    return Container(
+                      height: 130,
+                      color: Colors.white,
+                      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 30),
+                      margin: const EdgeInsets.all(20),
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: [
+                          Text(
+                            'User id: ${posts[index].userId}',
+                            maxLines: 1,
+                            style: const TextStyle(
+                              fontSize: 18,
+                            ),
+                          ),
+                          Text(
+                            'id: ${posts[index].id}',
+                            style: const TextStyle(
+                              fontSize: 18,
+                            ),
+                          ),
+                          Text(
+                            'title:${posts[index].title}',
+                            maxLines: 1,
+                            style: const TextStyle(
+                              fontSize: 18,
+                            ),
+                          ),
+                          Text(
+                            'Body:${posts[index].body}',
+                            maxLines: 2,
+                            style: const TextStyle(
+                              fontSize: 18,
+                            ),
+                          ),
+                        ],
+                      ),
+                    );
+                  });
+            } else {
+              return const Center(
+                child: CircularProgressIndicator(),
+              );
+            }
+          }),
+    );
+  }
+}
