@@ -16,12 +16,12 @@ class DashboardScreen extends StatefulWidget {
 }
 
 class _DashboardScreenState extends State<DashboardScreen> {
-  Widget currentDashboardPage =  AlbumPage();
+  Widget currentDashboardPage =  ExpertisePage();
 
   @override
   void initState() {
     super.initState();
-    currentDashboardPage =  AlbumPage();
+    currentDashboardPage =  ExpertisePage();
   }
 
   @override
@@ -54,7 +54,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     IconButton(
                       onPressed: () {
                         setState(() {
-                          currentDashboardPage =  AlbumPage();
+                          currentDashboardPage =  ExpertisePage();
                         });
                       },
                       icon: const Icon(Icons.auto_awesome),

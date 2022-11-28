@@ -1,7 +1,46 @@
-import 'package:flutter/material.dart';
+import 'dart:convert';
 
-class SignupScreen extends StatelessWidget {
-  const SignupScreen({super.key});
+import 'package:flutter/material.dart';
+import 'package:http/http.dart';
+import 'package:ubsprofessional/models/signup.dart';
+
+// ignore: must_be_immutable
+class Signup extends StatelessWidget {
+  Signup({super.key});
+
+  List<Signup> data = [];
+
+  TextEditingController nameController = TextEditingController();
+  TextEditingController phoneController = TextEditingController();
+  TextEditingController emailController = TextEditingController();
+  TextEditingController passwordController = TextEditingController();
+  TextEditingController confirmpasswordController = TextEditingController();
+
+
+
+  Future<bool> signup(String fullname, phone,email, password) async {
+    try {
+      Response response = await post(
+          Uri.parse('https://api.ubs.com.np/index.php?method=register_user'),
+          body: {
+            'fullname' : fullname,
+            'usertype' : '6',
+            'phone': phone,
+            'register_form' : 'Android',
+            'password': password,
+            'email':email
+          }
+      );
+      var responseData = jsonDecode(response.body.toString());
+      if (responseData["response"] == "success"){
+        
+        return true;
+      }
+      return false;
+    } catch(e) {
+      return false;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,6 +63,7 @@ class SignupScreen extends StatelessWidget {
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
                       TextFormField(
+                        controller: nameController,
                         decoration: InputDecoration(
                             border: OutlineInputBorder(
                               borderRadius: BorderRadius.circular(40),
@@ -34,6 +74,7 @@ class SignupScreen extends StatelessWidget {
                         height: 10,
                       ),
                       TextFormField(
+                        controller: phoneController,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(40),
@@ -45,6 +86,7 @@ class SignupScreen extends StatelessWidget {
                         height: 10,
                       ),
                       TextFormField(
+                        controller: emailController,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
                             borderRadius: BorderRadius.circular(40),
@@ -56,6 +98,7 @@ class SignupScreen extends StatelessWidget {
                         height: 10,
                       ),
                       TextFormField(
+                        controller: passwordController,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
                             borderSide: const BorderSide(
@@ -140,9 +183,17 @@ class SignupScreen extends StatelessWidget {
                                         RoundedRectangleBorder(
                                           borderRadius: BorderRadius.circular(18.0),
                                         ))),
-                                onPressed: () {},
+                        onPressed: () async{
+                                       if(await signup(nameController.text.toString(), phoneController.text.toString(),emailController.text.toString(), passwordController.text.toString ())){
+                                         Navigator.pushNamed(context, "/login");
+                          }
+                                       else{
+                                         ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Failed to sign up. Try again."),backgroundColor: Colors.red,));
+                                       }
+                           },
+
                                 child: const Text(
-                                  "Sign Out",
+                                  "Sign Up",
                                   style: TextStyle(
                                     color: Colors.red,
                                   ),

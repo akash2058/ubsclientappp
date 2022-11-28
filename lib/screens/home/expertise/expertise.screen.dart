@@ -4,75 +4,57 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
 import 'package:ubsprofessional/models/album.dart';
 
-// ignore: must_be_immutable
-class AlbumPage extends StatelessWidget {
-  AlbumPage({super.key});
-
-  List<Album> albums = [];
+class ExpertisePage extends StatefulWidget {
+  const ExpertisePage({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return FutureBuilder(
-        future: getData(),
-        builder: (context, snapshot) {
-          if (snapshot.hasData) {
-            return ListView.builder(
-                itemCount: albums.length,
-                itemBuilder: (context, index) {
-                  return Container(
-                      height: 130,
-                      width: 600,
-                      color: Colors.greenAccent,
-                      padding:
-                      const EdgeInsets.symmetric(vertical: 10, horizontal: 50),
-                      margin: const EdgeInsets.all(10),
-                      child: Column(
-                        crossAxisAlignment: CrossAxisAlignment.start,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Text(
-                            "user Id:${albums[index].userId}",
-                            style: const TextStyle(
-                              fontSize: 18,
-                            ),
-                          ),
-                          Text(
-                            "Id:${albums[index].id}",
-                            style: const TextStyle(
-                              fontSize: 18,
-                            ),
-                          ),
-                          Text(
-                            "Title:${albums[index].title}",
-                            maxLines: 1,
-                            style: const TextStyle(
-                              fontSize: 18,
-                            ),
-                          ),
-                        ],
-                      ));
-                });
-          } else {
-            return const Center(
-              child: CircularProgressIndicator(),
-            );
-          }
-        });
-  }
+  State<ExpertisePage> createState() => _ExpertisePageState();
+}
 
-  Future<List<Album>> getData() async {
-    final response = await http
-        .get(Uri.parse('https://jsonplaceholder.typicode.com/albums'));
-    var data = jsonDecode(response.body.toString());
-    if (response.statusCode == 200) {
-      for (Map<String, dynamic> index in data) {
-        albums.add(Album.fromJson(index));
-      }
-      return albums;
-    } else {
-      return albums;
+class _ExpertisePageState extends State<ExpertisePage> {
+
+  bool isLoading = true;
+  int user = 0;
+  String fullname = "";
+  String image = "";
+  String email = "";
+  
+  @override
+  void initState() {
+    super.initState();
+    loadUserData();
+  }
+    
+  void loadUserData() async{
+    final pref = await SharedPreferences.getInstance();
+    user = pref.getInt("user") ?? 0;
+    email = pref.getString("email") ?? "";
+    image = pref.getString("image") ?? "";
+    fullname = pref.getString("fullname") ?? "";
+    setState(() {
+      isLoading = false;
+    });
+  }
+  
+  
+  @override
+  Widget build(BuildContext context) {
+    if(isLoading){
+      return Center(child: CircularProgressIndicator(),);
     }
+
+    return Container(child:
+    Column(
+      children: [
+        Image.network(image,width: 300,),
+        Text("$user"),
+        Text("$fullname"),
+        Text("$email"),
+
+      ],
+    ),);
   }
 }
