@@ -5,18 +5,18 @@
     "version": "0.2.0",
     "configurations": [
         {
-            "name": "ubsprofessional",
+            "name": "ubsclient",
             "request": "launch",
             "type": "dart"
         },
         {
-            "name": "ubsprofessional (profile mode)",
+            "name": "ubsclient (profile mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "profile"
         },
         {
-            "name": "ubsprofessional (release mode)",
+            "name": "ubsclient (release mode)",
             "request": "launch",
             "type": "dart",
             "flutterMode": "release"

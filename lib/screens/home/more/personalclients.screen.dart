@@ -1,7 +1,8 @@
 import 'package:flutter/material.dart';
 
-class expertisepage extends StatelessWidget {
-  const expertisepage({super.key});
+class myclients extends StatelessWidget {
+  const myclients({super.key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -14,7 +15,7 @@ class expertisepage extends StatelessWidget {
           backgroundColor: Colors.white,
           centerTitle: true,
           title: Text(
-            'Expertise',
+            'My Personal Clients',
             style: TextStyle(fontWeight: FontWeight.bold, color: Colors.black),
           ),
           actions: [
@@ -28,20 +29,6 @@ class expertisepage extends StatelessWidget {
       body: Container(
           child: Column(
         children: [
-          Row(
-            children: [
-              Text(
-                '      Read info  ',
-                style: TextStyle(color: Colors.blue),
-              ),
-              IconButton(
-                  onPressed: () {},
-                  icon: Icon(
-                    Icons.circle,
-                    color: Colors.blue,
-                  ))
-            ],
-          ),
           Center(
             child: Image(image: AssetImage('assets/images/hh.png')),
           ),
@@ -50,7 +37,7 @@ class expertisepage extends StatelessWidget {
               'You Have not added your client yet',
               style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20),
             ),
-          ),
+          )
         ],
       )),
     );

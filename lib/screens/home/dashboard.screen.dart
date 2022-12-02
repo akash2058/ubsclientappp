@@ -1,12 +1,11 @@
-
-
 import 'package:flutter/material.dart';
-import 'package:ubsprofessional/screens/home/analytics/analytic.screen.dart';
-import 'package:ubsprofessional/screens/home/expertise/expertise.screen.dart';
-import 'package:ubsprofessional/screens/home/history/history.dart';
-
-import 'package:ubsprofessional/screens/home/post/post.screen.dart';
-import 'package:ubsprofessional/screens/home/user/user.screen.dart';
+import 'package:ubsclient/screens/home/analytics/analytics.screen.dart';
+import 'package:ubsclient/screens/home/dashboard/dashboard.page.dart';
+import 'package:ubsclient/screens/home/expertise/expertise.screen.dart';
+import 'package:ubsclient/screens/home/analytics/analytics.screen.dart';
+import 'package:ubsclient/screens/home/history/history.screen.dart';
+import 'package:ubsclient/screens/home/more/more.screen.dart';
+import 'package:ubsclient/screens/home/expertise/expertise.screen.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -16,12 +15,12 @@ class DashboardScreen extends StatefulWidget {
 }
 
 class _DashboardScreenState extends State<DashboardScreen> {
-  Widget currentDashboardPage =  ExpertisePage();
+  Widget currentDashboardPage = DashboardPage();
 
   @override
   void initState() {
     super.initState();
-    currentDashboardPage =  ExpertisePage();
+    // currentDashboardPage = UserPage();
   }
 
   @override
@@ -31,11 +30,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
         floatingActionButton: FloatingActionButton(
           onPressed: (() {
             setState(() {
-              currentDashboardPage = const PostPage();
+              currentDashboardPage = const DashboardPage();
             });
           }),
           backgroundColor: Colors.grey,
-          foregroundColor: Colors.deepOrange,
+          splashColor: Colors.red,
           elevation: 0,
           child: const Icon(Icons.home),
         ),
@@ -54,7 +53,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     IconButton(
                       onPressed: () {
                         setState(() {
-                          currentDashboardPage =  ExpertisePage();
+                          currentDashboardPage = expertisepage();
                         });
                       },
                       icon: const Icon(Icons.auto_awesome),
@@ -69,7 +68,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     IconButton(
                       onPressed: () {
                         setState(() {
-                          currentDashboardPage = const PhotoPage();
+                          currentDashboardPage = const Historypage();
                         });
                       },
                       icon: const Icon(Icons.history),
@@ -84,14 +83,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     IconButton(
                       onPressed: () {
                         setState(() {
-                          currentDashboardPage = const PhotoPage();
+                          // currentDashboardPage = Historypage();
                         });
                       },
                       icon: const Icon(Icons.check_box_outline_blank),
                       color: Colors.transparent,
                     ),
                     const Text(
-                      "Post",
+                      "Dashboard",
                     ),
                   ],
                 ),
@@ -100,7 +99,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     IconButton(
                       onPressed: () {
                         setState(() {
-                          currentDashboardPage = const CommentPage();
+                          currentDashboardPage = Analytics();
                         });
                       },
                       icon: const Icon(Icons.bar_chart),
@@ -115,13 +114,13 @@ class _DashboardScreenState extends State<DashboardScreen> {
                     IconButton(
                       onPressed: () {
                         setState(() {
-                          currentDashboardPage = const UserPage();
+                          currentDashboardPage = const moreset();
                         });
                       },
                       icon: const Icon(Icons.menu),
                     ),
                     const Text(
-                      "user",
+                      "more",
                     ),
                   ],
                 ),

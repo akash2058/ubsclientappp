@@ -2,7 +2,7 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
-import 'package:ubsprofessional/models/signup.dart';
+import 'package:ubsclient/models/signup.dart';
 
 // ignore: must_be_immutable
 class Signup extends StatelessWidget {
@@ -16,28 +16,24 @@ class Signup extends StatelessWidget {
   TextEditingController passwordController = TextEditingController();
   TextEditingController confirmpasswordController = TextEditingController();
 
-
-
-  Future<bool> signup(String fullname, phone,email, password) async {
+  Future<bool> signup(String fullname, phone, email, password) async {
     try {
       Response response = await post(
           Uri.parse('https://api.ubs.com.np/index.php?method=register_user'),
           body: {
-            'fullname' : fullname,
-            'usertype' : '6',
+            'fullname': fullname,
+            'usertype': '6',
             'phone': phone,
-            'register_form' : 'Android',
+            'register_form': 'Android',
             'password': password,
-            'email':email
-          }
-      );
+            'email': email
+          });
       var responseData = jsonDecode(response.body.toString());
-      if (responseData["response"] == "success"){
-        
+      if (responseData["response"] == "success") {
         return true;
       }
       return false;
-    } catch(e) {
+    } catch (e) {
       return false;
     }
   }
@@ -57,7 +53,7 @@ class Signup extends StatelessWidget {
               flex: 2,
               child: Padding(
                 padding:
-                const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+                    const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
                 child: SingleChildScrollView(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -179,19 +175,26 @@ class Signup extends StatelessWidget {
                                     side: MaterialStateProperty.all(
                                         const BorderSide(color: Colors.red)),
                                     shape: MaterialStateProperty.all<
-                                        RoundedRectangleBorder>(
+                                            RoundedRectangleBorder>(
                                         RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(18.0),
-                                        ))),
-                        onPressed: () async{
-                                       if(await signup(nameController.text.toString(), phoneController.text.toString(),emailController.text.toString(), passwordController.text.toString ())){
-                                         Navigator.pushNamed(context, "/login");
-                          }
-                                       else{
-                                         ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Failed to sign up. Try again."),backgroundColor: Colors.red,));
-                                       }
-                           },
-
+                                      borderRadius: BorderRadius.circular(18.0),
+                                    ))),
+                                onPressed: () async {
+                                  if (await signup(
+                                      nameController.text.toString(),
+                                      phoneController.text.toString(),
+                                      emailController.text.toString(),
+                                      passwordController.text.toString())) {
+                                    Navigator.pushNamed(context, "/login");
+                                  } else {
+                                    ScaffoldMessenger.of(context)
+                                        .showSnackBar(SnackBar(
+                                      content:
+                                          Text("Failed to sign up. Try again."),
+                                      backgroundColor: Colors.red,
+                                    ));
+                                  }
+                                },
                                 child: const Text(
                                   "Sign Up",
                                   style: TextStyle(
@@ -238,10 +241,10 @@ class Header extends StatelessWidget {
     return Container(
       decoration: const BoxDecoration(
           image: DecorationImage(
-            image: AssetImage("assets/images/oop.jpg"),
-            opacity: 0.25,
-            fit: BoxFit.cover,
-          )),
+        image: AssetImage("assets/images/oop.jpg"),
+        opacity: 0.25,
+        fit: BoxFit.cover,
+      )),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.center,
         mainAxisAlignment: MainAxisAlignment.center,

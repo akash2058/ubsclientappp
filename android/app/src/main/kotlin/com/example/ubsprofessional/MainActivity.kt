@@ -1,4 +1,4 @@
-package com.example.ubsprofessional
+package com.example.ubsclient
 
 import io.flutter.embedding.android.FlutterActivity
 

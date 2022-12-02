@@ -1,6 +1,6 @@
 {
-    "name": "ubsprofessional",
-    "short_name": "ubsprofessional",
+    "name": "ubsclient",
+    "short_name": "ubsclient",
     "start_url": ".",
     "display": "standalone",
     "background_color": "#0175C2",

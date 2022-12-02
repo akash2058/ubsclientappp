@@ -2,12 +2,10 @@ import 'dart:convert';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
-import 'package:ubsprofessional/screens/login/login.header.dart';
+import 'package:ubsclient/screens/login/login.header.dart';
 import 'package:http/http.dart' as http;
 
-import '../../models/data.dart';
-
-
+import '../../models/expertise.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -23,30 +21,28 @@ class _LoginScreenState extends State<LoginScreen> {
     try {
       Response response = await post(
           Uri.parse('https://api.ubs.com.np/index.php?method=user_login'),
-          body: {
-            'username' : email,
-            'password' : password
-          }
-      );
+          body: {'username': email, 'password': password});
       var responseData = jsonDecode(response.body.toString());
 
       if (responseData["response"] == "success") {
-        final SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+        final SharedPreferences sharedPreferences =
+            await SharedPreferences.getInstance();
         var userData = responseData["data"];
         sharedPreferences.setBool('isLoggedIn', true);
         sharedPreferences.setInt('user', int.parse(userData["user"]));
-        sharedPreferences.setString('usertype', userData["usertype"] );
-        sharedPreferences.setString('fullname', userData["fullname"] );
-        sharedPreferences.setString('email', userData["email"] );
-        sharedPreferences.setString('image', userData["image"] );
-        sharedPreferences.setString('profileCompleted', userData["profileCompleted"] );
+        sharedPreferences.setString('usertype', userData["usertype"]);
+        sharedPreferences.setString('fullname', userData["fullname"]);
+        sharedPreferences.setString('email', userData["email"]);
+        sharedPreferences.setString('image', userData["image"]);
+        sharedPreferences.setString(
+            'profileCompleted', userData["profileCompleted"]);
         sharedPreferences.setString('phoneno', email);
         sharedPreferences.setString('password', password);
 
         return true;
       }
       return false;
-    } catch(e) {
+    } catch (e) {
       return false;
     }
   }
@@ -56,14 +52,17 @@ class _LoginScreenState extends State<LoginScreen> {
     // TODO: implement initState
     super.initState();
     checkSavedCredentials();
-
   }
 
-  void checkSavedCredentials() async{
-    final SharedPreferences sharedPreferences = await SharedPreferences.getInstance();;
+  void checkSavedCredentials() async {
+    final SharedPreferences sharedPreferences =
+        await SharedPreferences.getInstance();
+    ;
     setState(() {
-      emailController = TextEditingController(text: sharedPreferences.getString('phoneno')!);
-      passwordController = TextEditingController(text: sharedPreferences.getString('password')!);
+      emailController = TextEditingController(
+          text: sharedPreferences.getString('phoneno') ?? "");
+      passwordController = TextEditingController(
+          text: sharedPreferences.getString('password') ?? "");
     });
   }
 
@@ -83,7 +82,8 @@ class _LoginScreenState extends State<LoginScreen> {
             Flexible(
                 flex: 2,
                 child: Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
@@ -95,7 +95,8 @@ class _LoginScreenState extends State<LoginScreen> {
                               Text("Full Name"),
                               Text(
                                 "*",
-                                style: TextStyle(color: Colors.red, fontSize: 22),
+                                style:
+                                    TextStyle(color: Colors.red, fontSize: 22),
                               )
                             ],
                           ),
@@ -107,7 +108,6 @@ class _LoginScreenState extends State<LoginScreen> {
                                 ),
                                 hintText: "Phone No."),
                           ),
-
                         ],
                       ),
                       const SizedBox(
@@ -121,24 +121,28 @@ class _LoginScreenState extends State<LoginScreen> {
                               Text("Password"),
                               Text(
                                 "*",
-                                style: TextStyle(color: Colors.red, fontSize: 20),
+                                style:
+                                    TextStyle(color: Colors.red, fontSize: 20),
                               )
                             ],
                           ),
                           TextFormField(
-
                             obscureText: hidePassword,
                             controller: passwordController,
-                            decoration:
-                                InputDecoration(
-                                    suffixIcon: IconButton(onPressed: () {
-
-                                      setState(() {
-                                        hidePassword=!hidePassword;
-                                      });
-
-                                    }, icon: (hidePassword)? Icon(Icons.visibility) : Icon(Icons.visibility_off),),
-                                    border: OutlineInputBorder(borderRadius: BorderRadius.circular(30)), hintText: "Password"),
+                            decoration: InputDecoration(
+                                suffixIcon: IconButton(
+                                  onPressed: () {
+                                    setState(() {
+                                      hidePassword = !hidePassword;
+                                    });
+                                  },
+                                  icon: (hidePassword)
+                                      ? Icon(Icons.visibility)
+                                      : Icon(Icons.visibility_off),
+                                ),
+                                border: OutlineInputBorder(
+                                    borderRadius: BorderRadius.circular(30)),
+                                hintText: "Password"),
                           ),
                         ],
                       ),
@@ -159,31 +163,37 @@ class _LoginScreenState extends State<LoginScreen> {
                         height: 10,
                       ),
                       OutlinedButton(
-                          style: ButtonStyle(
-                              side: MaterialStateProperty.all(const BorderSide(color: Colors.red)),
-                              shape: MaterialStateProperty.all<RoundedRectangleBorder>(RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(18.0),
-                              ))),
-                          onPressed: () async {
-
-                            bool isLoggedIn = await login(emailController.text.toString(), passwordController.text.toString());
-                            if(isLoggedIn){
-                              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Successfully Logged In"),backgroundColor: Colors.green,));
-                              Navigator.pushNamed(context, "/dashboard");
-                            }else{
-                              ScaffoldMessenger.of(context).showSnackBar(SnackBar(content: Text("Invalid Username or Password"),backgroundColor: Colors.red));
-                            }
-                          },
-                          child: GestureDetector(
-                          child: const Text(
-                            "Sign In",
-                            style: TextStyle(
-                              color: Colors.red,
-
-                            ),
-                          )),
-
-                        ),
+                        style: ButtonStyle(
+                            side: MaterialStateProperty.all(
+                                const BorderSide(color: Colors.red)),
+                            shape: MaterialStateProperty.all<
+                                RoundedRectangleBorder>(RoundedRectangleBorder(
+                              borderRadius: BorderRadius.circular(18.0),
+                            ))),
+                        onPressed: () async {
+                          bool isLoggedIn = await login(
+                              emailController.text.toString(),
+                              passwordController.text.toString());
+                          if (isLoggedIn) {
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                              content: Text("Successfully Logged In"),
+                              backgroundColor: Colors.green,
+                            ));
+                            Navigator.pushNamed(context, "/dashboard");
+                          } else {
+                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                content: Text("Invalid Username or Password"),
+                                backgroundColor: Colors.red));
+                          }
+                        },
+                        child: GestureDetector(
+                            child: const Text(
+                          "Sign In",
+                          style: TextStyle(
+                            color: Colors.red,
+                          ),
+                        )),
+                      ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
