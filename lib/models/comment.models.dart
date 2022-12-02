@@ -1,8 +1,6 @@
 import 'dart:convert';
 
-import 'package:ubsprofessional/models/post.model.dart';
-
-
+import 'package:ubsclient/models/Analytics.model.dart';
 
 class Comment {
   Comment({
@@ -19,8 +17,7 @@ class Comment {
   String email;
   String body;
 
-  factory Comment.fromJson(Map<String, dynamic> json) =>
-      Comment(
+  factory Comment.fromJson(Map<String, dynamic> json) => Comment(
         postId: json["postId"],
         id: json["id"],
         name: json["name"],
@@ -28,16 +25,11 @@ class Comment {
         body: json["body"],
       );
 
-  Map<String, dynamic> toJson() =>
-      {
+  Map<String, dynamic> toJson() => {
         "postId": postId,
         "id": id,
         "name": name,
         "email": email,
         "body": body,
       };
-
-
 }
-
-
