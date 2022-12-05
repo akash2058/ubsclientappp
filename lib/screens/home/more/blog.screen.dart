@@ -7,7 +7,7 @@ class blogscreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Colors.white,
+          backgroundColor: Colors.lightBlueAccent,
           centerTitle: true,
           title: Text(
             'Blog',

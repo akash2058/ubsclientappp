@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ubsclient/screens/home/analytics/analytics.screen.dart';
-import 'package:ubsclient/screens/home/dashboard/dashboard.page.dart';
+import 'package:ubsclient/screens/home/dashboard/activekaam.dart';
 import 'package:ubsclient/screens/home/expertise/expertise.screen.dart';
 import 'package:ubsclient/screens/home/analytics/analytics.screen.dart';
 import 'package:ubsclient/screens/home/history/history.screen.dart';
@@ -15,7 +15,8 @@ class DashboardScreen extends StatefulWidget {
 }
 
 class _DashboardScreenState extends State<DashboardScreen> {
-  Widget currentDashboardPage = DashboardPage();
+  Widget currentDashboardPage = expertisepage();
+  String currentDashboardPageTitle = "Expertise";
 
   @override
   void initState() {
@@ -26,15 +27,25 @@ class _DashboardScreenState extends State<DashboardScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+        appBar: AppBar(
+          automaticallyImplyLeading: false,
+          actions: [
+            IconButton(onPressed: (() {}), icon: Icon(Icons.notification_add))
+          ],
+          centerTitle: true,
+          backgroundColor: Colors.lightBlueAccent,
+          title: Text("$currentDashboardPageTitle"),
+        ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: FloatingActionButton(
           onPressed: (() {
             setState(() {
-              currentDashboardPage = const DashboardPage();
+              currentDashboardPageTitle = "Active Kaam";
+              currentDashboardPage = Activepage();
             });
           }),
-          backgroundColor: Colors.grey,
-          splashColor: Colors.red,
+          backgroundColor: Colors.blueGrey,
+          splashColor: Colors.deepPurpleAccent,
           elevation: 0,
           child: const Icon(Icons.home),
         ),
@@ -42,7 +53,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
         bottomNavigationBar: BottomAppBar(
           notchMargin: 5.0,
           shape: const CircularNotchedRectangle(),
-          color: const Color.fromARGB(255, 204, 168, 156),
+          color: Colors.blueGrey,
           child: SizedBox(
             height: 75,
             child: Row(
@@ -51,23 +62,27 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 Column(
                   children: [
                     IconButton(
+                      highlightColor: Colors.deepPurpleAccent,
                       onPressed: () {
                         setState(() {
+                          currentDashboardPageTitle = 'Expertise';
                           currentDashboardPage = expertisepage();
                         });
                       },
-                      icon: const Icon(Icons.auto_awesome),
+                      icon: const Icon(Icons.date_range),
                     ),
                     const Text(
-                      "Expetise",
+                      "Upaya client",
                     ),
                   ],
                 ),
                 Column(
                   children: [
                     IconButton(
+                      highlightColor: Colors.deepPurpleAccent,
                       onPressed: () {
                         setState(() {
+                          currentDashboardPageTitle = "History";
                           currentDashboardPage = const Historypage();
                         });
                       },
@@ -81,6 +96,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                 Column(
                   children: [
                     IconButton(
+                      highlightColor: Colors.deepPurpleAccent,
                       onPressed: () {
                         setState(() {
                           // currentDashboardPage = Historypage();
@@ -90,30 +106,34 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       color: Colors.transparent,
                     ),
                     const Text(
-                      "Dashboard",
+                      "Active Kaam ",
                     ),
                   ],
                 ),
                 Column(
                   children: [
                     IconButton(
+                      highlightColor: Colors.deepPurpleAccent,
                       onPressed: () {
                         setState(() {
+                          currentDashboardPageTitle = "My Packages";
                           currentDashboardPage = Analytics();
                         });
                       },
-                      icon: const Icon(Icons.bar_chart),
+                      icon: const Icon(Icons.card_giftcard),
                     ),
                     const Text(
-                      "Analytics",
+                      "My Packages",
                     ),
                   ],
                 ),
                 Column(
                   children: [
                     IconButton(
+                      highlightColor: Colors.deepPurpleAccent,
                       onPressed: () {
                         setState(() {
+                          currentDashboardPageTitle = "Profile & Settings";
                           currentDashboardPage = const moreset();
                         });
                       },

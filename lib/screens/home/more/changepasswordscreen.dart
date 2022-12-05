@@ -7,13 +7,16 @@ class changepasswordpage extends StatelessWidget {
   Widget build(BuildContext context) {
     return SafeArea(
       child: Scaffold(
+        appBar: AppBar(
+            centerTitle: true,
+            title: Text('Password Settings'),
+            automaticallyImplyLeading: true,
+            actions: [
+              IconButton(onPressed: (() {}), icon: Icon(Icons.notification_add))
+            ]),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [
-            const Expanded(flex: 1, child: Head()),
-            const SizedBox(
-              height: 0,
-            ),
             Flexible(
               flex: 2,
               child: SingleChildScrollView(

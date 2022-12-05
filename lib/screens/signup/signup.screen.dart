@@ -162,7 +162,7 @@ class Signup extends StatelessWidget {
                           Text(
                             "Terms and Condition",
                             style: TextStyle(
-                              color: Colors.deepOrange,
+                              color: Colors.blue,
                             ),
                           ),
                         ],
@@ -173,7 +173,7 @@ class Signup extends StatelessWidget {
                             OutlinedButton(
                                 style: ButtonStyle(
                                     side: MaterialStateProperty.all(
-                                        const BorderSide(color: Colors.red)),
+                                        const BorderSide(color: Colors.blue)),
                                     shape: MaterialStateProperty.all<
                                             RoundedRectangleBorder>(
                                         RoundedRectangleBorder(
@@ -191,14 +191,14 @@ class Signup extends StatelessWidget {
                                         .showSnackBar(SnackBar(
                                       content:
                                           Text("Failed to sign up. Try again."),
-                                      backgroundColor: Colors.red,
+                                      backgroundColor: Colors.blue,
                                     ));
                                   }
                                 },
                                 child: const Text(
                                   "Sign Up",
                                   style: TextStyle(
-                                    color: Colors.red,
+                                    color: Colors.blue,
                                   ),
                                 )),
                             Center(
@@ -212,7 +212,7 @@ class Signup extends StatelessWidget {
                                       child: Text(
                                         "Sign In",
                                         style: TextStyle(
-                                          color: Colors.deepOrange,
+                                          color: Colors.blue,
                                         ),
                                       ))
                                 ],

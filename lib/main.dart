@@ -11,7 +11,6 @@ import 'package:ubsclient/screens/home/more/more.screen.dart';
 import 'package:ubsclient/screens/home/more/changepasswordscreen.dart';
 import 'package:ubsclient/models/comment.models.dart';
 import 'package:ubsclient/screens/home/more/Reviews.screen.dart';
-import 'package:ubsclient/screens/home/more/personalclients.screen.dart';
 import 'package:ubsclient/screens/home/more/blog.screen.dart';
 import 'package:ubsclient/screens/home/more/condition.screen.dart';
 import 'package:ubsclient/screens/home/more/privacy.screen.dart';
@@ -23,10 +22,9 @@ void main() {
       '/login': (context) => LoginScreen(),
       '/signup': (context) => Signup(),
       '/dashboard': (context) => DashboardScreen(),
-      '/profile': (context) => profile(),
+      '/profile': (context) => Profile(),
       '/change': (context) => changepasswordpage(),
       '/review': (context) => Reviewpage(),
-      '/client': (context) => myclients(),
       '/blog': (context) => blogscreen(),
       '/terms': (context) => terms(),
       '/privacy': (context) => privacypage(),

@@ -18,7 +18,7 @@ class privacypage extends StatelessWidget {
               style: TextStyle(
                 color: Colors.black,
               )),
-          backgroundColor: Colors.white,
+          backgroundColor: Colors.lightBlueAccent,
           actions: [
             IconButton(
               onPressed: () {},

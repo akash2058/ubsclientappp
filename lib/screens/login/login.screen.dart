@@ -96,7 +96,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               Text(
                                 "*",
                                 style:
-                                    TextStyle(color: Colors.red, fontSize: 22),
+                                    TextStyle(color: Colors.blue, fontSize: 22),
                               )
                             ],
                           ),
@@ -122,7 +122,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               Text(
                                 "*",
                                 style:
-                                    TextStyle(color: Colors.red, fontSize: 20),
+                                    TextStyle(color: Colors.blue, fontSize: 20),
                               )
                             ],
                           ),
@@ -155,7 +155,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               },
                               child: const Text(
                                 "Reset",
-                                style: TextStyle(color: Colors.deepOrange),
+                                style: TextStyle(color: Colors.blue),
                               ))
                         ],
                       ),
@@ -165,7 +165,7 @@ class _LoginScreenState extends State<LoginScreen> {
                       OutlinedButton(
                         style: ButtonStyle(
                             side: MaterialStateProperty.all(
-                                const BorderSide(color: Colors.red)),
+                                const BorderSide(color: Colors.blue)),
                             shape: MaterialStateProperty.all<
                                 RoundedRectangleBorder>(RoundedRectangleBorder(
                               borderRadius: BorderRadius.circular(18.0),
@@ -186,13 +186,12 @@ class _LoginScreenState extends State<LoginScreen> {
                                 backgroundColor: Colors.red));
                           }
                         },
-                        child: GestureDetector(
-                            child: const Text(
+                        child: const Text(
                           "Sign In",
                           style: TextStyle(
-                            color: Colors.red,
+                            color: Colors.blue,
                           ),
-                        )),
+                        ),
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
@@ -207,7 +206,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               child: const Text(
                                 "Sign Up",
                                 style: TextStyle(
-                                  color: Colors.deepOrange,
+                                  color: Colors.blue,
                                 ),
                               ))
                         ],

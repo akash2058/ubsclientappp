@@ -5,197 +5,202 @@ class moreset extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-        appBar: AppBar(
-            backgroundColor: Colors.white,
-            title: Text(
-              'Profile & Settings',
-              style: TextStyle(color: Colors.black),
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      child: ListView(children: [
+        Container(
+          child: Card(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(0),
+                side: BorderSide(strokeAlign: StrokeAlign.inside)),
+            child: Column(
+              children: [
+                ListTile(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/profile');
+                  },
+                  title: Text('Profile'),
+                  trailing: IconButton(
+                    highlightColor: Colors.purpleAccent,
+                    onPressed: () {
+                      Navigator.pushNamed(context, '/profile');
+                    },
+                    icon: Icon(Icons.arrow_forward_ios),
+                  ),
+                  leading: Icon(Icons.person),
+                ),
+                Divider(
+                  color: Colors.black,
+                  height: 15,
+                  thickness: 2,
+                  indent: 20,
+                  endIndent: 20,
+                ),
+                ListTile(
+                  onTap: (() {
+                    Navigator.pushNamed(context, '/change');
+                  }),
+                  title: Text(' Change Password'),
+                  trailing: Icon(
+                    (Icons.arrow_forward_ios),
+                  ),
+                  leading: Icon(Icons.lock_open_outlined),
+                ),
+              ],
             ),
-            centerTitle: true,
-            actions: [
-              Icon(
-                Icons.notification_add,
-                color: Colors.black,
-              ),
-            ]),
-        body: Padding(
-            padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
-            child: ListView(children: [
-              Card(
-                child: Column(
-                  children: [
-                    ListTile(
-                      title: Text('Profile'),
-                      trailing: IconButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/profile');
-                        },
-                        icon: Icon(Icons.arrow_forward_ios),
-                      ),
-                      leading: Icon(Icons.person),
-                    )
-                  ],
+          ),
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        Container(
+          child: Card(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(0),
+                side: const BorderSide(width: 1.5)),
+            child: Column(
+              children: [
+                ListTile(
+                  focusColor: Colors.purple,
+                  title: Text(
+                    'Kaam',
+                    style: TextStyle(
+                      fontSize: 30,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  tileColor: Colors.grey,
                 ),
-              ),
-              Card(
-                child: Column(
-                  children: [
-                    ListTile(
-                      title: Text('Change Password'),
-                      trailing: IconButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/change');
-                        },
-                        icon: Icon(Icons.arrow_forward_ios),
-                      ),
-                      leading: Icon(Icons.lock_open),
-                    )
-                  ],
+                ListTile(
+                  trailing: Icon(Icons.arrow_forward_ios),
+                  leading: Icon(Icons.person),
+                  onTap: () {},
+                  title: Text('Upaya Proffessional'),
                 ),
-              ),
-              Container(
-                padding: EdgeInsets.all(10),
-                color: Colors.grey,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Kaam',
-                      style: TextStyle(
-                        fontSize: 25,
-                      ),
-                    )
-                  ],
+                Divider(
+                  color: Colors.black,
+                  height: 15,
+                  thickness: 2,
+                  indent: 20,
+                  endIndent: 20,
                 ),
-              ),
-              Card(
-                child: Column(
-                  children: [
-                    ListTile(
-                      title: Text('Reviews'),
-                      trailing: IconButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/review');
-                        },
-                        icon: Icon(Icons.arrow_forward_ios),
-                      ),
-                      leading: Icon(Icons.star),
-                    )
-                  ],
+                ListTile(
+                  focusColor: Colors.purpleAccent,
+                  trailing: Icon(Icons.arrow_forward_ios),
+                  leading: Icon(Icons.star),
+                  onTap: () {
+                    Navigator.pushNamed(context, '/review');
+                  },
+                  title: Text('Reviews'),
+                )
+              ],
+            ),
+          ),
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        Container(
+          child: Card(
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(0),
+                side: const BorderSide(width: 1.5)),
+            child: Column(
+              children: [
+                ListTile(
+                  focusColor: Colors.purpleAccent,
+                  title: Text(
+                    'Upaya',
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                  ),
+                  tileColor: Colors.grey,
                 ),
-              ),
-              Card(
-                child: Column(
-                  children: [
-                    ListTile(
-                      title: Text('My Personal Clients'),
-                      trailing: IconButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/client');
-                        },
-                        icon: Icon(Icons.arrow_forward_ios),
-                      ),
-                      leading: Icon(Icons.badge),
-                    )
-                  ],
+                ListTile(
+                  trailing: Icon(Icons.arrow_forward_ios),
+                  leading: Icon(Icons.gif_rounded),
+                  onTap: () {
+                    Navigator.pushNamed(context, '/blog');
+                  },
+                  focusColor: Colors.purpleAccent,
+                  title: Text('Blog'),
                 ),
-              ),
-              Container(
-                padding: EdgeInsets.all(10),
-                color: Colors.grey,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Upaya',
-                      style: TextStyle(
-                        fontSize: 25,
-                      ),
-                    )
-                  ],
+              ],
+            ),
+          ),
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        Container(
+          child: Card(
+            surfaceTintColor: Colors.red,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(0),
+                side: const BorderSide(width: 1.5)),
+            child: Column(
+              children: [
+                ListTile(
+                  title: Text(
+                    'Kaam',
+                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                  ),
+                  tileColor: Colors.grey,
                 ),
-              ),
-              Card(
-                child: Column(
-                  children: [
-                    ListTile(
-                      title: Text('Blog'),
-                      trailing: IconButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/blog');
-                        },
-                        icon: Icon(Icons.arrow_forward_ios),
-                      ),
-                      leading: Icon(Icons.block),
-                    )
-                  ],
+                ListTile(
+                  trailing: Icon(Icons.arrow_forward_ios),
+                  leading: Icon(Icons.copy),
+                  onTap: () {
+                    Navigator.pushNamed(context, '/terms');
+                  },
+                  title: Text('Terms and Conditions'),
                 ),
-              ),
-              Container(
-                padding: EdgeInsets.all(10),
-                color: Colors.grey,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      'Kaam',
-                      style: TextStyle(
-                        fontSize: 25,
-                      ),
-                    )
-                  ],
+                Divider(
+                  color: Colors.black,
+                  height: 5,
+                  thickness: 1,
+                  indent: 20,
+                  endIndent: 20,
                 ),
-              ),
-              Card(
-                child: Column(
-                  children: [
-                    ListTile(
-                      title: Text('Terms and Condition'),
-                      trailing: IconButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/terms');
-                        },
-                        icon: Icon(Icons.arrow_forward_ios),
-                      ),
-                      leading: Icon(Icons.content_copy),
-                    )
-                  ],
+                ListTile(
+                  trailing: Icon(Icons.arrow_forward_ios),
+                  leading: Icon(Icons.content_copy_outlined),
+                  onTap: () {
+                    Navigator.pushNamed(context, '/privacy');
+                  },
+                  title: Text('Privacy and policy'),
                 ),
-              ),
-              Card(
-                child: Column(
-                  children: [
-                    ListTile(
-                      title: Text('Privacy policy'),
-                      trailing: IconButton(
-                        onPressed: () {
-                          Navigator.pushNamed(context, '/privacy');
-                        },
-                        icon: Icon(Icons.arrow_forward_ios),
-                      ),
-                      leading: Icon(Icons.file_copy),
-                    )
-                  ],
+                SizedBox(
+                  height: 20,
                 ),
-              ),
-              SizedBox(
-                height: 20,
-              ),
-              Card(
-                child: Column(
-                  children: [
-                    ListTile(
-                      title: Text('logout'),
-                      trailing: IconButton(
-                        onPressed: () {},
-                        icon: Icon(Icons.arrow_forward_ios),
-                      ),
-                      leading: Icon(Icons.logout),
-                    )
-                  ],
+              ],
+            ),
+          ),
+        ),
+        SizedBox(
+          height: 20,
+        ),
+        Container(
+          child: Card(
+            shadowColor: Colors.green,
+            shape: RoundedRectangleBorder(
+                borderRadius: BorderRadius.circular(0),
+                side: const BorderSide(width: 1.5)),
+            child: Column(
+              children: [
+                ListTile(
+                  trailing: Icon(Icons.arrow_forward_ios),
+                  leading: Icon(Icons.logout),
+                  onTap: () {},
+                  title: Text(
+                    'Logout',
+                    style: TextStyle(fontWeight: FontWeight.bold),
+                  ),
                 ),
-              ),
-            ])));
+              ],
+            ),
+          ),
+        )
+      ]),
+    );
   }
 }

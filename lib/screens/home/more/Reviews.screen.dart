@@ -7,18 +7,18 @@ class Reviewpage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Colors.white,
+          backgroundColor: Colors.blue,
           centerTitle: true,
           title: Text(
             'Reviews',
-            style: TextStyle(color: Colors.black),
+            style: TextStyle(color: Colors.white),
           ),
           actions: [
             IconButton(
                 onPressed: () {},
                 icon: Icon(
                   Icons.notification_add,
-                  color: Colors.black,
+                  color: Colors.white,
                 ))
           ]),
     );
