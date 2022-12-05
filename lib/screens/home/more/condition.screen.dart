@@ -13,12 +13,12 @@ class terms extends StatelessWidget {
       ),
       appBar: AppBar(
         centerTitle: true,
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.blue,
         title: Text(
           'Terms and Condition',
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            color: Colors.black,
+            color: Colors.white,
           ),
         ),
         actions: [
@@ -26,7 +26,7 @@ class terms extends StatelessWidget {
               onPressed: () {},
               icon: Icon(
                 Icons.notification_add,
-                color: Colors.black,
+                color: Colors.white,
               ))
         ],
       ),

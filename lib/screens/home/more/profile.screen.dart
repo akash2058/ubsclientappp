@@ -156,6 +156,18 @@ class Profile extends StatelessWidget {
                         borderRadius: BorderRadius.circular(10)),
                     hintText: 'Enter Your affialted institution'),
               ),
+              OutlinedButton(
+                onPressed: () {},
+                style: OutlinedButton.styleFrom(
+                    backgroundColor: Colors.blue,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(20),
+                    )),
+                child: Text(
+                  'Save My Profile',
+                  style: TextStyle(color: Colors.white),
+                ),
+              )
             ],
           ),
         ),

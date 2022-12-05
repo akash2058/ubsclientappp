@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:ubsclient/screens/home/analytics/analytics.screen.dart';
 import 'package:ubsclient/screens/home/dashboard/activekaam.dart';
-import 'package:ubsclient/screens/home/expertise/expertise.screen.dart';
+import 'package:ubsclient/screens/home/Documnent/Document.screen.dart';
 import 'package:ubsclient/screens/home/analytics/analytics.screen.dart';
 import 'package:ubsclient/screens/home/history/history.screen.dart';
 import 'package:ubsclient/screens/home/more/more.screen.dart';
-import 'package:ubsclient/screens/home/expertise/expertise.screen.dart';
+import 'package:ubsclient/screens/home/Documnent/Document.screen.dart';
 
 class DashboardScreen extends StatefulWidget {
   const DashboardScreen({super.key});
@@ -15,8 +15,8 @@ class DashboardScreen extends StatefulWidget {
 }
 
 class _DashboardScreenState extends State<DashboardScreen> {
-  Widget currentDashboardPage = expertisepage();
-  String currentDashboardPageTitle = "Expertise";
+  Widget currentDashboardPage = Documentpage();
+  String currentDashboardPageTitle = "Documnents";
 
   @override
   void initState() {
@@ -65,14 +65,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       highlightColor: Colors.deepPurpleAccent,
                       onPressed: () {
                         setState(() {
-                          currentDashboardPageTitle = 'Expertise';
-                          currentDashboardPage = expertisepage();
+                          currentDashboardPageTitle = 'Documents';
+                          currentDashboardPage = Documentpage();
                         });
                       },
                       icon: const Icon(Icons.date_range),
                     ),
                     const Text(
-                      "Upaya client",
+                      "Documents",
                     ),
                   ],
                 ),
@@ -117,7 +117,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       onPressed: () {
                         setState(() {
                           currentDashboardPageTitle = "My Packages";
-                          currentDashboardPage = Analytics();
+                          currentDashboardPage = MyPackagescreen();
                         });
                       },
                       icon: const Icon(Icons.card_giftcard),

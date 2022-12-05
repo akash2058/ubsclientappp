@@ -1,7 +1,27 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:http/http.dart' as http;
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:ubsclient/models/blog.model.dart';
 
 class blogscreen extends StatelessWidget {
-  const blogscreen({super.key});
+  blogscreen({super.key});
+
+  List<BlogModel> bloglist = [];
+  Future<List<BlogModel>> getdata() async {
+    final response = await http.get(Uri.parse(
+        'https://api.ubs.com.np/index.php?method=get_reviews_up_app'));
+    var data = jsonDecode(response.body.toString());
+    if (response.statusCode == 200) {
+      for (Map<String, dynamic> index in data) {
+        bloglist.add(BlogModel.fromJson(index));
+      }
+      return bloglist;
+    } else {
+      return bloglist;
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -19,113 +39,25 @@ class blogscreen extends StatelessWidget {
               color: Colors.black,
             ),
           ]),
-      body: SingleChildScrollView(
-        scrollDirection: Axis.horizontal,
-        child: Row(
-          children: [
-            OutlinedButton(
-                child: Text(
-                  'All',
-                  style: TextStyle(
-                    color: Colors.black,
-                  ),
-                ),
-                onPressed: () {},
-                style: ButtonStyle(
-                    side: MaterialStateProperty.all(
-                        const BorderSide(color: Color.fromARGB(255, 40, 9, 7))),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(18.0),
-                    )))),
-            SizedBox(
-              width: 10,
-            ),
-            OutlinedButton(
-                child: Text(
-                  'Bussiness',
-                  style: TextStyle(color: Colors.black),
-                ),
-                onPressed: () {},
-                style: ButtonStyle(
-                    side: MaterialStateProperty.all(
-                        const BorderSide(color: Color.fromARGB(255, 40, 9, 7))),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(18.0),
-                    )))),
-            SizedBox(
-              width: 10,
-            ),
-            OutlinedButton(
-                child: Text(
-                  'Malpot',
-                  style: TextStyle(
-                    color: Colors.black,
-                  ),
-                ),
-                onPressed: () {},
-                style: ButtonStyle(
-                    side: MaterialStateProperty.all(
-                        const BorderSide(color: Color.fromARGB(255, 40, 9, 7))),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(18.0),
-                    )))),
-            SizedBox(
-              width: 10,
-            ),
-            OutlinedButton(
-                child: Text(
-                  'OCR',
-                  style: TextStyle(
-                    color: Colors.black,
-                  ),
-                ),
-                onPressed: () {},
-                style: ButtonStyle(
-                    side: MaterialStateProperty.all(
-                        const BorderSide(color: Color.fromARGB(255, 40, 9, 7))),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(18.0),
-                    )))),
-            SizedBox(
-              width: 10,
-            ),
-            OutlinedButton(
-                child: Text(
-                  'Notice',
-                  style: TextStyle(
-                    color: Colors.black,
-                  ),
-                ),
-                onPressed: () {},
-                style: ButtonStyle(
-                    side: MaterialStateProperty.all(
-                        const BorderSide(color: Color.fromARGB(255, 40, 9, 7))),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(18.0),
-                    )))),
-            SizedBox(
-              width: 10,
-            ),
-            OutlinedButton(
-                child: Text(
-                  'Upaya',
-                  style: TextStyle(color: Colors.black),
-                ),
-                onPressed: () {},
-                style: ButtonStyle(
-                    side: MaterialStateProperty.all(
-                        const BorderSide(color: Color.fromARGB(255, 40, 9, 7))),
-                    shape: MaterialStateProperty.all<RoundedRectangleBorder>(
-                        RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(18.0),
-                    )))),
-          ],
-        ),
+      body: Column(
+        children: [
+          Expanded(
+            child: FutureBuilder(
+                future: getdata(),
+                builder: (context, snapshot) {
+                  if (snapshot.hasData) {
+                    return Text('loading');
+                  } else {
+                    return ListView.builder(
+                      itemCount: bloglist.length,
+                      itemBuilder: (context, index) {
+                        return Text(index.toString());
+                      },
+                    );
+                  }
+                }),
+          )
+        ],
       ),
     );
   }
