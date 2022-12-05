@@ -72,10 +72,10 @@ class moreset extends StatelessWidget {
                   tileColor: Colors.grey,
                 ),
                 ListTile(
+                  title: Text('Upaya Proffessional'),
                   trailing: Icon(Icons.arrow_forward_ios),
                   leading: Icon(Icons.person),
                   onTap: () {},
-                  title: Text('Upaya Proffessional'),
                 ),
                 Divider(
                   color: Colors.black,

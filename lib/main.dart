@@ -3,6 +3,7 @@ import 'package:http/http.dart';
 import 'package:ubsclient/screens/home/dashboard.screen.dart';
 import 'package:ubsclient/screens/home/more/changepasswordscreen.dart';
 import 'package:ubsclient/screens/home/more/profile.screen.dart';
+import 'package:ubsclient/screens/home/more/splash.screen/splash.screen.dart';
 import 'package:ubsclient/screens/login/login.screen.dart';
 import 'package:ubsclient/screens/login/loginapi.dart';
 import 'package:ubsclient/screens/signup/signup.screen.dart';
@@ -14,10 +15,11 @@ import 'package:ubsclient/screens/home/more/Reviews.screen.dart';
 import 'package:ubsclient/screens/home/more/blog.screen.dart';
 import 'package:ubsclient/screens/home/more/condition.screen.dart';
 import 'package:ubsclient/screens/home/more/privacy.screen.dart';
+import 'package:ubsclient/screens/home/more/splash.screen/splash.screen.dart';
 
 void main() {
   runApp(MaterialApp(
-    initialRoute: '/login',
+    initialRoute: '/splash',
     routes: {
       '/login': (context) => LoginScreen(),
       '/signup': (context) => Signup(),
@@ -28,6 +30,7 @@ void main() {
       '/blog': (context) => blogscreen(),
       '/terms': (context) => terms(),
       '/privacy': (context) => privacypage(),
+      '/splash': (context) => SplashScreen(),
     },
   ));
 }
