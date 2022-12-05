@@ -190,7 +190,9 @@ class moreset extends StatelessWidget {
                 ListTile(
                   trailing: Icon(Icons.arrow_forward_ios),
                   leading: Icon(Icons.logout),
-                  onTap: () {},
+                  onTap: () {
+                    Navigator.pushNamed(context, "/login");
+                  },
                   title: Text(
                     'Logout',
                     style: TextStyle(fontWeight: FontWeight.bold),

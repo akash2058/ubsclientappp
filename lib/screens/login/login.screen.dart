@@ -177,12 +177,15 @@ class _LoginScreenState extends State<LoginScreen> {
                               passwordController.text.toString());
                           if (isLoggedIn) {
                             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                              margin: EdgeInsets.only(top: 100),
+                              behavior: SnackBarBehavior.floating,
                               content: Text("Successfully Logged In"),
                               backgroundColor: Colors.green,
                             ));
                             Navigator.pushNamed(context, "/dashboard");
                           } else {
                             ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                                behavior: SnackBarBehavior.floating,
                                 content: Text("Invalid Username or Password"),
                                 backgroundColor: Colors.red));
                           }
