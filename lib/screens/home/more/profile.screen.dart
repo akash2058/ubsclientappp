@@ -19,7 +19,7 @@ class Profile extends StatelessWidget {
                   Icons.notification_add,
                 ))
           ]),
-      backgroundColor: Colors.grey,
+      backgroundColor: Colors.white,
       body: Container(
         margin: EdgeInsets.all(8.0),
         padding: EdgeInsets.all(8.0),

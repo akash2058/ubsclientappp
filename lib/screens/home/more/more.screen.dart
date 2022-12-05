@@ -69,7 +69,7 @@ class moreset extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  tileColor: Colors.grey,
+                  tileColor: Color.fromARGB(255, 207, 198, 198),
                 ),
                 ListTile(
                   title: Text('Upaya Proffessional'),
@@ -111,9 +111,9 @@ class moreset extends StatelessWidget {
                   focusColor: Colors.purpleAccent,
                   title: Text(
                     'Upaya',
-                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 30),
+                    style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25),
                   ),
-                  tileColor: Colors.grey,
+                  tileColor: Color.fromARGB(255, 207, 198, 198),
                 ),
                 ListTile(
                   trailing: Icon(Icons.arrow_forward_ios),
@@ -142,9 +142,9 @@ class moreset extends StatelessWidget {
                 ListTile(
                   title: Text(
                     'Kaam',
-                    style: TextStyle(fontSize: 30, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
-                  tileColor: Colors.grey,
+                  tileColor: Color.fromARGB(255, 207, 198, 198),
                 ),
                 ListTile(
                   trailing: Icon(Icons.arrow_forward_ios),
