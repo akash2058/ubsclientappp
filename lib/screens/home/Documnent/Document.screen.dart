@@ -9,13 +9,13 @@ class Documentpage extends StatelessWidget {
       children: [
         Row(
           children: [
-            Text(
+            const Text(
               '      Read info  ',
               style: TextStyle(color: Colors.blue),
             ),
             IconButton(
                 onPressed: () {},
-                icon: Icon(
+                icon: const Icon(
                   Icons.info,
                   color: Colors.blue,
                 ))

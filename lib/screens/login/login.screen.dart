@@ -176,7 +176,8 @@ class _LoginScreenState extends State<LoginScreen> {
                               emailController.text.toString(),
                               passwordController.text.toString());
                           if (isLoggedIn) {
-                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                            ScaffoldMessenger.of(context)
+                                .showSnackBar(const SnackBar(
                               margin: EdgeInsets.only(top: 100),
                               behavior: SnackBarBehavior.floating,
                               content: Text("Successfully Logged In"),
@@ -184,10 +185,12 @@ class _LoginScreenState extends State<LoginScreen> {
                             ));
                             Navigator.pushNamed(context, "/dashboard");
                           } else {
-                            ScaffoldMessenger.of(context).showSnackBar(SnackBar(
-                                behavior: SnackBarBehavior.floating,
-                                content: Text("Invalid Username or Password"),
-                                backgroundColor: Colors.red));
+                            ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                    behavior: SnackBarBehavior.floating,
+                                    content:
+                                        Text("Invalid Username or Password"),
+                                    backgroundColor: Colors.red));
                           }
                         },
                         child: const Text(

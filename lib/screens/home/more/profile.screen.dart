@@ -2,8 +2,8 @@ import 'package:flutter/material.dart';
 
 import 'package:ubsclient/screens/login/login.header.dart';
 
-class Profile extends StatelessWidget {
-  const Profile({super.key});
+class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

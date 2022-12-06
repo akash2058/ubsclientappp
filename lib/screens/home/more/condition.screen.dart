@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class terms extends StatelessWidget {
-  const terms({super.key});
+class ConditionScreen extends StatelessWidget {
+  const ConditionScreen({super.key});
 
   @override
   Widget build(BuildContext context) {

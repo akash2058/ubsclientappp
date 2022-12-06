@@ -1,3 +1,4 @@
+// ignore_for_file: public_member_api_docs, sort_constructors_first
 // To parse this JSON data, do
 //
 //     final blog = blogFromJson(jsonString);
@@ -5,28 +6,106 @@
 import 'dart:convert';
 
 class BlogModel {
+  String transactionID;
+  String companyName;
+  String clientID;
+  String fullname;
+  String? imageURL;
+  String rating;
+  String review;
+  String reviewedOn;
   BlogModel({
-    required this.response,
-    required this.reviews,
-    required this.max,
+    required this.transactionID,
+    required this.companyName,
+    required this.clientID,
+    required this.fullname,
+    this.imageURL,
+    required this.rating,
+    required this.review,
+    required this.reviewedOn,
   });
 
-  String response;
-  List<Map<String, String>> reviews;
-  String max;
+  BlogModel copyWith({
+    String? transactionID,
+    String? companyName,
+    String? clientID,
+    String? fullname,
+    String? imageURL,
+    String? rating,
+    String? review,
+    String? reviewedOn,
+  }) {
+    return BlogModel(
+      transactionID: transactionID ?? this.transactionID,
+      companyName: companyName ?? this.companyName,
+      clientID: clientID ?? this.clientID,
+      fullname: fullname ?? this.fullname,
+      imageURL: imageURL ?? this.imageURL,
+      rating: rating ?? this.rating,
+      review: review ?? this.review,
+      reviewedOn: reviewedOn ?? this.reviewedOn,
+    );
+  }
 
-  factory BlogModel.fromJson(Map<String, dynamic> json) => BlogModel(
-        response: json["response"],
-        reviews: List<Map<String, String>>.from(json["reviews"].map((x) =>
-            Map.from(x).map(
-                (k, v) => MapEntry<String, String>(k, v == null ? null : v)))),
-        max: json["max"],
-      );
+  Map<String, dynamic> toMap() {
+    return <String, dynamic>{
+      'transactionID': transactionID,
+      'companyName': companyName,
+      'clientID': clientID,
+      'fullname': fullname,
+      'imageURL': imageURL,
+      'rating': rating,
+      'review': review,
+      'reviewedOn': reviewedOn,
+    };
+  }
 
-  Map<String, dynamic> toJson() => {
-        "response": response,
-        "reviews": List<dynamic>.from(reviews.map((x) => Map.from(x).map(
-            (k, v) => MapEntry<String, dynamic>(k, v == null ? null : v)))),
-        "max": max,
-      };
+  factory BlogModel.fromMap(Map<String, dynamic> map) {
+    return BlogModel(
+      transactionID: map['transactionID'] as String,
+      companyName: map['companyName'] as String,
+      clientID: map['clientID'] as String,
+      fullname: map['fullname'] as String,
+      imageURL: map['imageURL'] != null ? map['imageURL'] as String : null,
+      rating: map['rating'] as String,
+      review: map['review'] as String,
+      reviewedOn: map['reviewedOn'] as String,
+    );
+  }
+
+  String toJson() => json.encode(toMap());
+
+  factory BlogModel.fromJson(String source) =>
+      BlogModel.fromMap(json.decode(source) as Map<String, dynamic>);
+
+  @override
+  String toString() {
+    return 'BlogModel(transactionID: $transactionID, companyName: $companyName, clientID: $clientID, fullname: $fullname, imageURL: $imageURL, rating: $rating, review: $review, reviewedOn: $reviewedOn)';
+  }
+
+  @override
+  bool operator ==(covariant BlogModel other) {
+    if (identical(this, other)) return true;
+
+    return other.transactionID == transactionID &&
+        other.companyName == companyName &&
+        other.clientID == clientID &&
+        other.fullname == fullname &&
+        other.imageURL == imageURL &&
+        other.rating == rating &&
+        other.review == review &&
+        other.reviewedOn == reviewedOn;
+  }
+
+  @override
+  int get hashCode {
+    return transactionID.hashCode ^
+        companyName.hashCode ^
+        clientID.hashCode ^
+        fullname.hashCode ^
+        imageURL.hashCode ^
+        rating.hashCode ^
+        review.hashCode ^
+        reviewedOn.hashCode;
+  }
 }
