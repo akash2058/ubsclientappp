@@ -54,6 +54,107 @@ class BlogScreen extends StatelessWidget {
           ]),
       body: Column(
         children: [
+          Container(
+            margin: EdgeInsets.all(10),
+            child: SingleChildScrollView(
+              scrollDirection: Axis.horizontal,
+              child: Row(
+                children: [
+                  Text(
+                    'Gategory :',
+                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  ),
+                  SizedBox(
+                    width: 15,
+                  ),
+                  OutlinedButton(
+                      style: ButtonStyle(
+                          side: MaterialStateProperty.all(
+                              const BorderSide(color: Colors.black)),
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18.0),
+                          ))),
+                      onPressed: () {},
+                      child: Text("all")),
+                  SizedBox(
+                    width: 15,
+                  ),
+                  OutlinedButton(
+                      style: ButtonStyle(
+                          side: MaterialStateProperty.all(
+                              const BorderSide(color: Colors.black)),
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18.0),
+                          ))),
+                      onPressed: () {},
+                      child: Text("all")),
+                  SizedBox(
+                    width: 15,
+                  ),
+                  OutlinedButton(
+                      style: ButtonStyle(
+                          side: MaterialStateProperty.all(
+                              const BorderSide(color: Colors.black)),
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18.0),
+                          ))),
+                      onPressed: () {},
+                      child: Text("all")),
+                  SizedBox(
+                    width: 15,
+                  ),
+                  OutlinedButton(
+                      style: ButtonStyle(
+                          side: MaterialStateProperty.all(
+                              const BorderSide(color: Colors.black)),
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18.0),
+                          ))),
+                      onPressed: () {},
+                      child: Text("all")),
+                  SizedBox(
+                    width: 15,
+                  ),
+                  OutlinedButton(
+                      style: ButtonStyle(
+                          side: MaterialStateProperty.all(
+                              const BorderSide(color: Colors.black)),
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18.0),
+                          ))),
+                      onPressed: () {},
+                      child: Text("all")),
+                  SizedBox(
+                    width: 15,
+                  ),
+                  OutlinedButton(
+                      style: ButtonStyle(
+                          side: MaterialStateProperty.all(
+                              const BorderSide(color: Colors.black)),
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18.0),
+                          ))),
+                      onPressed: () {},
+                      child: Text("all")),
+                  SizedBox(
+                    width: 15,
+                  ),
+                ],
+              ),
+            ),
+          ),
           Expanded(
             child: FutureBuilder(
                 future: postData(),
@@ -63,10 +164,18 @@ class BlogScreen extends StatelessWidget {
                     return ListView.builder(
                       itemCount: data.length,
                       itemBuilder: (context, index) {
-                        return Container(
-                          margin: EdgeInsets.all(8),
-                          child: Card(
-                            child: Text(data[index].toString()),
+                        return Card(
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.stretch,
+                            children: [
+                              Text(data[index].transactionID),
+                              Text(data[index].clientID),
+                              Text(data[index].companyName),
+                              Text(data[index].fullname),
+                              Text(data[index].rating),
+                              Text(data[index].review),
+                              Text(data[index].reviewedOn),
+                            ],
                           ),
                         );
                       },
