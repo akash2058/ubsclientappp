@@ -15,7 +15,7 @@ class DashboardScreen extends StatefulWidget {
 }
 
 class _DashboardScreenState extends State<DashboardScreen> {
-  Widget currentDashboardPage = Documentpage();
+  Widget currentDashboardPage = DocumentScreen();
   String currentDashboardPageTitle = "Documnents";
 
   @override
@@ -30,7 +30,11 @@ class _DashboardScreenState extends State<DashboardScreen> {
         appBar: AppBar(
           automaticallyImplyLeading: false,
           actions: [
-            IconButton(onPressed: (() {}), icon: Icon(Icons.notification_add))
+            IconButton(
+                onPressed: (() {
+                  Navigator.pushNamed(context, '/notification');
+                }),
+                icon: Icon(Icons.notification_add))
           ],
           centerTitle: true,
           backgroundColor: Colors.lightBlueAccent,
@@ -66,7 +70,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       onPressed: () {
                         setState(() {
                           currentDashboardPageTitle = 'Documents';
-                          currentDashboardPage = Documentpage();
+                          currentDashboardPage = DocumentScreen();
                         });
                       },
                       icon: const Icon(Icons.date_range),
@@ -134,7 +138,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       onPressed: () {
                         setState(() {
                           currentDashboardPageTitle = "Profile & Settings";
-                          currentDashboardPage = const moreset();
+                          currentDashboardPage = const MoreScreen();
                         });
                       },
                       icon: const Icon(Icons.menu),

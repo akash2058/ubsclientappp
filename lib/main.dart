@@ -18,6 +18,7 @@ import 'package:ubsclient/screens/home/more/condition.screen.dart';
 import 'package:ubsclient/screens/home/more/privacy.screen.dart';
 import 'package:ubsclient/screens/home/more/splash.screen/splash.screen.dart';
 import 'package:ubsclient/screens/home/more/blog/bussiness.screen.dart';
+import 'package:ubsclient/screens/home/more/notification/notification.screen.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -34,6 +35,7 @@ void main() {
       '/privacy': (context) => PrivacyScreen(),
       '/splash': (context) => SplashScreen(),
       '/bussiness': (context) => BussinessScreen(),
+      '/notification': (context) => NotificationScreen(),
     },
   ));
 }

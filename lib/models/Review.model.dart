@@ -5,7 +5,7 @@
 
 import 'dart:convert';
 
-class BlogModel {
+class ReviewModel {
   String transactionID;
   String companyName;
   String clientID;
@@ -14,7 +14,7 @@ class BlogModel {
   String rating;
   String review;
   String reviewedOn;
-  BlogModel({
+  ReviewModel({
     required this.transactionID,
     required this.companyName,
     required this.clientID,
@@ -25,7 +25,7 @@ class BlogModel {
     required this.reviewedOn,
   });
 
-  BlogModel copyWith({
+  ReviewModel copyWith({
     String? transactionID,
     String? companyName,
     String? clientID,
@@ -35,7 +35,7 @@ class BlogModel {
     String? review,
     String? reviewedOn,
   }) {
-    return BlogModel(
+    return ReviewModel(
       transactionID: transactionID ?? this.transactionID,
       companyName: companyName ?? this.companyName,
       clientID: clientID ?? this.clientID,
@@ -60,8 +60,8 @@ class BlogModel {
     };
   }
 
-  factory BlogModel.fromMap(Map<String, dynamic> map) {
-    return BlogModel(
+  factory ReviewModel.fromMap(Map<String, dynamic> map) {
+    return ReviewModel(
       transactionID: map['transactionID'] as String,
       companyName: map['companyName'] as String,
       clientID: map['clientID'] as String,
@@ -75,8 +75,8 @@ class BlogModel {
 
   String toJson() => json.encode(toMap());
 
-  factory BlogModel.fromJson(String source) =>
-      BlogModel.fromMap(json.decode(source) as Map<String, dynamic>);
+  factory ReviewModel.fromJson(String source) =>
+      ReviewModel.fromMap(json.decode(source) as Map<String, dynamic>);
 
   @override
   String toString() {
@@ -84,7 +84,7 @@ class BlogModel {
   }
 
   @override
-  bool operator ==(covariant BlogModel other) {
+  bool operator ==(covariant ReviewModel other) {
     if (identical(this, other)) return true;
 
     return other.transactionID == transactionID &&

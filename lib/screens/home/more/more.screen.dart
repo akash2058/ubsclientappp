@@ -1,35 +1,35 @@
 import 'package:flutter/material.dart';
 
-class moreset extends StatelessWidget {
-  const moreset({super.key});
+class MoreScreen extends StatelessWidget {
+  const MoreScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 10, vertical: 10),
+      padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
       child: ListView(children: [
         Container(
           child: Card(
             shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.circular(0),
-                side: BorderSide(strokeAlign: StrokeAlign.inside)),
+                side: const BorderSide(strokeAlign: StrokeAlign.inside)),
             child: Column(
               children: [
                 ListTile(
                   onTap: () {
                     Navigator.pushNamed(context, '/profile');
                   },
-                  title: Text('Profile'),
+                  title: const Text('Profile'),
                   trailing: IconButton(
                     highlightColor: Colors.purpleAccent,
                     onPressed: () {
                       Navigator.pushNamed(context, '/profile');
                     },
-                    icon: Icon(Icons.arrow_forward_ios),
+                    icon: const Icon(Icons.arrow_forward_ios),
                   ),
-                  leading: Icon(Icons.person),
+                  leading: const Icon(Icons.person),
                 ),
-                Divider(
+                const Divider(
                   color: Colors.black,
                   height: 15,
                   thickness: 2,
@@ -40,17 +40,17 @@ class moreset extends StatelessWidget {
                   onTap: (() {
                     Navigator.pushNamed(context, '/change');
                   }),
-                  title: Text(' Change Password'),
-                  trailing: Icon(
+                  title: const Text(' Change Password'),
+                  trailing: const Icon(
                     (Icons.arrow_forward_ios),
                   ),
-                  leading: Icon(Icons.lock_open_outlined),
+                  leading: const Icon(Icons.lock_open_outlined),
                 ),
               ],
             ),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         Container(
@@ -60,7 +60,7 @@ class moreset extends StatelessWidget {
                 side: const BorderSide(width: 1.5)),
             child: Column(
               children: [
-                ListTile(
+                const ListTile(
                   focusColor: Colors.purple,
                   title: Text(
                     'Kaam',
@@ -72,12 +72,12 @@ class moreset extends StatelessWidget {
                   tileColor: Color.fromARGB(255, 207, 198, 198),
                 ),
                 ListTile(
-                  title: Text('Upaya Proffessional'),
-                  trailing: Icon(Icons.arrow_forward_ios),
-                  leading: Icon(Icons.person),
+                  title: const Text('Upaya Proffessional'),
+                  trailing: const Icon(Icons.arrow_forward_ios),
+                  leading: const Icon(Icons.person),
                   onTap: () {},
                 ),
-                Divider(
+                const Divider(
                   color: Colors.black,
                   height: 15,
                   thickness: 2,
@@ -86,18 +86,18 @@ class moreset extends StatelessWidget {
                 ),
                 ListTile(
                   focusColor: Colors.purpleAccent,
-                  trailing: Icon(Icons.arrow_forward_ios),
-                  leading: Icon(Icons.star),
+                  trailing: const Icon(Icons.arrow_forward_ios),
+                  leading: const Icon(Icons.star),
                   onTap: () {
                     Navigator.pushNamed(context, '/review');
                   },
-                  title: Text('Reviews'),
+                  title: const Text('Reviews'),
                 )
               ],
             ),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         Container(
@@ -107,7 +107,7 @@ class moreset extends StatelessWidget {
                 side: const BorderSide(width: 1.5)),
             child: Column(
               children: [
-                ListTile(
+                const ListTile(
                   focusColor: Colors.purpleAccent,
                   title: Text(
                     'Upaya',
@@ -116,19 +116,19 @@ class moreset extends StatelessWidget {
                   tileColor: Color.fromARGB(255, 207, 198, 198),
                 ),
                 ListTile(
-                  trailing: Icon(Icons.arrow_forward_ios),
-                  leading: Icon(Icons.gif_rounded),
+                  trailing: const Icon(Icons.arrow_forward_ios),
+                  leading: const Icon(Icons.gif_rounded),
                   onTap: () {
                     Navigator.pushNamed(context, '/blog');
                   },
                   focusColor: Colors.purpleAccent,
-                  title: Text('Blog'),
+                  title: const Text('Blog'),
                 ),
               ],
             ),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         Container(
@@ -139,7 +139,7 @@ class moreset extends StatelessWidget {
                 side: const BorderSide(width: 1.5)),
             child: Column(
               children: [
-                ListTile(
+                const ListTile(
                   title: Text(
                     'Kaam',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
@@ -147,14 +147,14 @@ class moreset extends StatelessWidget {
                   tileColor: Color.fromARGB(255, 207, 198, 198),
                 ),
                 ListTile(
-                  trailing: Icon(Icons.arrow_forward_ios),
-                  leading: Icon(Icons.copy),
+                  trailing: const Icon(Icons.arrow_forward_ios),
+                  leading: const Icon(Icons.copy),
                   onTap: () {
                     Navigator.pushNamed(context, '/terms');
                   },
-                  title: Text('Terms and Conditions'),
+                  title: const Text('Terms and Conditions'),
                 ),
-                Divider(
+                const Divider(
                   color: Colors.black,
                   height: 5,
                   thickness: 1,
@@ -162,21 +162,21 @@ class moreset extends StatelessWidget {
                   endIndent: 20,
                 ),
                 ListTile(
-                  trailing: Icon(Icons.arrow_forward_ios),
-                  leading: Icon(Icons.content_copy_outlined),
+                  trailing: const Icon(Icons.arrow_forward_ios),
+                  leading: const Icon(Icons.content_copy_outlined),
                   onTap: () {
                     Navigator.pushNamed(context, '/privacy');
                   },
-                  title: Text('Privacy and policy'),
+                  title: const Text('Privacy and policy'),
                 ),
-                SizedBox(
+                const SizedBox(
                   height: 20,
                 ),
               ],
             ),
           ),
         ),
-        SizedBox(
+        const SizedBox(
           height: 20,
         ),
         Container(
@@ -188,12 +188,12 @@ class moreset extends StatelessWidget {
             child: Column(
               children: [
                 ListTile(
-                  trailing: Icon(Icons.arrow_forward_ios),
-                  leading: Icon(Icons.logout),
+                  trailing: const Icon(Icons.arrow_forward_ios),
+                  leading: const Icon(Icons.logout),
                   onTap: () {
                     Navigator.pushNamed(context, "/login");
                   },
-                  title: Text(
+                  title: const Text(
                     'Logout',
                     style: TextStyle(fontWeight: FontWeight.bold),
                   ),

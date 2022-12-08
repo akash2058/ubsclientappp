@@ -1,13 +1,21 @@
-import 'dart:async';
 import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:ubsclient/models/blog.model.dart';
+import 'package:ubsclient/main.dart';
+import 'package:ubsclient/models/blogmodel.dart';
+import 'package:ubsclient/screens/home/more/blog/bussiness.screen.dart';
+import 'package:url_launcher/url_launcher.dart';
 
-class BlogScreen extends StatelessWidget {
+class BlogScreen extends StatefulWidget {
   BlogScreen({super.key});
+
+  @override
+  State<BlogScreen> createState() => _BlogScreenState();
+}
+
+class _BlogScreenState extends State<BlogScreen> {
   Future<List<BlogModel>> postData() async {
     try {
       List<BlogModel> bloglist = [];
@@ -15,8 +23,7 @@ class BlogScreen extends StatelessWidget {
       final pref = await SharedPreferences.getInstance();
       int user = pref.getInt('user')!;
       final response = await http.post(
-          Uri.parse(
-              'https://api.ubs.com.np/index.php?method=get_reviews_up_app'),
+          Uri.parse('https://api.ubs.com.np/index.php?method=get_blog_posts'),
           body: {
             "user": user.toString(),
             "start": "0",
@@ -24,7 +31,7 @@ class BlogScreen extends StatelessWidget {
           });
       var resposeData = jsonDecode(response.body.toString());
       if (resposeData["response"] == "success") {
-        for (Map<String, dynamic> index in resposeData["reviews"]) {
+        for (Map<String, dynamic> index in resposeData["blog"]) {
           bloglist.add(BlogModel.fromMap(index));
         }
         return bloglist;
@@ -55,15 +62,53 @@ class BlogScreen extends StatelessWidget {
       body: Column(
         children: [
           Container(
-            margin: EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
                 children: [
-                  Text(
-                    'Gategory :',
+                  const Text(
+                    'Gategory:',
                     style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
                   ),
+                  SizedBox(width: 15),
+                  OutlinedButton(
+                      style: ButtonStyle(
+                          side: MaterialStateProperty.all(
+                              const BorderSide(color: Colors.black)),
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18.0),
+                          ))),
+                      onPressed: () {
+                        setState(() {});
+                      },
+                      child: Text(
+                        'All',
+                        style: TextStyle(
+                            color: Colors.black, fontWeight: FontWeight.bold),
+                      )),
+                  SizedBox(
+                    width: 15,
+                  ),
+                  OutlinedButton(
+                      style: ButtonStyle(
+                          side: MaterialStateProperty.all(
+                              const BorderSide(color: Colors.black)),
+                          shape:
+                              MaterialStateProperty.all<RoundedRectangleBorder>(
+                                  RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(18.0),
+                          ))),
+                      onPressed: () {
+                        Navigator.pushNamed(context, '/bussiness');
+                      },
+                      child: Text(
+                        'Bussiness',
+                        style: TextStyle(
+                            color: Colors.black, fontWeight: FontWeight.bold),
+                      )),
                   SizedBox(
                     width: 15,
                   ),
@@ -77,7 +122,11 @@ class BlogScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(18.0),
                           ))),
                       onPressed: () {},
-                      child: Text("all")),
+                      child: Text(
+                        'Malpot',
+                        style: TextStyle(
+                            color: Colors.black, fontWeight: FontWeight.bold),
+                      )),
                   SizedBox(
                     width: 15,
                   ),
@@ -91,7 +140,11 @@ class BlogScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(18.0),
                           ))),
                       onPressed: () {},
-                      child: Text("all")),
+                      child: Text(
+                        'OCR',
+                        style: TextStyle(
+                            color: Colors.black, fontWeight: FontWeight.bold),
+                      )),
                   SizedBox(
                     width: 15,
                   ),
@@ -105,7 +158,11 @@ class BlogScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(18.0),
                           ))),
                       onPressed: () {},
-                      child: Text("all")),
+                      child: Text(
+                        'Notice',
+                        style: TextStyle(
+                            color: Colors.black, fontWeight: FontWeight.bold),
+                      )),
                   SizedBox(
                     width: 15,
                   ),
@@ -119,38 +176,11 @@ class BlogScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(18.0),
                           ))),
                       onPressed: () {},
-                      child: Text("all")),
-                  SizedBox(
-                    width: 15,
-                  ),
-                  OutlinedButton(
-                      style: ButtonStyle(
-                          side: MaterialStateProperty.all(
-                              const BorderSide(color: Colors.black)),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(18.0),
-                          ))),
-                      onPressed: () {},
-                      child: Text("all")),
-                  SizedBox(
-                    width: 15,
-                  ),
-                  OutlinedButton(
-                      style: ButtonStyle(
-                          side: MaterialStateProperty.all(
-                              const BorderSide(color: Colors.black)),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(18.0),
-                          ))),
-                      onPressed: () {},
-                      child: Text("all")),
-                  SizedBox(
-                    width: 15,
-                  ),
+                      child: Text(
+                        'Upaya',
+                        style: TextStyle(
+                            color: Colors.black, fontWeight: FontWeight.bold),
+                      )),
                 ],
               ),
             ),
@@ -164,18 +194,55 @@ class BlogScreen extends StatelessWidget {
                     return ListView.builder(
                       itemCount: data.length,
                       itemBuilder: (context, index) {
-                        return Card(
-                          child: Column(
-                            crossAxisAlignment: CrossAxisAlignment.stretch,
-                            children: [
-                              Text(data[index].transactionID),
-                              Text(data[index].clientID),
-                              Text(data[index].companyName),
-                              Text(data[index].fullname),
-                              Text(data[index].rating),
-                              Text(data[index].review),
-                              Text(data[index].reviewedOn),
-                            ],
+                        return Container(
+                          margin: const EdgeInsets.all(8),
+                          padding: const EdgeInsets.all(5),
+                          child: Container(
+                            child: Card(
+                              margin: EdgeInsets.all(4),
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(0),
+                                  side: const BorderSide(width: 0)),
+                              child: Column(
+                                  crossAxisAlignment:
+                                      CrossAxisAlignment.stretch,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    InkWell(
+                                        onTap: () => launchUrl(Uri.parse(
+                                            "https://nepalkhabar.com/economy/49387-2021-02-05-09-49-29")),
+                                        child: Image(
+                                          image: NetworkImage(
+                                              data[index].thumbnail.toString()),
+                                        )),
+                                    Text(
+                                      data[index].title.toString(),
+                                      style: TextStyle(
+                                          fontSize: 25,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    Row(
+                                      children: [
+                                        Align(
+                                          alignment: Alignment.bottomLeft,
+                                          child: CircleAvatar(
+                                            child: Image(
+                                                image: NetworkImage(data[index]
+                                                    .author_image
+                                                    .toString())),
+                                          ),
+                                        ),
+                                        SizedBox(
+                                          width: 200,
+                                        ),
+                                        Text(data[index]
+                                            .blog_timestamp
+                                            .toString()),
+                                      ],
+                                    ),
+                                  ]),
+                            ),
                           ),
                         );
                       },
