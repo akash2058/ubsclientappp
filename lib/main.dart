@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'package:ubsclient/screens/home/dashboard.screen.dart';
+import 'package:ubsclient/screens/home/more/blog/bussiness.screen.dart';
 import 'package:ubsclient/screens/home/more/changepasswordscreen.dart';
 import 'package:ubsclient/screens/home/more/profile.screen.dart';
 import 'package:ubsclient/screens/home/more/splash.screen/splash.screen.dart';
@@ -12,10 +13,11 @@ import 'package:ubsclient/screens/home/more/more.screen.dart';
 import 'package:ubsclient/screens/home/more/changepasswordscreen.dart';
 import 'package:ubsclient/models/comment.models.dart';
 import 'package:ubsclient/screens/home/more/Reviews.screen.dart';
-import 'package:ubsclient/screens/home/more/blog.screen.dart';
+import 'package:ubsclient/screens/home/more/blog/blog.screen.dart';
 import 'package:ubsclient/screens/home/more/condition.screen.dart';
 import 'package:ubsclient/screens/home/more/privacy.screen.dart';
 import 'package:ubsclient/screens/home/more/splash.screen/splash.screen.dart';
+import 'package:ubsclient/screens/home/more/blog/bussiness.screen.dart';
 
 void main() {
   runApp(MaterialApp(
@@ -26,11 +28,12 @@ void main() {
       '/dashboard': (context) => DashboardScreen(),
       '/profile': (context) => ProfileScreen(),
       '/change': (context) => ChangePasswordScreen(),
-      '/review': (context) => Reviewpage(),
+      '/review': (context) => ReviewScreen(),
       '/blog': (context) => BlogScreen(),
       '/terms': (context) => ConditionScreen(),
       '/privacy': (context) => PrivacyScreen(),
       '/splash': (context) => SplashScreen(),
+      '/bussiness': (context) => BussinessScreen(),
     },
   ));
 }
