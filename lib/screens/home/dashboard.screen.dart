@@ -14,7 +14,7 @@ class DashboardScreen extends StatefulWidget {
 }
 
 class _DashboardScreenState extends State<DashboardScreen> {
-  Widget currentDashboardPage = const ServicesScreen();
+  Widget currentDashboardPage = ServicesScreen();
   String currentDashboardPageTitle = "Services";
 
   @override
@@ -74,7 +74,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       onPressed: () {
                         setState(() {
                           currentDashboardPageTitle = 'Services';
-                          currentDashboardPage = const ServicesScreen();
+                          currentDashboardPage = ServicesScreen();
                         });
                       },
                       icon: const Icon(Icons.date_range),
