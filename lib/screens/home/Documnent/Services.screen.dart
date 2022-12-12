@@ -8,6 +8,7 @@ class ServicesScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return SingleChildScrollView(
+      physics: BouncingScrollPhysics(),
       child: Padding(
         padding: const EdgeInsets.all(12),
         child: Column(
@@ -29,7 +30,7 @@ class ServicesScreen extends StatelessWidget {
                 Expanded(
                   flex: 5,
                   child: ServiceCard(
-                    svg: "assets/svg/certificate.svg",
+                    svg: "assets/svg/compliance.svg",
                     label: "Compliance",
                     gradients: [0xFFf83600, 0xFFfe8c00],
                   ),
@@ -69,7 +70,7 @@ class ServicesScreen extends StatelessWidget {
                 Expanded(
                   flex: 5,
                   child: ServiceCard(
-                    svg: "assets/svg/certificate.svg",
+                    svg: "assets/svg/job-interview.svg",
                     label: "Advisory",
                     gradients: [0xFFf83600, 0xFFfe8c00],
                   ),
@@ -81,7 +82,7 @@ class ServicesScreen extends StatelessWidget {
                 Expanded(
                   flex: 5,
                   child: ServiceCard(
-                    svg: "assets/svg/certificate.svg",
+                    svg: "assets/svg/agreement.svg",
                     label: "Agreement Drafting",
                     gradients: [0xFFf83600, 0xFFfe8c00],
                   ),
@@ -109,7 +110,7 @@ class ServicesScreen extends StatelessWidget {
                 Expanded(
                   flex: 5,
                   child: ServiceCard(
-                    svg: "assets/svg/certificate.svg",
+                    svg: "assets/svg/conversion.svg",
                     label: "Conversion",
                     gradients: [0xFFf83600, 0xFFfe8c00],
                   ),
@@ -117,11 +118,14 @@ class ServicesScreen extends StatelessWidget {
               ],
             ),
             ServiceCard(
-              svg: "assets/svg/tax.svg",
+              svg: "assets/svg/gift.svg",
               label: "Other Services",
               isOtherService: true,
-              gradients: [0xFFf83600, 0xFFfe8c00],
-            )
+              gradients: [0xFFfc00ff, 0xFF00dbde],
+            ),
+            SizedBox(
+              height: 40,
+            ),
           ],
         ),
       ),
@@ -182,13 +186,15 @@ class ServiceCard extends StatelessWidget {
                           width: 80,
                         ),
                         SizedBox(
-                          height: 6,
+                          height: 12,
                         ),
                         Text(
                           textAlign: TextAlign.center,
                           label,
                           style: TextStyle(
-                              fontSize: 18, fontWeight: FontWeight.bold),
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold),
                         )
                       ],
                     )
@@ -207,7 +213,9 @@ class ServiceCard extends StatelessWidget {
                             label,
                             textAlign: TextAlign.center,
                             style: TextStyle(
-                                fontSize: 18, fontWeight: FontWeight.bold),
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold),
                           ),
                         ),
                         Spacer(
