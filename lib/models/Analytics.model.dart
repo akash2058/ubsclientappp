@@ -4,7 +4,7 @@
 
 import 'dart:convert';
 
-import 'package:ubsclient/screens/home/analytics/analytics.screen.dart';
+import 'package:ubsclient/screens/home/analytics/package.screen.dart';
 
 class Analytics {
   Analytics({

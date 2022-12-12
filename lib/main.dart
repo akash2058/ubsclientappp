@@ -1,27 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:http/http.dart';
 import 'package:ubsclient/screens/home/dashboard.screen.dart';
 import 'package:ubsclient/screens/home/more/blog/bussiness.screen.dart';
 import 'package:ubsclient/screens/home/more/changepasswordscreen.dart';
 import 'package:ubsclient/screens/home/more/profile.screen.dart';
 import 'package:ubsclient/screens/home/more/splash.screen/splash.screen.dart';
 import 'package:ubsclient/screens/login/login.screen.dart';
-import 'package:ubsclient/screens/login/loginapi.dart';
 import 'package:ubsclient/screens/signup/signup.screen.dart';
-import 'package:ubsclient/screens/home/more/profile.screen.dart';
-import 'package:ubsclient/screens/home/more/more.screen.dart';
-import 'package:ubsclient/screens/home/more/changepasswordscreen.dart';
-import 'package:ubsclient/models/comment.models.dart';
 import 'package:ubsclient/screens/home/more/Reviews.screen.dart';
 import 'package:ubsclient/screens/home/more/blog/blog.screen.dart';
 import 'package:ubsclient/screens/home/more/condition.screen.dart';
 import 'package:ubsclient/screens/home/more/privacy.screen.dart';
-import 'package:ubsclient/screens/home/more/splash.screen/splash.screen.dart';
+// ignore: duplicate_import
 import 'package:ubsclient/screens/home/more/blog/bussiness.screen.dart';
 import 'package:ubsclient/screens/home/more/notification/notification.screen.dart';
 
 void main() {
   runApp(MaterialApp(
+    debugShowCheckedModeBanner: false,
     initialRoute: '/splash',
     routes: {
       '/login': (context) => LoginScreen(),

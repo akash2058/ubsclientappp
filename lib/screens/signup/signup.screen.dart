@@ -2,7 +2,6 @@ import 'dart:convert';
 
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
-import 'package:ubsclient/models/signup.dart';
 
 // ignore: must_be_immutable
 class Signup extends StatelessWidget {
@@ -58,6 +57,15 @@ class Signup extends StatelessWidget {
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
+                      Row(
+                        children: const [
+                          Text('Full Name'),
+                          Text(
+                            '*',
+                            style: TextStyle(color: Colors.redAccent),
+                          )
+                        ],
+                      ),
                       TextFormField(
                         controller: nameController,
                         decoration: InputDecoration(
@@ -68,6 +76,15 @@ class Signup extends StatelessWidget {
                       ),
                       const SizedBox(
                         height: 10,
+                      ),
+                      Row(
+                        children: const [
+                          Text('Phone Number'),
+                          Text(
+                            '*',
+                            style: TextStyle(color: Colors.redAccent),
+                          )
+                        ],
                       ),
                       TextFormField(
                         controller: phoneController,
@@ -81,6 +98,15 @@ class Signup extends StatelessWidget {
                       const SizedBox(
                         height: 10,
                       ),
+                      Row(
+                        children: const [
+                          Text('Email'),
+                          Text(
+                            '*',
+                            style: TextStyle(color: Colors.redAccent),
+                          )
+                        ],
+                      ),
                       TextFormField(
                         controller: emailController,
                         decoration: InputDecoration(
@@ -93,7 +119,17 @@ class Signup extends StatelessWidget {
                       const SizedBox(
                         height: 10,
                       ),
+                      Row(
+                        children: const [
+                          Text('Password'),
+                          Text(
+                            '*',
+                            style: TextStyle(color: Colors.redAccent),
+                          )
+                        ],
+                      ),
                       TextFormField(
+                        obscureText: true,
                         controller: passwordController,
                         decoration: InputDecoration(
                           border: OutlineInputBorder(
@@ -108,7 +144,17 @@ class Signup extends StatelessWidget {
                       const SizedBox(
                         height: 10,
                       ),
+                      Row(
+                        children: const [
+                          Text('Confirm Password'),
+                          Text(
+                            '*',
+                            style: TextStyle(color: Colors.redAccent),
+                          )
+                        ],
+                      ),
                       TextFormField(
+                        obscureText: true,
                         decoration: InputDecoration(
                             border: OutlineInputBorder(
                               borderSide: const BorderSide(
@@ -125,9 +171,15 @@ class Signup extends StatelessWidget {
                       Row(
                         children: const [
                           Text(
-                            "What is Your Expertise?",
+                            "IM A",
                             style: TextStyle(
                               color: Colors.black45,
+                            ),
+                          ),
+                          Text(
+                            "*",
+                            style: TextStyle(
+                              color: Colors.redAccent,
                             ),
                           ),
                         ],
@@ -141,23 +193,13 @@ class Signup extends StatelessWidget {
                                 groupValue: 1,
                                 onChanged: (value) {},
                               ),
-                              const Text("Legal Expertise 1"),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Radio(
-                                value: 1,
-                                groupValue: 1,
-                                onChanged: (value) {},
-                              ),
-                              const Text("Legal Expertise 2"),
+                              const Text("Client"),
                             ],
                           ),
                         ],
                       ),
                       Row(
-                        children: [
+                        children: const [
                           Text("By Signing up agree to our"),
                           Text(
                             "Terms and Condition",
@@ -170,15 +212,12 @@ class Signup extends StatelessWidget {
                       Center(
                         child: Column(
                           children: [
-                            OutlinedButton(
-                                style: ButtonStyle(
-                                    side: MaterialStateProperty.all(
-                                        const BorderSide(color: Colors.blue)),
-                                    shape: MaterialStateProperty.all<
-                                            RoundedRectangleBorder>(
-                                        RoundedRectangleBorder(
-                                      borderRadius: BorderRadius.circular(18.0),
-                                    ))),
+                            ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                    backgroundColor: Colors.blue,
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius:
+                                            BorderRadius.circular(10))),
                                 onPressed: () async {
                                   if (await signup(
                                       nameController.text.toString(),
@@ -188,7 +227,7 @@ class Signup extends StatelessWidget {
                                     Navigator.pushNamed(context, "/login");
                                   } else {
                                     ScaffoldMessenger.of(context)
-                                        .showSnackBar(SnackBar(
+                                        .showSnackBar(const SnackBar(
                                       content:
                                           Text("Failed to sign up. Try again."),
                                       backgroundColor: Colors.blue,
@@ -198,18 +237,19 @@ class Signup extends StatelessWidget {
                                 child: const Text(
                                   "Sign Up",
                                   style: TextStyle(
-                                    color: Colors.blue,
+                                    color: Colors.white,
                                   ),
                                 )),
                             Center(
                               child: Row(
+                                mainAxisAlignment: MainAxisAlignment.center,
                                 children: [
-                                  Text("Already have an account ?"),
+                                  const Text("Already have an account ?"),
                                   TextButton(
                                       onPressed: () {
                                         Navigator.pushNamed(context, "/login");
                                       },
-                                      child: Text(
+                                      child: const Text(
                                         "Sign In",
                                         style: TextStyle(
                                           color: Colors.blue,

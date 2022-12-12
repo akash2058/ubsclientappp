@@ -8,12 +8,10 @@ class ChangePasswordScreen extends StatelessWidget {
     return SafeArea(
       child: Scaffold(
         appBar: AppBar(
-            centerTitle: true,
-            title: Text('Password Settings'),
-            automaticallyImplyLeading: true,
-            actions: [
-              IconButton(onPressed: (() {}), icon: Icon(Icons.notification_add))
-            ]),
+          centerTitle: true,
+          title: const Text('Password Settings'),
+          automaticallyImplyLeading: true,
+        ),
         body: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
           children: [

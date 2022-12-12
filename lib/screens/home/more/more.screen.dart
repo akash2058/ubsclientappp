@@ -8,46 +8,44 @@ class MoreScreen extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
       child: ListView(children: [
-        Container(
-          child: Card(
-            shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(0),
-                side: const BorderSide(strokeAlign: StrokeAlign.inside)),
-            child: Column(
-              children: [
-                ListTile(
-                  onTap: () {
+        Card(
+          shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(0),
+              side: const BorderSide(strokeAlign: StrokeAlign.inside)),
+          child: Column(
+            children: [
+              ListTile(
+                onTap: () {
+                  Navigator.pushNamed(context, '/profile');
+                },
+                title: const Text('Profile'),
+                trailing: IconButton(
+                  highlightColor: Colors.purpleAccent,
+                  onPressed: () {
                     Navigator.pushNamed(context, '/profile');
                   },
-                  title: const Text('Profile'),
-                  trailing: IconButton(
-                    highlightColor: Colors.purpleAccent,
-                    onPressed: () {
-                      Navigator.pushNamed(context, '/profile');
-                    },
-                    icon: const Icon(Icons.arrow_forward_ios),
-                  ),
-                  leading: const Icon(Icons.person),
+                  icon: const Icon(Icons.arrow_forward_ios),
                 ),
-                const Divider(
-                  color: Colors.black,
-                  height: 15,
-                  thickness: 2,
-                  indent: 20,
-                  endIndent: 20,
+                leading: const Icon(Icons.person),
+              ),
+              const Divider(
+                color: Colors.black,
+                height: 15,
+                thickness: 2,
+                indent: 20,
+                endIndent: 20,
+              ),
+              ListTile(
+                onTap: (() {
+                  Navigator.pushNamed(context, '/change');
+                }),
+                title: const Text(' Change Password'),
+                trailing: const Icon(
+                  (Icons.arrow_forward_ios),
                 ),
-                ListTile(
-                  onTap: (() {
-                    Navigator.pushNamed(context, '/change');
-                  }),
-                  title: const Text(' Change Password'),
-                  trailing: const Icon(
-                    (Icons.arrow_forward_ios),
-                  ),
-                  leading: const Icon(Icons.lock_open_outlined),
-                ),
-              ],
-            ),
+                leading: const Icon(Icons.lock_open_outlined),
+              ),
+            ],
           ),
         ),
         const SizedBox(
@@ -65,7 +63,7 @@ class MoreScreen extends StatelessWidget {
                   title: Text(
                     'Kaam',
                     style: TextStyle(
-                      fontSize: 30,
+                      fontSize: 25,
                       fontWeight: FontWeight.bold,
                     ),
                   ),
@@ -135,16 +133,16 @@ class MoreScreen extends StatelessWidget {
           child: Card(
             surfaceTintColor: Colors.red,
             shape: RoundedRectangleBorder(
-                borderRadius: BorderRadius.circular(0),
+                borderRadius: BorderRadius.circular(2),
                 side: const BorderSide(width: 1.5)),
             child: Column(
               children: [
                 const ListTile(
                   title: Text(
                     'Kaam',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                    style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
                   ),
-                  tileColor: Color.fromARGB(255, 207, 198, 198),
+                  tileColor: Color.fromARGB(255, 215, 205, 205),
                 ),
                 ListTile(
                   trailing: const Icon(Icons.arrow_forward_ios),
@@ -191,7 +189,78 @@ class MoreScreen extends StatelessWidget {
                   trailing: const Icon(Icons.arrow_forward_ios),
                   leading: const Icon(Icons.logout),
                   onTap: () {
-                    Navigator.pushNamed(context, "/login");
+                    showDialog(
+                        context: context,
+                        builder: (context) {
+                          return Center(
+                            child: Dialog(
+                              backgroundColor: Colors.blue[200],
+                              shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10)),
+                              child: Container(
+                                margin: EdgeInsets.all(20),
+                                height: 210,
+                                width: 210,
+                                child: Column(
+                                  children: [
+                                    const CircleAvatar(
+                                      radius: 50,
+                                      backgroundImage:
+                                          AssetImage('assets/images/vv.png'),
+                                    ),
+                                    const Text(
+                                      'Are you Sure you want to ',
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    const Text(
+                                      'Logout ?',
+                                      style: TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 18,
+                                          fontWeight: FontWeight.bold),
+                                    ),
+                                    const SizedBox(
+                                      height: 15,
+                                    ),
+                                    Row(
+                                      children: [
+                                        ElevatedButton(
+                                            style: ElevatedButton.styleFrom(
+                                                backgroundColor: Colors.red,
+                                                shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            10))),
+                                            onPressed: () {
+                                              Navigator.pop(context);
+                                            },
+                                            child: Text('Cancel')),
+                                        const SizedBox(
+                                          width: 85,
+                                        ),
+                                        ElevatedButton(
+                                            style: ElevatedButton.styleFrom(
+                                                backgroundColor: Colors.green,
+                                                shape: RoundedRectangleBorder(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            10))),
+                                            onPressed: () {
+                                              Navigator.pushNamed(
+                                                  context, '/login');
+                                            },
+                                            child: Text('Logout')),
+                                      ],
+                                    )
+                                  ],
+                                ),
+                              ),
+                            ),
+                          );
+                        });
                   },
                   title: const Text(
                     'Logout',

@@ -3,9 +3,7 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:ubsclient/main.dart';
 import 'package:ubsclient/models/blogmodel.dart';
-import 'package:ubsclient/screens/home/more/blog/bussiness.screen.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class BlogScreen extends StatefulWidget {
@@ -47,18 +45,13 @@ class _BlogScreenState extends State<BlogScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Colors.lightBlueAccent,
-          centerTitle: true,
-          title: const Text(
-            'Blog',
-            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-          ),
-          actions: const [
-            Icon(
-              Icons.notification_add,
-              color: Colors.black,
-            ),
-          ]),
+        backgroundColor: Colors.lightBlueAccent,
+        centerTitle: true,
+        title: const Text(
+          'Blog',
+          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+        ),
+      ),
       body: Column(
         children: [
           Container(
@@ -84,12 +77,12 @@ class _BlogScreenState extends State<BlogScreen> {
                       onPressed: () {
                         setState(() {});
                       },
-                      child: Text(
+                      child: const Text(
                         'All',
                         style: TextStyle(
                             color: Colors.black, fontWeight: FontWeight.bold),
                       )),
-                  SizedBox(
+                  const SizedBox(
                     width: 15,
                   ),
                   OutlinedButton(
@@ -104,12 +97,12 @@ class _BlogScreenState extends State<BlogScreen> {
                       onPressed: () {
                         Navigator.pushNamed(context, '/bussiness');
                       },
-                      child: Text(
+                      child: const Text(
                         'Bussiness',
                         style: TextStyle(
                             color: Colors.black, fontWeight: FontWeight.bold),
                       )),
-                  SizedBox(
+                  const SizedBox(
                     width: 15,
                   ),
                   OutlinedButton(
@@ -122,12 +115,12 @@ class _BlogScreenState extends State<BlogScreen> {
                             borderRadius: BorderRadius.circular(18.0),
                           ))),
                       onPressed: () {},
-                      child: Text(
+                      child: const Text(
                         'Malpot',
                         style: TextStyle(
                             color: Colors.black, fontWeight: FontWeight.bold),
                       )),
-                  SizedBox(
+                  const SizedBox(
                     width: 15,
                   ),
                   OutlinedButton(
@@ -140,12 +133,12 @@ class _BlogScreenState extends State<BlogScreen> {
                             borderRadius: BorderRadius.circular(18.0),
                           ))),
                       onPressed: () {},
-                      child: Text(
+                      child: const Text(
                         'OCR',
                         style: TextStyle(
                             color: Colors.black, fontWeight: FontWeight.bold),
                       )),
-                  SizedBox(
+                  const SizedBox(
                     width: 15,
                   ),
                   OutlinedButton(
@@ -158,12 +151,12 @@ class _BlogScreenState extends State<BlogScreen> {
                             borderRadius: BorderRadius.circular(18.0),
                           ))),
                       onPressed: () {},
-                      child: Text(
+                      child: const Text(
                         'Notice',
                         style: TextStyle(
                             color: Colors.black, fontWeight: FontWeight.bold),
                       )),
-                  SizedBox(
+                  const SizedBox(
                     width: 15,
                   ),
                   OutlinedButton(
@@ -176,7 +169,7 @@ class _BlogScreenState extends State<BlogScreen> {
                             borderRadius: BorderRadius.circular(18.0),
                           ))),
                       onPressed: () {},
-                      child: Text(
+                      child: const Text(
                         'Upaya',
                         style: TextStyle(
                             color: Colors.black, fontWeight: FontWeight.bold),
@@ -197,52 +190,49 @@ class _BlogScreenState extends State<BlogScreen> {
                         return Container(
                           margin: const EdgeInsets.all(8),
                           padding: const EdgeInsets.all(5),
-                          child: Container(
-                            child: Card(
-                              margin: EdgeInsets.all(4),
-                              shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(0),
-                                  side: const BorderSide(width: 0)),
-                              child: Column(
-                                  crossAxisAlignment:
-                                      CrossAxisAlignment.stretch,
-                                  mainAxisAlignment:
-                                      MainAxisAlignment.spaceEvenly,
-                                  children: [
-                                    InkWell(
-                                        onTap: () => launchUrl(Uri.parse(
-                                            "https://nepalkhabar.com/economy/49387-2021-02-05-09-49-29")),
-                                        child: Image(
-                                          image: NetworkImage(
-                                              data[index].thumbnail.toString()),
-                                        )),
-                                    Text(
-                                      data[index].title.toString(),
-                                      style: TextStyle(
-                                          fontSize: 25,
-                                          fontWeight: FontWeight.bold),
-                                    ),
-                                    Row(
-                                      children: [
-                                        Align(
-                                          alignment: Alignment.bottomLeft,
-                                          child: CircleAvatar(
-                                            child: Image(
-                                                image: NetworkImage(data[index]
-                                                    .author_image
-                                                    .toString())),
-                                          ),
+                          child: Card(
+                            margin: EdgeInsets.all(4),
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(0),
+                                side: const BorderSide(width: 0)),
+                            child: Column(
+                                crossAxisAlignment: CrossAxisAlignment.stretch,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  InkWell(
+                                      onTap: () => launchUrl(Uri.parse(
+                                          "https://nepalkhabar.com/economy/49387-2021-02-05-09-49-29")),
+                                      child: Image(
+                                        image: NetworkImage(
+                                            data[index].thumbnail.toString()),
+                                      )),
+                                  Text(
+                                    data[index].title.toString(),
+                                    style: const TextStyle(
+                                        fontSize: 25,
+                                        fontWeight: FontWeight.bold),
+                                  ),
+                                  Row(
+                                    children: [
+                                      Align(
+                                        alignment: Alignment.bottomLeft,
+                                        child: CircleAvatar(
+                                          child: Image(
+                                              image: NetworkImage(data[index]
+                                                  .author_image
+                                                  .toString())),
                                         ),
-                                        SizedBox(
-                                          width: 200,
-                                        ),
-                                        Text(data[index]
-                                            .blog_timestamp
-                                            .toString()),
-                                      ],
-                                    ),
-                                  ]),
-                            ),
+                                      ),
+                                      const SizedBox(
+                                        width: 200,
+                                      ),
+                                      Text(data[index]
+                                          .blog_timestamp
+                                          .toString()),
+                                    ],
+                                  ),
+                                ]),
                           ),
                         );
                       },

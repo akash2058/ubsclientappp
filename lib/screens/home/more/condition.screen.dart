@@ -14,21 +14,13 @@ class ConditionScreen extends StatelessWidget {
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Colors.blue,
-        title: Text(
+        title: const Text(
           'Terms and Condition',
           style: TextStyle(
             fontWeight: FontWeight.bold,
             color: Colors.white,
           ),
         ),
-        actions: [
-          IconButton(
-              onPressed: () {},
-              icon: Icon(
-                Icons.notification_add,
-                color: Colors.white,
-              ))
-        ],
       ),
       body: Column(
         children: [

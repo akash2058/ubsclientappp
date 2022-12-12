@@ -1,12 +1,9 @@
 import 'dart:convert';
+import 'dart:ui';
 import 'package:shared_preferences/shared_preferences.dart';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart';
 import 'package:ubsclient/screens/login/login.header.dart';
-import 'package:http/http.dart' as http;
-import 'package:ubsclient/screens/home/more/splash.screen/splash.screen.dart';
-
-import '../../models/expertise.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({Key? key}) : super(key: key);
@@ -96,8 +93,8 @@ class _LoginScreenState extends State<LoginScreen> {
                               Text("Full Name"),
                               Text(
                                 "*",
-                                style:
-                                    TextStyle(color: Colors.blue, fontSize: 22),
+                                style: TextStyle(
+                                    color: Colors.redAccent, fontSize: 22),
                               )
                             ],
                           ),
@@ -122,8 +119,8 @@ class _LoginScreenState extends State<LoginScreen> {
                               Text("Password"),
                               Text(
                                 "*",
-                                style:
-                                    TextStyle(color: Colors.blue, fontSize: 20),
+                                style: TextStyle(
+                                    color: Colors.redAccent, fontSize: 20),
                               )
                             ],
                           ),
@@ -138,8 +135,8 @@ class _LoginScreenState extends State<LoginScreen> {
                                     });
                                   },
                                   icon: (hidePassword)
-                                      ? Icon(Icons.visibility)
-                                      : Icon(Icons.visibility_off),
+                                      ? const Icon(Icons.visibility)
+                                      : const Icon(Icons.visibility_off),
                                 ),
                                 border: OutlineInputBorder(
                                     borderRadius: BorderRadius.circular(30)),
@@ -149,10 +146,112 @@ class _LoginScreenState extends State<LoginScreen> {
                       ),
                       Row(
                         children: [
-                          const Text("Forgot Password ? "),
+                          const Text("Forgot Password ?"),
                           TextButton(
                               onPressed: () {
-                                Navigator.pushNamed(context, "/reset");
+                                showDialog(
+                                    context: context,
+                                    builder: (context) {
+                                      return Center(
+                                        child: Container(
+                                          height: 481,
+                                          width: 400,
+                                          child: Dialog(
+                                              backgroundColor: Colors.blue[200],
+                                              child: Container(
+                                                margin:
+                                                    const EdgeInsets.all(40),
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  crossAxisAlignment:
+                                                      CrossAxisAlignment.center,
+                                                  children: [
+                                                    const Text(
+                                                      'Reset Password',
+                                                      style: TextStyle(
+                                                        fontSize: 25,
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                      ),
+                                                    ),
+                                                    const Text(
+                                                        'Enter your phone number to get '),
+                                                    const Text(
+                                                        'verification code to reset your'),
+                                                    const Text('password'),
+                                                    const CircleAvatar(
+                                                      radius: 70,
+                                                      backgroundImage: AssetImage(
+                                                          'assets/images/und.png'),
+                                                    ),
+                                                    const Align(
+                                                        alignment: Alignment
+                                                            .bottomLeft,
+                                                        child: Text(
+                                                          'Phone Number',
+                                                          style: TextStyle(
+                                                              fontWeight:
+                                                                  FontWeight
+                                                                      .bold,
+                                                              fontSize: 17),
+                                                        )),
+                                                    TextFormField(
+                                                      decoration: InputDecoration(
+                                                          contentPadding:
+                                                              const EdgeInsets
+                                                                  .all(10),
+                                                          border: OutlineInputBorder(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          5)),
+                                                          hintText:
+                                                              'Enter your phone number',
+                                                          hintStyle:
+                                                              const TextStyle(
+                                                                  color: Colors
+                                                                      .blueGrey)),
+                                                    ),
+                                                    const SizedBox(
+                                                      height: 20,
+                                                    ),
+                                                    ElevatedButton(
+                                                      style: ButtonStyle(
+                                                        shape: MaterialStateProperty
+                                                            .all<
+                                                                RoundedRectangleBorder>(
+                                                          RoundedRectangleBorder(
+                                                            borderRadius:
+                                                                BorderRadius
+                                                                    .circular(
+                                                                        30),
+                                                          ),
+                                                        ),
+                                                        side:
+                                                            MaterialStateProperty
+                                                                .all(
+                                                          const BorderSide(
+                                                            color: Colors
+                                                                .blueAccent,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      onPressed: () {},
+                                                      child: const Text(
+                                                        "Send Verfication code",
+                                                        style: TextStyle(
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
+                                                ),
+                                              )),
+                                        ),
+                                      );
+                                    });
                               },
                               child: const Text(
                                 "Reset",
@@ -163,14 +262,11 @@ class _LoginScreenState extends State<LoginScreen> {
                       const SizedBox(
                         height: 10,
                       ),
-                      OutlinedButton(
-                        style: ButtonStyle(
-                            side: MaterialStateProperty.all(
-                                const BorderSide(color: Colors.blue)),
-                            shape: MaterialStateProperty.all<
-                                RoundedRectangleBorder>(RoundedRectangleBorder(
-                              borderRadius: BorderRadius.circular(18.0),
-                            ))),
+                      ElevatedButton(
+                        style: ElevatedButton.styleFrom(
+                            backgroundColor: Colors.blue,
+                            shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(40))),
                         onPressed: () async {
                           bool isLoggedIn = await login(
                               emailController.text.toString(),
@@ -178,7 +274,6 @@ class _LoginScreenState extends State<LoginScreen> {
                           if (isLoggedIn) {
                             ScaffoldMessenger.of(context)
                                 .showSnackBar(const SnackBar(
-                              margin: EdgeInsets.only(top: 100),
                               behavior: SnackBarBehavior.floating,
                               content: Text("Successfully Logged In"),
                               backgroundColor: Colors.green,
@@ -196,14 +291,14 @@ class _LoginScreenState extends State<LoginScreen> {
                         child: const Text(
                           "Sign In",
                           style: TextStyle(
-                            color: Colors.blue,
+                            color: Colors.white,
                           ),
                         ),
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
-                          Icon(Icons.account_box_outlined),
+                          const Icon(Icons.account_box_outlined),
                           const Text("Don't have an account? "),
                           TextButton(
                               onPressed: () {

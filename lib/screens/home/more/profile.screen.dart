@@ -1,7 +1,5 @@
 import 'package:flutter/material.dart';
 
-import 'package:ubsclient/screens/login/login.header.dart';
-
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
@@ -9,16 +7,10 @@ class ProfileScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          centerTitle: true,
-          title: Text('Profile'),
-          automaticallyImplyLeading: true,
-          actions: [
-            IconButton(
-                onPressed: (() {}),
-                icon: Icon(
-                  Icons.notification_add,
-                ))
-          ]),
+        centerTitle: true,
+        title: Text('Profile'),
+        automaticallyImplyLeading: true,
+      ),
       backgroundColor: Colors.white,
       body: Container(
         margin: EdgeInsets.all(8.0),

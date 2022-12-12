@@ -80,7 +80,7 @@ class ReviewModel {
 
   @override
   String toString() {
-    return 'BlogModel(transactionID: $transactionID, companyName: $companyName, clientID: $clientID, fullname: $fullname, imageURL: $imageURL, rating: $rating, review: $review, reviewedOn: $reviewedOn)';
+    return 'ReviewModel(transactionID: $transactionID, companyName: $companyName, clientID: $clientID, fullname: $fullname, imageURL: $imageURL, rating: $rating, review: $review, reviewedOn: $reviewedOn)';
   }
 
   @override

@@ -7,7 +7,7 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:ubsclient/models/Review.model.dart';
 
 class ReviewScreen extends StatelessWidget {
-  ReviewScreen({super.key});
+  const ReviewScreen({super.key});
   Future<List<ReviewModel>> postData() async {
     try {
       List<ReviewModel> reviewlist = [];
@@ -40,26 +40,21 @@ class ReviewScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-          backgroundColor: Colors.lightBlueAccent,
-          centerTitle: true,
-          title: const Text(
-            'Reviews',
-            style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
-          ),
-          actions: const [
-            Icon(
-              Icons.notification_add,
-              color: Colors.black,
-            ),
-          ]),
+        backgroundColor: Colors.lightBlueAccent,
+        centerTitle: true,
+        title: const Text(
+          'Reviews',
+          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
+        ),
+      ),
       body: Column(
         children: [
           Container(
-            margin: EdgeInsets.all(10),
+            margin: const EdgeInsets.all(10),
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
-                children: [
+                children: const [
                   SizedBox(
                     width: 15,
                   ),
@@ -77,12 +72,13 @@ class ReviewScreen extends StatelessWidget {
                       itemCount: data.length,
                       itemBuilder: (context, index) {
                         return Container(
-                          margin: EdgeInsets.all(8),
-                          padding: EdgeInsets.all(5),
+                          margin: const EdgeInsets.all(8),
+                          padding: const EdgeInsets.all(5),
                           child: Container(
-                            decoration: BoxDecoration(boxShadow: [
+                            decoration: const BoxDecoration(boxShadow: [
                               BoxShadow(
-                                blurRadius: 20,
+                                blurStyle: BlurStyle.normal,
+                                blurRadius: 5.0,
                               )
                             ]),
                             child: Card(
@@ -98,7 +94,7 @@ class ReviewScreen extends StatelessWidget {
                                     initialRating:
                                         double.parse(data[index].rating),
                                     updateOnDrag: true,
-                                    itemBuilder: (context, index) => Icon(
+                                    itemBuilder: (context, index) => const Icon(
                                       Icons.star,
                                       color: Colors.red,
                                     ),

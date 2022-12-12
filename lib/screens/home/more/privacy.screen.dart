@@ -12,22 +12,14 @@ class PrivacyScreen extends StatelessWidget {
         child: const Icon(Icons.add),
       ),
       appBar: AppBar(
-          shadowColor: Colors.black,
-          centerTitle: true,
-          title: const Text('Privacy Policy',
-              style: TextStyle(
-                color: Colors.black,
-              )),
-          backgroundColor: Colors.lightBlueAccent,
-          actions: [
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(
-                Icons.notification_add,
-                color: Colors.black,
-              ),
-            )
-          ]),
+        shadowColor: Colors.black,
+        centerTitle: true,
+        title: const Text('Privacy Policy',
+            style: TextStyle(
+              color: Colors.black,
+            )),
+        backgroundColor: Colors.lightBlueAccent,
+      ),
       body: Column(
         children: [
           const Expanded(

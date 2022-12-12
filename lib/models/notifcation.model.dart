@@ -2,68 +2,63 @@
 import 'dart:convert';
 
 class NotificationModel {
-  String? notifcationmsg;
-  String? transactionID;
+  String notification_msg;
+  String tid;
   String notification_type;
   String notification_status;
   String accept_status;
-  String? notiffcation_date;
+  String notification_date;
   String? cimID;
   NotificationModel({
-    this.notifcationmsg,
-    this.transactionID,
+    required this.notification_msg,
+    required this.tid,
     required this.notification_type,
     required this.notification_status,
     required this.accept_status,
-    this.notiffcation_date,
+    required this.notification_date,
     this.cimID,
   });
 
   NotificationModel copyWith({
-    String? notifcationmsg,
-    String? transactionID,
+    String? notification_msg,
+    String? tid,
     String? notification_type,
     String? notification_status,
     String? accept_status,
-    String? notiffcation_date,
+    String? notification_date,
     String? cimID,
   }) {
     return NotificationModel(
-      notifcationmsg: notifcationmsg ?? this.notifcationmsg,
-      transactionID: transactionID ?? this.transactionID,
+      notification_msg: notification_msg ?? this.notification_msg,
+      tid: tid ?? this.tid,
       notification_type: notification_type ?? this.notification_type,
       notification_status: notification_status ?? this.notification_status,
       accept_status: accept_status ?? this.accept_status,
-      notiffcation_date: notiffcation_date ?? this.notiffcation_date,
+      notification_date: notification_date ?? this.notification_date,
       cimID: cimID ?? this.cimID,
     );
   }
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'notifcationmsg': notifcationmsg,
-      'transactionID': transactionID,
+      'notification_msg': notification_msg,
+      'tid': tid,
       'notification_type': notification_type,
       'notification_status': notification_status,
       'accept_status': accept_status,
-      'notiffcation_date': notiffcation_date,
+      'notification_date': notification_date,
       'cimID': cimID,
     };
   }
 
   factory NotificationModel.fromMap(Map<String, dynamic> map) {
     return NotificationModel(
-      notifcationmsg: map['notifcationmsg'] != null
-          ? map['notifcationmsg'] as String
-          : null,
-      transactionID:
-          map['transactionID'] != null ? map['transactionID'] as String : null,
+      notification_msg: map['notification_msg'] as String,
+      tid: map['tid'] as String,
       notification_type: map['notification_type'] as String,
       notification_status: map['notification_status'] as String,
       accept_status: map['accept_status'] as String,
-      notiffcation_date: map['notiffcation_date'] != null
-          ? map['notiffcation_date'] as String
-          : null,
+      notification_date: map['notification_date'] as String,
       cimID: map['cimID'] != null ? map['cimID'] as String : null,
     );
   }
@@ -75,30 +70,30 @@ class NotificationModel {
 
   @override
   String toString() {
-    return 'NotificationModel(notifcationmsg: $notifcationmsg, transactionID: $transactionID, notification_type: $notification_type, notification_status: $notification_status, accept_status: $accept_status, notiffcation_date: $notiffcation_date, cimID: $cimID)';
+    return 'NotificationModel(notification_msg: $notification_msg, tid: $tid, notification_type: $notification_type, notification_status: $notification_status, accept_status: $accept_status, notification_date: $notification_date, cimID: $cimID)';
   }
 
   @override
   bool operator ==(covariant NotificationModel other) {
     if (identical(this, other)) return true;
 
-    return other.notifcationmsg == notifcationmsg &&
-        other.transactionID == transactionID &&
+    return other.notification_msg == notification_msg &&
+        other.tid == tid &&
         other.notification_type == notification_type &&
         other.notification_status == notification_status &&
         other.accept_status == accept_status &&
-        other.notiffcation_date == notiffcation_date &&
+        other.notification_date == notification_date &&
         other.cimID == cimID;
   }
 
   @override
   int get hashCode {
-    return notifcationmsg.hashCode ^
-        transactionID.hashCode ^
+    return notification_msg.hashCode ^
+        tid.hashCode ^
         notification_type.hashCode ^
         notification_status.hashCode ^
         accept_status.hashCode ^
-        notiffcation_date.hashCode ^
+        notification_date.hashCode ^
         cimID.hashCode;
   }
 }

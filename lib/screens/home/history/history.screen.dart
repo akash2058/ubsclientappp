@@ -1,7 +1,4 @@
-import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
-import 'package:http/http.dart' as http;
-import 'package:ubsclient/models/photo.dart';
 
 class Historypage extends StatelessWidget {
   const Historypage({super.key});
@@ -127,7 +124,7 @@ class Historypage extends StatelessWidget {
           ]),
         ),
       ),
-      SizedBox(
+      const SizedBox(
         height: 20,
       ),
       Container(
@@ -228,7 +225,7 @@ class Historypage extends StatelessWidget {
                   ),
                   Container(
                     margin: const EdgeInsets.all(5.0),
-                    padding: EdgeInsets.all(5.0),
+                    padding: const EdgeInsets.all(5.0),
                     color: Colors.blueAccent,
                     child: Row(
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -246,12 +243,12 @@ class Historypage extends StatelessWidget {
                   ),
                 ])
               ]))),
-      SizedBox(
+      const SizedBox(
         height: 20,
       ),
       Container(
-          padding: EdgeInsets.all(5.0),
-          margin: EdgeInsets.all(5),
+          padding: const EdgeInsets.all(5.0),
+          margin: const EdgeInsets.all(5),
           child: Card(
               shadowColor: Colors.black,
               shape: RoundedRectangleBorder(

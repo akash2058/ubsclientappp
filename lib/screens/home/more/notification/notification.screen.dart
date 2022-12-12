@@ -1,9 +1,7 @@
 import 'dart:convert';
-
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:ubsclient/models/expertise.dart';
 import 'package:ubsclient/models/notifcation.model.dart';
 
 class NotificationScreen extends StatelessWidget {
@@ -41,7 +39,7 @@ class NotificationScreen extends StatelessWidget {
         appBar: AppBar(
             centerTitle: true,
             title: const Text(
-              'Notification',
+              'Notifications',
             )),
         body: Column(
           children: [
@@ -61,51 +59,67 @@ class NotificationScreen extends StatelessWidget {
                                       CrossAxisAlignment.stretch,
                                   children: [
                                     Card(
+                                      shadowColor: Colors.black,
                                       child: Column(
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
-                                          Text(data[index]
-                                              .notifcationmsg
-                                              .toString()),
+                                          Text(
+                                            data[index].tid.toString(),
+                                            style: const TextStyle(
+                                                fontWeight: FontWeight.bold),
+                                          ),
                                           const SizedBox(
                                             height: 10,
                                           ),
-                                          Text(data[index]
-                                              .notification_type
-                                              .toString()),
+                                          Text(
+                                            data[index]
+                                                .notification_msg
+                                                .toString(),
+                                            style: TextStyle(fontSize: 16),
+                                          ),
                                           const SizedBox(
                                             height: 10,
                                           ),
-                                          Text(data[index]
-                                              .notification_status
-                                              .toString()),
+                                          Text(
+                                            data[index]
+                                                .notification_type
+                                                .toString(),
+                                            style: const TextStyle(
+                                                fontSize: 16,
+                                                color: Colors.blue,
+                                                fontWeight: FontWeight.bold),
+                                          ),
                                           const SizedBox(
                                             height: 10,
                                           ),
-                                          Text(data[index]
-                                              .transactionID
-                                              .toString()),
-                                          const SizedBox(
-                                            height: 10,
-                                          ),
-                                          Text(data[index]
-                                              .accept_status
-                                              .toString()),
-                                          const SizedBox(
-                                            height: 10,
-                                          ),
-                                          Text(data[index]
-                                              .accept_status
-                                              .toString()),
-                                          const SizedBox(
-                                            height: 10,
-                                          ),
-                                          Text(data[index]
-                                              .notiffcation_date
-                                              .toString()),
-                                          const SizedBox(
-                                            height: 10,
+                                          Row(
+                                            children: [
+                                              Text(
+                                                data[index]
+                                                    .notification_date
+                                                    .toString(),
+                                                style: const TextStyle(
+                                                  fontWeight: FontWeight.bold,
+                                                ),
+                                              ),
+                                              const SizedBox(
+                                                width: 110,
+                                              ),
+                                              const Icon(
+                                                Icons.check,
+                                                color: Colors.green,
+                                              ),
+                                              Text(
+                                                data[index]
+                                                    .accept_status
+                                                    .toString(),
+                                                style: const TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                    fontSize: 15,
+                                                    color: Colors.green),
+                                              ),
+                                            ],
                                           ),
                                         ],
                                       ),
@@ -115,7 +129,7 @@ class NotificationScreen extends StatelessWidget {
                               );
                             });
                       }
-                      return Text("loading");
+                      return const Text("loading");
                     })))
           ],
         ));
