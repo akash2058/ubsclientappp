@@ -21,6 +21,9 @@ class ServicesScreen extends StatelessWidget {
                     svg: "assets/svg/registration.svg",
                     label: "Registration",
                     gradients: [0xFFf83600, 0xFFfe8c00],
+                    onTap: () {
+                      print("Hello");
+                    },
                   ),
                 ),
                 Expanded(
@@ -132,80 +135,87 @@ class ServiceCard extends StatelessWidget {
   final double borderRadius = 22;
   final bool isOtherService;
   final List<int> gradients;
+
+  final VoidCallback? onTap;
+
   const ServiceCard(
       {super.key,
       required this.label,
       required this.svg,
       required this.gradients,
-      this.isOtherService = false});
+      this.isOtherService = false,
+      this.onTap});
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-      shape: RoundedRectangleBorder(
-          borderRadius: BorderRadius.circular(borderRadius)),
-      margin: EdgeInsets.all(8),
-      elevation: 5,
-      child: Container(
-        decoration: BoxDecoration(
-          color: Colors.red,
-          borderRadius: BorderRadius.circular(borderRadius),
-          gradient: LinearGradient(
-              colors: [
-                Color(gradients[1]),
-                Color(gradients[0]),
-              ],
-              begin: const FractionalOffset(0.0, 0.0),
-              end: const FractionalOffset(1.0, 0.0),
-              stops: [0.0, 1.0],
-              tileMode: TileMode.clamp),
-        ),
-        child: Padding(
-            padding: const EdgeInsets.all(26),
-            child: (!isOtherService)
-                ? Column(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      SvgPicture.asset(
-                        svg,
-                        alignment: Alignment.center,
-                        height: 80,
-                        width: 80,
-                      ),
-                      SizedBox(
-                        height: 6,
-                      ),
-                      Text(
-                        textAlign: TextAlign.center,
-                        label,
-                        style: TextStyle(
-                            fontSize: 18, fontWeight: FontWeight.bold),
-                      )
-                    ],
-                  )
-                : Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    children: [
-                      SvgPicture.asset(
-                        svg,
-                        alignment: Alignment.center,
-                        height: 80,
-                        width: 80,
-                      ),
-                      Expanded(
-                        flex: 3,
-                        child: Text(
-                          label,
+    return InkWell(
+      onTap: onTap,
+      child: Card(
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(borderRadius)),
+        margin: EdgeInsets.all(8),
+        elevation: 5,
+        child: Container(
+          decoration: BoxDecoration(
+            color: Colors.red,
+            borderRadius: BorderRadius.circular(borderRadius),
+            gradient: LinearGradient(
+                colors: [
+                  Color(gradients[1]),
+                  Color(gradients[0]),
+                ],
+                begin: const FractionalOffset(0.0, 0.0),
+                end: const FractionalOffset(1.0, 0.0),
+                stops: [0.0, 1.0],
+                tileMode: TileMode.clamp),
+          ),
+          child: Padding(
+              padding: const EdgeInsets.all(26),
+              child: (!isOtherService)
+                  ? Column(
+                      crossAxisAlignment: CrossAxisAlignment.center,
+                      children: [
+                        SvgPicture.asset(
+                          svg,
+                          alignment: Alignment.center,
+                          height: 80,
+                          width: 80,
+                        ),
+                        SizedBox(
+                          height: 6,
+                        ),
+                        Text(
                           textAlign: TextAlign.center,
+                          label,
                           style: TextStyle(
                               fontSize: 18, fontWeight: FontWeight.bold),
+                        )
+                      ],
+                    )
+                  : Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        SvgPicture.asset(
+                          svg,
+                          alignment: Alignment.center,
+                          height: 80,
+                          width: 80,
                         ),
-                      ),
-                      Spacer(
-                        flex: 1,
-                      )
-                    ],
-                  )),
+                        Expanded(
+                          flex: 3,
+                          child: Text(
+                            label,
+                            textAlign: TextAlign.center,
+                            style: TextStyle(
+                                fontSize: 18, fontWeight: FontWeight.bold),
+                          ),
+                        ),
+                        Spacer(
+                          flex: 1,
+                        )
+                      ],
+                    )),
+        ),
       ),
     );
   }
