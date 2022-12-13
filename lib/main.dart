@@ -1,14 +1,16 @@
 import 'package:flutter/material.dart';
-import 'package:ubsclient/screens/home/Documnent/Serivces/registrationscreen.dart';
 import 'package:ubsclient/screens/home/dashboard.screen.dart';
 import 'package:ubsclient/screens/home/more/blog/bussiness.screen.dart';
 import 'package:ubsclient/screens/home/more/changepasswordscreen.dart';
 
 import 'package:ubsclient/screens/home/more/profile.screen.dart';
 import 'package:ubsclient/screens/home/more/splash.screen/splash.screen.dart';
+import 'package:ubsclient/screens/home/services/accounting/accounting.screen.dart';
 import 'package:ubsclient/screens/home/services/advisory/advisory.screen.dart';
 import 'package:ubsclient/screens/home/services/compliance/compliance.screen.dart';
+import 'package:ubsclient/screens/home/services/conversion/conversion.screen.dart';
 import 'package:ubsclient/screens/home/services/registration/registration.screen.dart';
+import 'package:ubsclient/screens/home/services/special%20packages/packages.screen.dart';
 import 'package:ubsclient/screens/login/login.screen.dart';
 import 'package:ubsclient/screens/signup/signup.screen.dart';
 import 'package:ubsclient/screens/home/more/Reviews.screen.dart';
@@ -39,6 +41,10 @@ void main() {
       '/registration': (context) => RegistrationScreen(),
        '/compliance': (context) => ComplianceScreen(),
        '/advisory': (context) => AdvisoryScreen(),
+       '/accounting': (context) => AccountingScreen(),
+        '/packages': (context) => PackagesScreen(),
+          '/conversion': (context) => ConversionScreen(),
+
 
     },
   ));
