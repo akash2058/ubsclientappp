@@ -3,10 +3,10 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:ubsclient/screens/home/services/conversion/conversion.card.dart';
+import 'package:ubsclient/screens/home/services/special packages/packages.card.dart';
 
-class ConversionScreen extends StatelessWidget {
-  const ConversionScreen({super.key});
+class PackagesScreen extends StatelessWidget {
+  const PackagesScreen({super.key});
 
   Future<void> callRemoteService(BuildContext context,
       {required String serviceID,
@@ -126,59 +126,67 @@ class ConversionScreen extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: const Text('Conversion'),
+          title: const Text('Packages'),
         ),
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
           child: Column(
             children: [
-              ConversionCard(
-                title: "Private to Public",
+              PackagesCard(
+                title: "Three Month's Return of Company",
                 serviceDetailCards: [
-                  ConversionServiceDetail(
+                  PackagesServiceDetail(
                     title: "Fee",
-                    amount: "1200",
+                    amount: "2500",
                     onTap: () {},
                   ),
                 ],
               ),
-              ConversionCard(
-                title: "Public to Private",
+              PackagesCard(
+                title: "SME",
                 serviceDetailCards: [
-                  ConversionServiceDetail(
-                    title: "Fee",
+                  PackagesServiceDetail(
+                    title: "Starting From",
                     amount: "20,000",
                     onTap: () {
                       callRemoteService(
                         context,
-                        parentServiceID: '71',
-                        service: 'Conversion',
-                        serviceID: '108',
+                        parentServiceID: '75',
+                        service: 'Packages',
+                        serviceID: '129',
                       );
                     },
                   ),
-                ],
-              ),
-              ConversionCard(
-                title: "Single Shareholder to Multi Shareholder",
-                serviceDetailCards: [
-                  ConversionServiceDetail(
-                    title: "Fee",
-                    amount: "8000",
+                  PackagesServiceDetail(
+                    title: "Annual Return of Public",
+                    amount: "6000",
                     onTap: () {},
                   ),
-              
-                ],
-              ),
-                  ConversionCard(
-                title: "Multi Shareholder to Single Shareholder",
-                serviceDetailCards: [
-                  ConversionServiceDetail(
-                    title: "Fee",
-                    amount: "8000",
+                  PackagesServiceDetail(
+                    title: "Annual Return of Not for Profit",
+                    amount: "6000",
                     onTap: () {},
                   ),
-              
+                  PackagesServiceDetail(
+                    title: "Annual Return of Foreign Company/Branch",
+                    amount: "6000",
+                    onTap: () {},
+                  ),
+                ],
+              ),
+              PackagesCard(
+                title: "Share Lagat",
+                serviceDetailCards: [
+                  PackagesServiceDetail(
+                    title: "Old Company",
+                    amount: "12000",
+                    onTap: () {},
+                  ),
+                  PackagesServiceDetail(
+                    title: "New Company",
+                    amount: "15000",
+                    onTap: () {},
+                  ),
                 ],
               ),
             ],

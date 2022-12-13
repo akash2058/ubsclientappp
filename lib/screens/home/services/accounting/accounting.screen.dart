@@ -3,10 +3,10 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:ubsclient/screens/home/services/conversion/conversion.card.dart';
+import 'package:ubsclient/screens/home/services/accounting/accounting.card.dart';
 
-class ConversionScreen extends StatelessWidget {
-  const ConversionScreen({super.key});
+class AccountingScreen extends StatelessWidget {
+  const AccountingScreen({super.key});
 
   Future<void> callRemoteService(BuildContext context,
       {required String serviceID,
@@ -126,59 +126,67 @@ class ConversionScreen extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: const Text('Conversion'),
+          title: const Text('Accounting'),
         ),
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
           child: Column(
             children: [
-              ConversionCard(
-                title: "Private to Public",
+              AccountingCard(
+                title: "Three Month's Return of Company",
                 serviceDetailCards: [
-                  ConversionServiceDetail(
+                  AccountingServiceDetail(
                     title: "Fee",
-                    amount: "1200",
+                    amount: "2500",
                     onTap: () {},
                   ),
                 ],
               ),
-              ConversionCard(
-                title: "Public to Private",
+              AccountingCard(
+                title: "Monthly Finanacial Reporting",
                 serviceDetailCards: [
-                  ConversionServiceDetail(
-                    title: "Fee",
-                    amount: "20,000",
+                  AccountingServiceDetail(
+                    title: "Starting From",
+                    amount: "7,000",
                     onTap: () {
                       callRemoteService(
                         context,
-                        parentServiceID: '71',
-                        service: 'Conversion',
-                        serviceID: '108',
+                        parentServiceID: '73',
+                        service: 'Accounting',
+                        serviceID: '114',
                       );
                     },
                   ),
-                ],
-              ),
-              ConversionCard(
-                title: "Single Shareholder to Multi Shareholder",
-                serviceDetailCards: [
-                  ConversionServiceDetail(
-                    title: "Fee",
-                    amount: "8000",
+                  AccountingServiceDetail(
+                    title: "Annual Return of Public",
+                    amount: "6000",
                     onTap: () {},
                   ),
-              
-                ],
-              ),
-                  ConversionCard(
-                title: "Multi Shareholder to Single Shareholder",
-                serviceDetailCards: [
-                  ConversionServiceDetail(
-                    title: "Fee",
-                    amount: "8000",
+                  AccountingServiceDetail(
+                    title: "Annual Return of Not for Profit",
+                    amount: "6000",
                     onTap: () {},
                   ),
-              
+                  AccountingServiceDetail(
+                    title: "Annual Return of Foreign Company/Branch",
+                    amount: "6000",
+                    onTap: () {},
+                  ),
+                ],
+              ),
+              AccountingCard(
+                title: "Share Lagat",
+                serviceDetailCards: [
+                  AccountingServiceDetail(
+                    title: "Old Company",
+                    amount: "12000",
+                    onTap: () {},
+                  ),
+                  AccountingServiceDetail(
+                    title: "New Company",
+                    amount: "15000",
+                    onTap: () {},
+                  ),
                 ],
               ),
             ],
