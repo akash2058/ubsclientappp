@@ -23,7 +23,7 @@ class ServicesScreen extends StatelessWidget {
                     label: "Registration",
                     gradients: [0xFFf83600, 0xFFfe8c00],
                     onTap: () {
-                      Navigator.pushNamed(context, '/package');
+                      Navigator.pushNamed(context, '/registration');
                     },
                   ),
                 ),
@@ -142,21 +142,14 @@ class ServiceCard extends StatelessWidget {
 
   final VoidCallback? onTap;
 
-  const ServiceCard(
-      {super.key,
-      required this.label,
-      required this.svg,
-      required this.gradients,
-      this.isOtherService = false,
-      this.onTap});
+  const ServiceCard({super.key, required this.label, required this.svg, required this.gradients, this.isOtherService = false, this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
       child: Card(
-        shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(borderRadius)),
+        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(borderRadius)),
         margin: EdgeInsets.all(8),
         elevation: 5,
         child: Container(
@@ -191,10 +184,7 @@ class ServiceCard extends StatelessWidget {
                         Text(
                           textAlign: TextAlign.center,
                           label,
-                          style: TextStyle(
-                              color: Colors.white,
-                              fontSize: 18,
-                              fontWeight: FontWeight.bold),
+                          style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
                         )
                       ],
                     )
@@ -212,10 +202,7 @@ class ServiceCard extends StatelessWidget {
                           child: Text(
                             label,
                             textAlign: TextAlign.center,
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 18,
-                                fontWeight: FontWeight.bold),
+                            style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
                           ),
                         ),
                         Spacer(

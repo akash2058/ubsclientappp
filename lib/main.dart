@@ -6,6 +6,7 @@ import 'package:ubsclient/screens/home/more/changepasswordscreen.dart';
 import 'package:ubsclient/screens/home/more/personalclients.screen.dart';
 import 'package:ubsclient/screens/home/more/profile.screen.dart';
 import 'package:ubsclient/screens/home/more/splash.screen/splash.screen.dart';
+import 'package:ubsclient/screens/home/services/registration/registration.screen.dart';
 import 'package:ubsclient/screens/login/login.screen.dart';
 import 'package:ubsclient/screens/signup/signup.screen.dart';
 import 'package:ubsclient/screens/home/more/Reviews.screen.dart';
@@ -33,7 +34,7 @@ void main() {
       '/splash': (context) => SplashScreen(),
       '/bussiness': (context) => BussinessScreen(),
       '/notification': (context) => NotificationScreen(),
-      '/package': (context) => RegistrationScreen(),
+      '/registration': (context) => RegistrationScreen(),
     },
   ));
 }

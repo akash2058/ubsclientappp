@@ -1,7 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:ubsclient/screens/home/Documnent/Serivces/Services.screen.dart';
 import 'package:ubsclient/screens/login/login.screen.dart';
 
 class SplashScreen extends StatefulWidget {
@@ -16,8 +15,7 @@ class _SplashScreenState extends State<SplashScreen> {
   void initState() {
     super.initState();
     Future.delayed(const Duration(seconds: 3)).then((value) {
-      Navigator.of(context).pushReplacement(
-          CupertinoPageRoute(builder: (ctx) => const LoginScreen()));
+      Navigator.of(context).pushReplacement(CupertinoPageRoute(builder: (ctx) => const LoginScreen()));
     });
   }
 
@@ -35,8 +33,7 @@ class _SplashScreenState extends State<SplashScreen> {
           ),
           Text(
             'Upaya Services.PVT.LTD',
-            style: TextStyle(
-                color: Colors.white, fontWeight: FontWeight.bold, fontSize: 21),
+            style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 21),
           ),
           SpinKitFadingCircle(
             color: Colors.amberAccent,

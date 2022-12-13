@@ -1,8 +1,7 @@
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
-import 'package:ubsclient/screens/home/Documnent/Serivces/registrationscreen.dart';
 import 'package:ubsclient/screens/home/dashboard/activekaam.dart';
-import 'package:ubsclient/screens/home/Documnent/Serivces/Services.screen.dart';
+import 'package:ubsclient/screens/home/services/services.screen.dart';
 import 'package:ubsclient/screens/home/history/history.screen.dart';
 import 'package:ubsclient/screens/home/more/more.screen.dart';
 
@@ -33,11 +32,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
               onPressed: (() {
                 Navigator.pushNamed(context, '/notification');
               }),
-              icon: Badge(
-                  ignorePointer: true,
-                  badgeColor: Colors.red,
-                  badgeContent: Text('0'),
-                  child: Icon(Icons.notifications)),
+              icon: Badge(ignorePointer: true, badgeColor: Colors.red, badgeContent: Text('0'), child: Icon(Icons.notifications)),
             )
           ],
           centerTitle: true,
