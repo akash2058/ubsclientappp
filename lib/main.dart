@@ -3,9 +3,11 @@ import 'package:ubsclient/screens/home/Documnent/Serivces/registrationscreen.dar
 import 'package:ubsclient/screens/home/dashboard.screen.dart';
 import 'package:ubsclient/screens/home/more/blog/bussiness.screen.dart';
 import 'package:ubsclient/screens/home/more/changepasswordscreen.dart';
-import 'package:ubsclient/screens/home/more/personalclients.screen.dart';
+
 import 'package:ubsclient/screens/home/more/profile.screen.dart';
 import 'package:ubsclient/screens/home/more/splash.screen/splash.screen.dart';
+import 'package:ubsclient/screens/home/services/advisory/advisory.screen.dart';
+import 'package:ubsclient/screens/home/services/compliance/compliance.screen.dart';
 import 'package:ubsclient/screens/home/services/registration/registration.screen.dart';
 import 'package:ubsclient/screens/login/login.screen.dart';
 import 'package:ubsclient/screens/signup/signup.screen.dart';
@@ -35,6 +37,9 @@ void main() {
       '/bussiness': (context) => BussinessScreen(),
       '/notification': (context) => NotificationScreen(),
       '/registration': (context) => RegistrationScreen(),
+       '/compliance': (context) => ComplianceScreen(),
+       '/advisory': (context) => AdvisoryScreen(),
+
     },
   ));
 }
