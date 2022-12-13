@@ -133,22 +133,22 @@ class PackagesScreen extends StatelessWidget {
           child: Column(
             children: [
               PackagesCard(
-                title: "Three Month's Return of Company",
-                serviceDetailCards: [
-                  PackagesServiceDetail(
-                    title: "Fee",
-                    amount: "2500",
-                    onTap: () {},
-                  ),
-                ],
-              ),
-              PackagesCard(
                 title: "SME",
                 serviceDetailCards: [
                   PackagesServiceDetail(
                     title: "Starting From",
                     amount: "20,000",
-                    onTap: () {
+                    onTap: () {},
+                  ),
+                ],
+              ),
+              PackagesCard(
+                title: "Retainership",
+                serviceDetailCards: [
+                  PackagesServiceDetail(
+                    title: "Starting From",
+                    amount: "20,000",
+                    onTap: (){
                       callRemoteService(
                         context,
                         parentServiceID: '75',
@@ -157,28 +157,13 @@ class PackagesScreen extends StatelessWidget {
                       );
                     },
                   ),
-                  PackagesServiceDetail(
-                    title: "Annual Return of Public",
-                    amount: "6000",
-                    onTap: () {},
-                  ),
-                  PackagesServiceDetail(
-                    title: "Annual Return of Not for Profit",
-                    amount: "6000",
-                    onTap: () {},
-                  ),
-                  PackagesServiceDetail(
-                    title: "Annual Return of Foreign Company/Branch",
-                    amount: "6000",
-                    onTap: () {},
-                  ),
                 ],
               ),
               PackagesCard(
-                title: "Share Lagat",
+                title: "Registration Package",
                 serviceDetailCards: [
                   PackagesServiceDetail(
-                    title: "Old Company",
+                    title: "Private Comapany Registration",
                     amount: "12000",
                     onTap: () {},
                   ),

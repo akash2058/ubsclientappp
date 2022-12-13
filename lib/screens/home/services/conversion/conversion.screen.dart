@@ -138,7 +138,14 @@ class ConversionScreen extends StatelessWidget {
                   ConversionServiceDetail(
                     title: "Fee",
                     amount: "1200",
-                    onTap: () {},
+                     onTap: () {
+                      callRemoteService(
+                        context,
+                        parentServiceID: '71',
+                        service: 'Conversion',
+                        serviceID: '106',
+                      );
+                    },
                   ),
                 ],
               ),
@@ -153,7 +160,7 @@ class ConversionScreen extends StatelessWidget {
                         context,
                         parentServiceID: '71',
                         service: 'Conversion',
-                        serviceID: '108',
+                        serviceID: '107',
                       );
                     },
                   ),
@@ -165,7 +172,14 @@ class ConversionScreen extends StatelessWidget {
                   ConversionServiceDetail(
                     title: "Fee",
                     amount: "8000",
-                    onTap: () {},
+                     onTap: () {
+                      callRemoteService(
+                        context,
+                        parentServiceID: '71',
+                        service: 'Conversion',
+                        serviceID: '108',
+                      );
+                    },
                   ),
               
                 ],
@@ -176,7 +190,14 @@ class ConversionScreen extends StatelessWidget {
                   ConversionServiceDetail(
                     title: "Fee",
                     amount: "8000",
-                    onTap: () {},
+                     onTap: () {
+                      callRemoteService(
+                        context,
+                        parentServiceID: '71',
+                        service: 'Conversion',
+                        serviceID: '36',
+                      );
+                    },
                   ),
               
                 ],
