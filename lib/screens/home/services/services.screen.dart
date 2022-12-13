@@ -33,6 +33,9 @@ class ServicesScreen extends StatelessWidget {
                     svg: "assets/svg/compliance.svg",
                     label: "Compliance",
                     gradients: [0xFFf83600, 0xFFfe8c00],
+                      onTap: () {
+                      Navigator.pushNamed(context, '/compliance');
+                    },
                   ),
                 ),
               ],
