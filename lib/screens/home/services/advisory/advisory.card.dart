@@ -90,8 +90,8 @@ class AdvisoryServiceDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return InkWell(
-      onTap: () => onTap,
+    return GestureDetector(
+      onTap: onTap,
       child: Card(
           margin: const EdgeInsets.only(bottom: 12),
           elevation: 3,

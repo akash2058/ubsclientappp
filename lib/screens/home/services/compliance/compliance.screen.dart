@@ -12,7 +12,7 @@ class ComplianceScreen extends StatelessWidget {
       {required String serviceID,
       required String parentServiceID,
       required String service}) async {
-    return showDialog(
+    await showDialog(
       context: context,
       builder: (context) {
         return AlertDialog(
@@ -27,8 +27,20 @@ class ComplianceScreen extends StatelessWidget {
             TextButton(
               child: const Text("Continue"),
               onPressed: () async {
-                Navigator.pop(context);
-
+                showDialog(
+                  context: context,
+                  builder: (context) {
+                    return const Dialog(
+                      child: SizedBox(
+                        height: 160,
+                        width: 80,
+                        child: Center(
+                          child: CircularProgressIndicator(),
+                        ),
+                      ),
+                    );
+                  },
+                );
                 try {
                   final SharedPreferences sharedPreferences =
                       await SharedPreferences.getInstance();
@@ -40,26 +52,37 @@ class ComplianceScreen extends StatelessWidget {
                       Uri.parse(
                           'https://api.ubs.com.np/index.php?method=add_app_request'),
                       body: {
-                        user,
-                        name,
-                        email,
-                        phone,
-                        serviceID,
-                        parentServiceID,
-                        service
+                        "user": user,
+                        "name": name,
+                        "email": email,
+                        "phone": phone,
+                        "serviceID": serviceID,
+                        "parentServiceID": parentServiceID,
+                        "service": service,
                       });
                   var responseData = jsonDecode(response.body.toString());
 
                   if (responseData["response"] == "success") {
-                    showDialog(
+                    await showDialog(
                       context: context,
                       builder: (context) {
                         return AlertDialog(
-                          content: const Text('Success'),
+                          content: Padding(
+                            padding: const EdgeInsets.all(18.0),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                Text('Success'),
+                                Text(responseData["message"])
+                              ],
+                            ),
+                          ),
                           actions: [
                             TextButton(
                               child: const Text("OK"),
                               onPressed: () {
+                                Navigator.pop(context);
+                                Navigator.pop(context);
                                 Navigator.pop(context);
                               },
                             ),
@@ -71,15 +94,17 @@ class ComplianceScreen extends StatelessWidget {
                     throw Exception(responseData["response"]);
                   }
                 } catch (e) {
-                  showDialog(
+                  await showDialog(
                     context: context,
                     builder: (context) {
                       return AlertDialog(
-                        content: const Text('Failed'),
+                        content: Text(e.toString()),
                         actions: [
                           TextButton(
                             child: const Text("OK"),
                             onPressed: () {
+                              Navigator.pop(context);
+                              Navigator.pop(context);
                               Navigator.pop(context);
                             },
                           ),
@@ -126,8 +151,8 @@ class ComplianceScreen extends StatelessWidget {
                     onTap: () {
                       callRemoteService(
                         context,
-                        parentServiceID: '26',
-                        service: '',
+                        parentServiceID: '69',
+                        service: 'Compliance',
                         serviceID: '44',
                       );
                     },

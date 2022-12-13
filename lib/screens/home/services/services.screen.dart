@@ -76,6 +76,9 @@ class ServicesScreen extends StatelessWidget {
                     svg: "assets/svg/job-interview.svg",
                     label: "Advisory",
                     gradients: [0xFFf83600, 0xFFfe8c00],
+                    onTap: () {
+                      Navigator.pushNamed(context, '/advisory');
+                    },
                   ),
                 ),
               ],
