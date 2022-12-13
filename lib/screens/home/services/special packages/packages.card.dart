@@ -2,11 +2,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class AdvisoryCard extends StatelessWidget {
+class PackagesCard extends StatelessWidget {
   final String title;
-  final List<AdvisoryServiceDetail> serviceDetailCards;
+  final List<PackagesServiceDetail> serviceDetailCards;
 
-  const AdvisoryCard({
+  const PackagesCard({
     Key? key,
     required this.title,
     required this.serviceDetailCards,
@@ -24,8 +24,8 @@ class AdvisoryCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
           gradient: const LinearGradient(
               colors: [
-                Color(0xFF00C6FF),
-                Color(0xFF0072FF),
+                Color.fromARGB(255, 252, 52, 52),
+                Color.fromARGB(255, 107, 1, 1),
               ],
               begin: FractionalOffset(0.0, 0.0),
               end: FractionalOffset(1.0, 0.0),
@@ -74,17 +74,17 @@ class AdvisoryCard extends StatelessWidget {
   }
 }
 
-class AdvisoryServiceDetail extends StatelessWidget {
+class PackagesServiceDetail extends StatelessWidget {
   final String title;
   final String amount;
   final String icon;
   final VoidCallback? onTap;
 
-  const AdvisoryServiceDetail({
+  const PackagesServiceDetail({
     Key? key,
     required this.title,
     required this.amount,
-    this.icon = "assets/svg/accounting.svg",
+    this.icon = "assets/svg/gift.svg",
      this.onTap,
   }) : super(key: key);
 

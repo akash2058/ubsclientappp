@@ -48,6 +48,9 @@ class ServicesScreen extends StatelessWidget {
                     svg: "assets/svg/accounting.svg",
                     label: "Accounting",
                     gradients: [0xFFf83600, 0xFFfe8c00],
+                     onTap: () {
+                      Navigator.pushNamed(context, '/accounting');
+                    },
                   ),
                 ),
                 Expanded(
@@ -79,6 +82,9 @@ class ServicesScreen extends StatelessWidget {
                     svg: "assets/svg/job-interview.svg",
                     label: "Advisory",
                     gradients: [0xFFf83600, 0xFFfe8c00],
+                    onTap: () {
+                      Navigator.pushNamed(context, '/advisory');
+                    },
                   ),
                 ),
               ],
@@ -99,6 +105,9 @@ class ServicesScreen extends StatelessWidget {
                     svg: "assets/svg/gift.svg",
                     label: "Special Packages",
                     gradients: [0xFFf83600, 0xFFfe8c00],
+                     onTap: () {
+                      Navigator.pushNamed(context, '/packages');
+                    },
                   ),
                 ),
               ],
@@ -119,6 +128,9 @@ class ServicesScreen extends StatelessWidget {
                     svg: "assets/svg/conversion.svg",
                     label: "Conversion",
                     gradients: [0xFFf83600, 0xFFfe8c00],
+                    onTap: () {
+                      Navigator.pushNamed(context, '/conversion');
+                    },
                   ),
                 ),
               ],

@@ -3,10 +3,10 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:ubsclient/screens/home/services/compliance/compliance.card.dart';
+import 'package:ubsclient/screens/home/services/conversion/conversion.card.dart';
 
-class ComplianceScreen extends StatelessWidget {
-  const ComplianceScreen({super.key});
+class ConversionScreen extends StatelessWidget {
+  const ConversionScreen({super.key});
 
   Future<void> callRemoteService(BuildContext context,
       {required String serviceID,
@@ -126,67 +126,59 @@ class ComplianceScreen extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: const Text('Compliance'),
+          title: const Text('Conversion'),
         ),
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
           child: Column(
             children: [
-              ComplianceCard(
-                title: "Three Month's Return of Company",
+              ConversionCard(
+                title: "Private to Public",
                 serviceDetailCards: [
-                  ComplianceServiceDetail(
+                  ConversionServiceDetail(
                     title: "Fee",
-                    amount: "2500",
+                    amount: "1200",
                     onTap: () {},
                   ),
                 ],
               ),
-              ComplianceCard(
-                title: "Annual Return",
+              ConversionCard(
+                title: "Public to Private",
                 serviceDetailCards: [
-                  ComplianceServiceDetail(
-                    title: "Annual Return of Private",
-                    amount: "6000",
+                  ConversionServiceDetail(
+                    title: "Fee",
+                    amount: "20,000",
                     onTap: () {
                       callRemoteService(
                         context,
-                        parentServiceID: '69',
-                        service: 'Compliance',
-                        serviceID: '44',
+                        parentServiceID: '71',
+                        service: 'Conversion',
+                        serviceID: '108',
                       );
                     },
                   ),
-                  ComplianceServiceDetail(
-                    title: "Annual Return of Public",
-                    amount: "6000",
-                    onTap: () {},
-                  ),
-                  ComplianceServiceDetail(
-                    title: "Annual Return of Not for Profit",
-                    amount: "6000",
-                    onTap: () {},
-                  ),
-                  ComplianceServiceDetail(
-                    title: "Annual Return of Foreign Company/Branch",
-                    amount: "6000",
-                    onTap: () {},
-                  ),
                 ],
               ),
-              ComplianceCard(
-                title: "Share Lagat",
+              ConversionCard(
+                title: "Single Shareholder to Multi Shareholder",
                 serviceDetailCards: [
-                  ComplianceServiceDetail(
-                    title: "Old Company",
-                    amount: "12000",
+                  ConversionServiceDetail(
+                    title: "Fee",
+                    amount: "8000",
                     onTap: () {},
                   ),
-                  ComplianceServiceDetail(
-                    title: "New Company",
-                    amount: "15000",
+              
+                ],
+              ),
+                  ConversionCard(
+                title: "Multi Shareholder to Single Shareholder",
+                serviceDetailCards: [
+                  ConversionServiceDetail(
+                    title: "Fee",
+                    amount: "8000",
                     onTap: () {},
                   ),
+              
                 ],
               ),
             ],

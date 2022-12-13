@@ -3,10 +3,10 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:ubsclient/screens/home/services/compliance/compliance.card.dart';
+import 'package:ubsclient/screens/home/services/accounting/accounting.card.dart';
 
-class ComplianceScreen extends StatelessWidget {
-  const ComplianceScreen({super.key});
+class AccountingScreen extends StatelessWidget {
+  const AccountingScreen({super.key});
 
   Future<void> callRemoteService(BuildContext context,
       {required String serviceID,
@@ -126,63 +126,63 @@ class ComplianceScreen extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: const Text('Compliance'),
+          title: const Text('Accounting'),
         ),
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
           child: Column(
             children: [
-              ComplianceCard(
+              AccountingCard(
                 title: "Three Month's Return of Company",
                 serviceDetailCards: [
-                  ComplianceServiceDetail(
+                  AccountingServiceDetail(
                     title: "Fee",
                     amount: "2500",
                     onTap: () {},
                   ),
                 ],
               ),
-              ComplianceCard(
-                title: "Annual Return",
+              AccountingCard(
+                title: "Monthly Finanacial Reporting",
                 serviceDetailCards: [
-                  ComplianceServiceDetail(
-                    title: "Annual Return of Private",
-                    amount: "6000",
+                  AccountingServiceDetail(
+                    title: "Starting From",
+                    amount: "7,000",
                     onTap: () {
                       callRemoteService(
                         context,
-                        parentServiceID: '69',
-                        service: 'Compliance',
-                        serviceID: '44',
+                        parentServiceID: '73',
+                        service: 'Accounting',
+                        serviceID: '114',
                       );
                     },
                   ),
-                  ComplianceServiceDetail(
+                  AccountingServiceDetail(
                     title: "Annual Return of Public",
                     amount: "6000",
                     onTap: () {},
                   ),
-                  ComplianceServiceDetail(
+                  AccountingServiceDetail(
                     title: "Annual Return of Not for Profit",
                     amount: "6000",
                     onTap: () {},
                   ),
-                  ComplianceServiceDetail(
+                  AccountingServiceDetail(
                     title: "Annual Return of Foreign Company/Branch",
                     amount: "6000",
                     onTap: () {},
                   ),
                 ],
               ),
-              ComplianceCard(
+              AccountingCard(
                 title: "Share Lagat",
                 serviceDetailCards: [
-                  ComplianceServiceDetail(
+                  AccountingServiceDetail(
                     title: "Old Company",
                     amount: "12000",
                     onTap: () {},
                   ),
-                  ComplianceServiceDetail(
+                  AccountingServiceDetail(
                     title: "New Company",
                     amount: "15000",
                     onTap: () {},

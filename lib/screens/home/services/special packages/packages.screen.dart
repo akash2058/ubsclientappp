@@ -3,10 +3,10 @@ import 'dart:convert';
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:ubsclient/screens/home/services/compliance/compliance.card.dart';
+import 'package:ubsclient/screens/home/services/special packages/packages.card.dart';
 
-class ComplianceScreen extends StatelessWidget {
-  const ComplianceScreen({super.key});
+class PackagesScreen extends StatelessWidget {
+  const PackagesScreen({super.key});
 
   Future<void> callRemoteService(BuildContext context,
       {required String serviceID,
@@ -126,63 +126,63 @@ class ComplianceScreen extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: const Text('Compliance'),
+          title: const Text('Packages'),
         ),
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
           child: Column(
             children: [
-              ComplianceCard(
+              PackagesCard(
                 title: "Three Month's Return of Company",
                 serviceDetailCards: [
-                  ComplianceServiceDetail(
+                  PackagesServiceDetail(
                     title: "Fee",
                     amount: "2500",
                     onTap: () {},
                   ),
                 ],
               ),
-              ComplianceCard(
-                title: "Annual Return",
+              PackagesCard(
+                title: "SME",
                 serviceDetailCards: [
-                  ComplianceServiceDetail(
-                    title: "Annual Return of Private",
-                    amount: "6000",
+                  PackagesServiceDetail(
+                    title: "Starting From",
+                    amount: "20,000",
                     onTap: () {
                       callRemoteService(
                         context,
-                        parentServiceID: '69',
-                        service: 'Compliance',
-                        serviceID: '44',
+                        parentServiceID: '75',
+                        service: 'Packages',
+                        serviceID: '129',
                       );
                     },
                   ),
-                  ComplianceServiceDetail(
+                  PackagesServiceDetail(
                     title: "Annual Return of Public",
                     amount: "6000",
                     onTap: () {},
                   ),
-                  ComplianceServiceDetail(
+                  PackagesServiceDetail(
                     title: "Annual Return of Not for Profit",
                     amount: "6000",
                     onTap: () {},
                   ),
-                  ComplianceServiceDetail(
+                  PackagesServiceDetail(
                     title: "Annual Return of Foreign Company/Branch",
                     amount: "6000",
                     onTap: () {},
                   ),
                 ],
               ),
-              ComplianceCard(
+              PackagesCard(
                 title: "Share Lagat",
                 serviceDetailCards: [
-                  ComplianceServiceDetail(
+                  PackagesServiceDetail(
                     title: "Old Company",
                     amount: "12000",
                     onTap: () {},
                   ),
-                  ComplianceServiceDetail(
+                  PackagesServiceDetail(
                     title: "New Company",
                     amount: "15000",
                     onTap: () {},

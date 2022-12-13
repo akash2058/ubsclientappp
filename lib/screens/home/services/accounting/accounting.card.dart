@@ -2,11 +2,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class AdvisoryCard extends StatelessWidget {
+class AccountingCard extends StatelessWidget {
   final String title;
-  final List<AdvisoryServiceDetail> serviceDetailCards;
+  final List<AccountingServiceDetail> serviceDetailCards;
 
-  const AdvisoryCard({
+  const AccountingCard({
     Key? key,
     required this.title,
     required this.serviceDetailCards,
@@ -74,13 +74,13 @@ class AdvisoryCard extends StatelessWidget {
   }
 }
 
-class AdvisoryServiceDetail extends StatelessWidget {
+class AccountingServiceDetail extends StatelessWidget {
   final String title;
   final String amount;
   final String icon;
   final VoidCallback? onTap;
 
-  const AdvisoryServiceDetail({
+  const AccountingServiceDetail({
     Key? key,
     required this.title,
     required this.amount,
