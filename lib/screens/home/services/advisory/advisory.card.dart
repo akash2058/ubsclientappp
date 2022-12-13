@@ -56,7 +56,10 @@ class AdvisoryCard extends StatelessWidget {
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
                             title,
-                            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500, color: Colors.white),
+                            style: const TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.white),
                           ),
                         ),
                         ...serviceDetailCards
@@ -85,7 +88,7 @@ class AdvisoryServiceDetail extends StatelessWidget {
     required this.title,
     required this.amount,
     this.icon = "assets/svg/accounting.svg",
-     this.onTap,
+    this.onTap,
   }) : super(key: key);
 
   @override
@@ -95,7 +98,8 @@ class AdvisoryServiceDetail extends StatelessWidget {
       child: Card(
           margin: const EdgeInsets.only(bottom: 12),
           elevation: 3,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(36)),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(36)),
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
             child: Row(

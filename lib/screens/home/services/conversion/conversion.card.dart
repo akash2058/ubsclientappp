@@ -56,7 +56,10 @@ class ConversionCard extends StatelessWidget {
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
                             title,
-                            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500, color: Colors.white),
+                            style: const TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.white),
                           ),
                         ),
                         ...serviceDetailCards
@@ -95,7 +98,8 @@ class ConversionServiceDetail extends StatelessWidget {
       child: Card(
           margin: const EdgeInsets.only(bottom: 12),
           elevation: 3,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(36)),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(36)),
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
             child: Row(

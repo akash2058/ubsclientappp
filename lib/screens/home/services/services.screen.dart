@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:ubsclient/screens/home/services/taxation/taxation.screen.dart';
 
 class ServicesScreen extends StatelessWidget {
   const ServicesScreen({super.key});
@@ -33,7 +34,7 @@ class ServicesScreen extends StatelessWidget {
                     svg: "assets/svg/compliance.svg",
                     label: "Compliance",
                     gradients: [0xFFf83600, 0xFFfe8c00],
-                      onTap: () {
+                    onTap: () {
                       Navigator.pushNamed(context, '/compliance');
                     },
                   ),
@@ -48,7 +49,7 @@ class ServicesScreen extends StatelessWidget {
                     svg: "assets/svg/accounting.svg",
                     label: "Accounting",
                     gradients: [0xFFf83600, 0xFFfe8c00],
-                     onTap: () {
+                    onTap: () {
                       Navigator.pushNamed(context, '/accounting');
                     },
                   ),
@@ -59,6 +60,13 @@ class ServicesScreen extends StatelessWidget {
                     svg: "assets/svg/tax.svg",
                     label: "Taxation",
                     gradients: [0xFFf83600, 0xFFfe8c00],
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => TaxationScreen(),
+                          ));
+                    },
                   ),
                 ),
               ],
@@ -97,6 +105,9 @@ class ServicesScreen extends StatelessWidget {
                     svg: "assets/svg/agreement.svg",
                     label: "Agreement Drafting",
                     gradients: [0xFFf83600, 0xFFfe8c00],
+                    onTap: () {
+                      Navigator.pushNamed(context, '/agreement');
+                    },
                   ),
                 ),
                 Expanded(
@@ -105,7 +116,7 @@ class ServicesScreen extends StatelessWidget {
                     svg: "assets/svg/gift.svg",
                     label: "Special Packages",
                     gradients: [0xFFf83600, 0xFFfe8c00],
-                     onTap: () {
+                    onTap: () {
                       Navigator.pushNamed(context, '/packages');
                     },
                   ),
@@ -120,6 +131,9 @@ class ServicesScreen extends StatelessWidget {
                     svg: "assets/svg/certificate.svg",
                     label: "Renewals",
                     gradients: [0xFFf83600, 0xFFfe8c00],
+                    onTap: () {
+                      Navigator.pushNamed(context, '/reneval');
+                    },
                   ),
                 ),
                 Expanded(
@@ -140,6 +154,9 @@ class ServicesScreen extends StatelessWidget {
               label: "Other Services",
               isOtherService: true,
               gradients: [0xFFfc00ff, 0xFF00dbde],
+              onTap: () {
+                Navigator.pushNamed(context, '/other');
+              },
             ),
             SizedBox(
               height: 40,

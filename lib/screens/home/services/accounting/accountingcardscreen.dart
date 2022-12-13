@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 
-class RegistrationCard extends StatelessWidget {
+class AccountingCard extends StatelessWidget {
   final String title;
-  final List<RegistrationServiceDetail> serviceDetailCards;
+  final List<AccountingServiceDetail> serviceDetailCards;
 
-  const RegistrationCard({
+  const AccountingCard({
     Key? key,
     required this.title,
     required this.serviceDetailCards,
@@ -23,8 +23,8 @@ class RegistrationCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
           gradient: const LinearGradient(
               colors: [
-                Color(0xFF00C6FF),
-                Color(0xFF0072FF),
+                Color.fromARGB(255, 131, 119, 188),
+                Color.fromARGB(255, 0, 81, 255),
               ],
               begin: FractionalOffset(0.0, 0.0),
               end: FractionalOffset(1.0, 0.0),
@@ -76,12 +76,12 @@ class RegistrationCard extends StatelessWidget {
   }
 }
 
-class RegistrationServiceDetail extends StatelessWidget {
+class AccountingServiceDetail extends StatelessWidget {
   final String title;
   final String amount;
   final String icon;
 
-  const RegistrationServiceDetail({
+  const AccountingServiceDetail({
     Key? key,
     required this.title,
     required this.amount,

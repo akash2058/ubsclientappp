@@ -167,10 +167,9 @@ class ConversionScreen extends StatelessWidget {
                     amount: "8000",
                     onTap: () {},
                   ),
-              
                 ],
               ),
-                  ConversionCard(
+              ConversionCard(
                 title: "Multi Shareholder to Single Shareholder",
                 serviceDetailCards: [
                   ConversionServiceDetail(
@@ -178,7 +177,6 @@ class ConversionScreen extends StatelessWidget {
                     amount: "8000",
                     onTap: () {},
                   ),
-              
                 ],
               ),
             ],

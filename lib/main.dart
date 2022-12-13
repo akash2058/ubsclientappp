@@ -7,10 +7,14 @@ import 'package:ubsclient/screens/home/more/profile.screen.dart';
 import 'package:ubsclient/screens/home/more/splash.screen/splash.screen.dart';
 import 'package:ubsclient/screens/home/services/accounting/accounting.screen.dart';
 import 'package:ubsclient/screens/home/services/advisory/advisory.screen.dart';
+import 'package:ubsclient/screens/home/services/agreementdrafting/agreementdrafting.screen.dart';
 import 'package:ubsclient/screens/home/services/compliance/compliance.screen.dart';
 import 'package:ubsclient/screens/home/services/conversion/conversion.screen.dart';
+import 'package:ubsclient/screens/home/services/package/package.screen.dart';
+import 'package:ubsclient/screens/home/services/registration/otherservices/otherservices.dart';
 import 'package:ubsclient/screens/home/services/registration/registration.screen.dart';
 import 'package:ubsclient/screens/home/services/bank/bank.screen.dart';
+import 'package:ubsclient/screens/home/services/renevals/renevals.screen.dart';
 import 'package:ubsclient/screens/home/services/special%20packages/packages.screen.dart';
 import 'package:ubsclient/screens/login/login.screen.dart';
 import 'package:ubsclient/screens/signup/signup.screen.dart';
@@ -43,9 +47,13 @@ void main() {
       '/bank': (context) => BankScreen(),
       '/compliance': (context) => ComplianceScreen(),
       '/advisory': (context) => AdvisoryScreen(),
-      '/accounting': (context) => AccountingScreen(),
       '/packages': (context) => PackagesScreen(),
+      '/accounting': (context) => AccountingScreen(),
+      '/agreement': (context) => AgreementdraftingScreen(),
+      '/reneval': (context) => RenevalScreen(),
       '/conversion': (context) => ConversionScreen(),
+      '/package': (context) => PackageScreen(),
+      '/other': (context) => OtherScreen()
     },
   ));
 }
