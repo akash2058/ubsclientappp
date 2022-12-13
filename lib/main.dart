@@ -6,7 +6,14 @@ import 'package:ubsclient/screens/home/more/changepasswordscreen.dart';
 import 'package:ubsclient/screens/home/more/personalclients.screen.dart';
 import 'package:ubsclient/screens/home/more/profile.screen.dart';
 import 'package:ubsclient/screens/home/more/splash.screen/splash.screen.dart';
+import 'package:ubsclient/screens/home/services/accounting/accountingscrreen.dart';
+import 'package:ubsclient/screens/home/services/advisory/advisory.screen.dart';
+import 'package:ubsclient/screens/home/services/agreementdrafting/agreementdrafting.screen.dart';
+import 'package:ubsclient/screens/home/services/conversion/conversion.screen.dart';
+import 'package:ubsclient/screens/home/services/package/package.screen.dart';
+import 'package:ubsclient/screens/home/services/registration/otherservices/otherservices.dart';
 import 'package:ubsclient/screens/home/services/registration/registration.screen.dart';
+import 'package:ubsclient/screens/home/services/renevals/renevals.screen.dart';
 import 'package:ubsclient/screens/login/login.screen.dart';
 import 'package:ubsclient/screens/signup/signup.screen.dart';
 import 'package:ubsclient/screens/home/more/Reviews.screen.dart';
@@ -35,6 +42,13 @@ void main() {
       '/bussiness': (context) => BussinessScreen(),
       '/notification': (context) => NotificationScreen(),
       '/registration': (context) => RegistrationScreen(),
+      '/accounting': (context) => AccountingScreen(),
+      '/agreement': (context) => AgreementdraftingScreen(),
+      '/reneval': (context) => RenevalScreen(),
+      '/conversion': (context) => ConversionScreen(),
+      '/advisory': (context) => AdvisoryScreen(),
+      '/package': (context) => PackageScreen(),
+      '/other': (context) => OtherScreen()
     },
   ));
 }
