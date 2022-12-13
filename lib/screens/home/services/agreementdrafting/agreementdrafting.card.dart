@@ -80,56 +80,62 @@ class AgreementdraftingServiceDetail extends StatelessWidget {
   final String title;
   final String amount;
   final String icon;
+  final VoidCallback? onTap;
 
-  const AgreementdraftingServiceDetail({
-    Key? key,
-    required this.title,
-    required this.amount,
-    this.icon = "assets/svg/accounting.svg",
-  }) : super(key: key);
+  const AgreementdraftingServiceDetail(
+      {Key? key,
+      required this.title,
+      required this.amount,
+      this.icon = "assets/svg/accounting.svg",
+      this.onTap})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
-    return Card(
-        margin: const EdgeInsets.only(bottom: 12),
-        elevation: 3,
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(36)),
-        child: Container(
-          padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
-          child: Row(
-            children: [
-              Expanded(
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text(
-                      title,
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.blue.shade800,
+    return GestureDetector(
+      onTap: onTap,
+      child: Card(
+          margin: const EdgeInsets.only(bottom: 12),
+          elevation: 3,
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(36)),
+          child: Container(
+            padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
+            child: Row(
+              children: [
+                Expanded(
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      Text(
+                        title,
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.blue.shade800,
+                        ),
                       ),
-                    ),
-                    const SizedBox(
-                      height: 6,
-                    ),
-                    Text(
-                      'NPR $amount',
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        color: Colors.amber.shade900,
+                      const SizedBox(
+                        height: 6,
                       ),
-                    )
-                  ],
+                      Text(
+                        'NPR $amount',
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          color: Colors.amber.shade900,
+                        ),
+                      )
+                    ],
+                  ),
                 ),
-              ),
-              SvgPicture.asset(
-                icon,
-                alignment: Alignment.center,
-                height: 42,
-                width: 42,
-              )
-            ],
-          ),
-        ));
+                SvgPicture.asset(
+                  icon,
+                  alignment: Alignment.center,
+                  height: 42,
+                  width: 42,
+                )
+              ],
+            ),
+          )),
+    );
   }
 }

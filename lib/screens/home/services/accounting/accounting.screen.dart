@@ -16,7 +16,7 @@ class AccountingScreen extends StatelessWidget {
       context: context,
       builder: (context) {
         return AlertDialog(
-          content: const Text('Confirm??'),
+          content: const Text('Confirm?'),
           actions: [
             TextButton(
               child: const Text("Cancel"),
