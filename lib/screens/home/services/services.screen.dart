@@ -132,7 +132,7 @@ class ServicesScreen extends StatelessWidget {
                     label: "Renewals",
                     gradients: [0xFFf83600, 0xFFfe8c00],
                     onTap: () {
-                      Navigator.pushNamed(context, '/reneval');
+                      Navigator.pushNamed(context, '/renewals');
                     },
                   ),
                 ),

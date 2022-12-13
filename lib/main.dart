@@ -10,11 +10,10 @@ import 'package:ubsclient/screens/home/services/advisory/advisory.screen.dart';
 import 'package:ubsclient/screens/home/services/agreementdrafting/agreementdrafting.screen.dart';
 import 'package:ubsclient/screens/home/services/compliance/compliance.screen.dart';
 import 'package:ubsclient/screens/home/services/conversion/conversion.screen.dart';
-import 'package:ubsclient/screens/home/services/package/package.screen.dart';
 import 'package:ubsclient/screens/home/services/registration/otherservices/otherservices.dart';
 import 'package:ubsclient/screens/home/services/registration/registration.screen.dart';
 import 'package:ubsclient/screens/home/services/bank/bank.screen.dart';
-import 'package:ubsclient/screens/home/services/renevals/renevals.screen.dart';
+import 'package:ubsclient/screens/home/services/renewals/renewals.screen.dart';
 import 'package:ubsclient/screens/home/services/special%20packages/packages.screen.dart';
 import 'package:ubsclient/screens/login/login.screen.dart';
 import 'package:ubsclient/screens/signup/signup.screen.dart';
@@ -31,29 +30,29 @@ void main() {
     debugShowCheckedModeBanner: false,
     initialRoute: '/splash',
     routes: {
-      '/login': (context) => LoginScreen(),
+      '/login': (context) => const LoginScreen(),
       '/signup': (context) => Signup(),
-      '/dashboard': (context) => DashboardScreen(),
-      '/profile': (context) => ProfileScreen(),
-      '/change': (context) => ChangePasswordScreen(),
-      '/review': (context) => ReviewScreen(),
+      '/dashboard': (context) => const DashboardScreen(),
+      '/profile': (context) => const ProfileScreen(),
+      '/change': (context) => const ChangePasswordScreen(),
+      '/review': (context) => const ReviewScreen(),
       '/blog': (context) => BlogScreen(),
-      '/terms': (context) => ConditionScreen(),
-      '/privacy': (context) => PrivacyScreen(),
-      '/splash': (context) => SplashScreen(),
-      '/bussiness': (context) => BussinessScreen(),
-      '/notification': (context) => NotificationScreen(),
-      '/registration': (context) => RegistrationScreen(),
-      '/bank': (context) => BankScreen(),
-      '/compliance': (context) => ComplianceScreen(),
-      '/advisory': (context) => AdvisoryScreen(),
-      '/packages': (context) => PackagesScreen(),
-      '/accounting': (context) => AccountingScreen(),
-      '/agreement': (context) => AgreementdraftingScreen(),
-      '/reneval': (context) => RenevalScreen(),
-      '/conversion': (context) => ConversionScreen(),
-      '/package': (context) => PackageScreen(),
-      '/other': (context) => OtherScreen()
+      '/terms': (context) => const ConditionScreen(),
+      '/privacy': (context) => const PrivacyScreen(),
+      '/splash': (context) => const SplashScreen(),
+      '/bussiness': (context) => const BussinessScreen(),
+      '/notification': (context) => const NotificationScreen(),
+      '/registration': (context) => const RegistrationScreen(),
+      '/bank': (context) => const BankScreen(),
+      '/compliance': (context) => const ComplianceScreen(),
+      '/advisory': (context) => const AdvisoryScreen(),
+      '/packages': (context) => const PackagesScreen(),
+      '/accounting': (context) => const AccountingScreen(),
+      '/agreement': (context) => const AgreementdraftingScreen(),
+      '/reneval': (context) => const RenewalScreen(),
+      '/conversion': (context) => const ConversionScreen(),
+      '/package': (context) => const PackagesScreen(),
+      '/other': (context) => const OtherScreen()
     },
   ));
 }

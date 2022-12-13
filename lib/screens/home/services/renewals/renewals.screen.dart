@@ -1,12 +1,12 @@
 import 'dart:convert';
 
-import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:flutter/material.dart';
 import 'package:shared_preferences/shared_preferences.dart';
-import 'package:ubsclient/screens/home/services/taxation/taxation.card.dart';
+import 'package:ubsclient/screens/home/services/renewals/renewals.card.dart';
 
-class TaxationScreen extends StatelessWidget {
-  const TaxationScreen({super.key});
+class RenewalScreen extends StatelessWidget {
+  const RenewalScreen({super.key});
 
   Future<void> callRemoteService(BuildContext context,
       {required String serviceID,
@@ -126,90 +126,90 @@ class TaxationScreen extends StatelessWidget {
     return Scaffold(
         appBar: AppBar(
           centerTitle: true,
-          title: const Text('Taxation'),
+          title: const Text('Renewals'),
         ),
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
           child: Column(
             children: [
-              TaxationCard(
-                title: "VAT Return Filing",
+              RenewalCard(
+                title: "Exim Code Renewals",
                 serviceDetailCards: [
-                  TaxationServiceDetail(
+                  RenevalsServiceDetail(
                       onTap: () {
                         callRemoteService(
                           context,
-                          parentServiceID: '74',
-                          service: 'Taxation',
+                          parentServiceID: '72',
+                          service: 'Renewals',
                           serviceID: '',
                         );
                       },
                       title: "Starting From",
-                      amount: "1,000"),
+                      amount: "8000"),
                 ],
               ),
-              TaxationCard(
-                title: "E-TDS Filing",
+              RenewalCard(
+                title: "Banijya Renewals",
                 serviceDetailCards: [
-                  TaxationServiceDetail(
+                  RenevalsServiceDetail(
                       onTap: () {
                         callRemoteService(
                           context,
-                          parentServiceID: '74',
-                          service: 'Taxation',
+                          parentServiceID: '72',
+                          service: 'Renewals',
                           serviceID: '',
                         );
                       },
-                      title: "Starting From",
-                      amount: "2,000"),
+                      title: "Fee",
+                      amount: "17000"),
                 ],
               ),
-              TaxationCard(
-                title: "Temporary/Bussiness Closure",
+              RenewalCard(
+                title: "Gharelu Renewals",
                 serviceDetailCards: [
-                  TaxationServiceDetail(
+                  RenevalsServiceDetail(
                       onTap: () {
                         callRemoteService(
                           context,
-                          parentServiceID: '74',
-                          service: 'Taxation',
+                          parentServiceID: '72',
+                          service: 'Renewals',
                           serviceID: '',
                         );
                       },
-                      title: "Starting From",
-                      amount: "7,000"),
+                      title: "Fee",
+                      amount: "17000"),
                 ],
               ),
-              TaxationCard(
-                title: "Tax Returns Filing",
+              RenewalCard(
+                title: "Udhyog Renewals",
                 serviceDetailCards: [
-                  TaxationServiceDetail(
+                  RenevalsServiceDetail(
                       onTap: () {
                         callRemoteService(
                           context,
-                          parentServiceID: '74',
-                          service: 'Taxation',
+                          parentServiceID: '72',
+                          service: 'Renewals',
                           serviceID: '',
                         );
                       },
-                      title: "Starting From",
-                      amount: "5,000"),
+                      title: "Fee",
+                      amount: "17000"),
                 ],
               ),
-              TaxationCard(
-                title: "Tax Clearance Certificate",
+              RenewalCard(
+                title: "Ward Renewals",
                 serviceDetailCards: [
-                  TaxationServiceDetail(
+                  RenevalsServiceDetail(
                       onTap: () {
                         callRemoteService(
                           context,
-                          parentServiceID: '74',
-                          service: 'Taxation',
+                          parentServiceID: '72',
+                          service: 'Renewals',
                           serviceID: '',
                         );
                       },
-                      title: "Starting From",
-                      amount: "5,000"),
+                      title: "Fee",
+                      amount: "17000"),
                 ],
               ),
             ],
