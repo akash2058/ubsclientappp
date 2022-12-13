@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:ubsclient/screens/home/Documnent/Serivces/registrationscreen.dart';
 import 'package:ubsclient/screens/home/dashboard.screen.dart';
 import 'package:ubsclient/screens/home/more/blog/bussiness.screen.dart';
 import 'package:ubsclient/screens/home/more/changepasswordscreen.dart';
+import 'package:ubsclient/screens/home/more/personalclients.screen.dart';
 import 'package:ubsclient/screens/home/more/profile.screen.dart';
 import 'package:ubsclient/screens/home/more/splash.screen/splash.screen.dart';
 import 'package:ubsclient/screens/login/login.screen.dart';
@@ -31,6 +33,7 @@ void main() {
       '/splash': (context) => SplashScreen(),
       '/bussiness': (context) => BussinessScreen(),
       '/notification': (context) => NotificationScreen(),
+      '/package': (context) => RegistrationScreen(),
     },
   ));
 }

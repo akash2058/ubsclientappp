@@ -1,7 +1,7 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:ubsclient/screens/home/Documnent/Services.screen.dart';
+import 'package:ubsclient/screens/home/Documnent/Serivces/Services.screen.dart';
 import 'package:ubsclient/screens/login/login.screen.dart';
 
 class SplashScreen extends StatefulWidget {

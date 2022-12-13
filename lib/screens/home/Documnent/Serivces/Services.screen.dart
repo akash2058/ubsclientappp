@@ -23,7 +23,7 @@ class ServicesScreen extends StatelessWidget {
                     label: "Registration",
                     gradients: [0xFFf83600, 0xFFfe8c00],
                     onTap: () {
-                      print("Hello");
+                      Navigator.pushNamed(context, '/package');
                     },
                   ),
                 ),

@@ -1,8 +1,8 @@
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
-import 'package:ubsclient/screens/home/analytics/package.screen.dart';
+import 'package:ubsclient/screens/home/Documnent/Serivces/registrationscreen.dart';
 import 'package:ubsclient/screens/home/dashboard/activekaam.dart';
-import 'package:ubsclient/screens/home/Documnent/Services.screen.dart';
+import 'package:ubsclient/screens/home/Documnent/Serivces/Services.screen.dart';
 import 'package:ubsclient/screens/home/history/history.screen.dart';
 import 'package:ubsclient/screens/home/more/more.screen.dart';
 
@@ -125,7 +125,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       onPressed: () {
                         setState(() {
                           currentDashboardPageTitle = "My Packages";
-                          currentDashboardPage = MyPackagescreen();
+                          //currentDashboardPage = MyPackagescreen();
                         });
                       },
                       icon: const Icon(Icons.card_giftcard),
