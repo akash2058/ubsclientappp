@@ -2,6 +2,7 @@
 
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:ubsclient/screens/home/services/taxation/taxation.screen.dart';
 
 class ServicesScreen extends StatelessWidget {
   const ServicesScreen({super.key});
@@ -33,7 +34,7 @@ class ServicesScreen extends StatelessWidget {
                     svg: "assets/svg/compliance.svg",
                     label: "Compliance",
                     gradients: [0xFFf83600, 0xFFfe8c00],
-                      onTap: () {
+                    onTap: () {
                       Navigator.pushNamed(context, '/compliance');
                     },
                   ),
@@ -48,7 +49,7 @@ class ServicesScreen extends StatelessWidget {
                     svg: "assets/svg/accounting.svg",
                     label: "Accounting",
                     gradients: [0xFFf83600, 0xFFfe8c00],
-                     onTap: () {
+                    onTap: () {
                       Navigator.pushNamed(context, '/accounting');
                     },
                   ),
@@ -59,6 +60,13 @@ class ServicesScreen extends StatelessWidget {
                     svg: "assets/svg/tax.svg",
                     label: "Taxation",
                     gradients: [0xFFf83600, 0xFFfe8c00],
+                    onTap: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                            builder: (context) => TaxationScreen(),
+                          ));
+                    },
                   ),
                 ),
               ],
@@ -71,6 +79,9 @@ class ServicesScreen extends StatelessWidget {
                     svg: "assets/svg/bank.svg",
                     label: "Bank Works",
                     gradients: [0xFFf83600, 0xFFfe8c00],
+                    onTap: () {
+                      Navigator.pushNamed(context, '/bank');
+                    },
                   ),
                 ),
                 Expanded(
@@ -94,6 +105,9 @@ class ServicesScreen extends StatelessWidget {
                     svg: "assets/svg/agreement.svg",
                     label: "Agreement Drafting",
                     gradients: [0xFFf83600, 0xFFfe8c00],
+                    onTap: () {
+                      Navigator.pushNamed(context, '/agreement');
+                    },
                   ),
                 ),
                 Expanded(
@@ -102,7 +116,7 @@ class ServicesScreen extends StatelessWidget {
                     svg: "assets/svg/gift.svg",
                     label: "Special Packages",
                     gradients: [0xFFf83600, 0xFFfe8c00],
-                     onTap: () {
+                    onTap: () {
                       Navigator.pushNamed(context, '/packages');
                     },
                   ),
@@ -117,6 +131,9 @@ class ServicesScreen extends StatelessWidget {
                     svg: "assets/svg/certificate.svg",
                     label: "Renewals",
                     gradients: [0xFFf83600, 0xFFfe8c00],
+                    onTap: () {
+                      Navigator.pushNamed(context, '/reneval');
+                    },
                   ),
                 ),
                 Expanded(
@@ -137,6 +154,9 @@ class ServicesScreen extends StatelessWidget {
               label: "Other Services",
               isOtherService: true,
               gradients: [0xFFfc00ff, 0xFF00dbde],
+              onTap: () {
+                Navigator.pushNamed(context, '/other');
+              },
             ),
             SizedBox(
               height: 40,
@@ -157,14 +177,21 @@ class ServiceCard extends StatelessWidget {
 
   final VoidCallback? onTap;
 
-  const ServiceCard({super.key, required this.label, required this.svg, required this.gradients, this.isOtherService = false, this.onTap});
+  const ServiceCard(
+      {super.key,
+      required this.label,
+      required this.svg,
+      required this.gradients,
+      this.isOtherService = false,
+      this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return InkWell(
       onTap: onTap,
       child: Card(
-        shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(borderRadius)),
+        shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(borderRadius)),
         margin: EdgeInsets.all(8),
         elevation: 5,
         child: Container(
@@ -199,7 +226,10 @@ class ServiceCard extends StatelessWidget {
                         Text(
                           textAlign: TextAlign.center,
                           label,
-                          style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+                          style: TextStyle(
+                              color: Colors.white,
+                              fontSize: 18,
+                              fontWeight: FontWeight.bold),
                         )
                       ],
                     )
@@ -217,7 +247,10 @@ class ServiceCard extends StatelessWidget {
                           child: Text(
                             label,
                             textAlign: TextAlign.center,
-                            style: TextStyle(color: Colors.white, fontSize: 18, fontWeight: FontWeight.bold),
+                            style: TextStyle(
+                                color: Colors.white,
+                                fontSize: 18,
+                                fontWeight: FontWeight.bold),
                           ),
                         ),
                         Spacer(

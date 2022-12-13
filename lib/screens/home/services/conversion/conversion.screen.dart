@@ -181,10 +181,9 @@ class ConversionScreen extends StatelessWidget {
                       );
                     },
                   ),
-              
                 ],
               ),
-                  ConversionCard(
+              ConversionCard(
                 title: "Multi Shareholder to Single Shareholder",
                 serviceDetailCards: [
                   ConversionServiceDetail(
@@ -199,7 +198,6 @@ class ConversionScreen extends StatelessWidget {
                       );
                     },
                   ),
-              
                 ],
               ),
             ],
