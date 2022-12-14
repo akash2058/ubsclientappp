@@ -1,7 +1,9 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.ubsclient">
+    package="com.upaya.ubsclient">
+    <uses-permission android:name="android.permission.INTERNET" />
+
    <application
-        android:label="Upaya Services"
+        android:label="Upaya Business Solutions"
         android:name="${applicationName}"
         android:icon="@mipmap/ic_launcher">
         <activity

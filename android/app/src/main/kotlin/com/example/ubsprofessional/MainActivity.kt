@@ -1,4 +1,4 @@
-package com.example.ubsclient
+package com.upaya.ubsclient
 
 import io.flutter.embedding.android.FlutterActivity
 
