@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:ubsclient/screens/home/dashboard.screen.dart';
 import 'package:ubsclient/screens/home/more/blog/bussiness.screen.dart';
 import 'package:ubsclient/screens/home/more/changepasswordscreen.dart';
+import 'package:ubsclient/screens/home/more/documnent/documentscreen.dart';
 
 import 'package:ubsclient/screens/home/more/profile.screen.dart';
 import 'package:ubsclient/screens/home/more/splash.screen/splash.screen.dart';
@@ -49,10 +50,11 @@ void main() {
       '/packages': (context) => const PackagesScreen(),
       '/accounting': (context) => const AccountingScreen(),
       '/agreement': (context) => const AgreementdraftingScreen(),
-      '/reneval': (context) => const RenewalScreen(),
+      '/renewals': (context) => const RenewalScreen(),
       '/conversion': (context) => const ConversionScreen(),
       '/package': (context) => const PackagesScreen(),
-      '/other': (context) => const OtherScreen()
+      '/other': (context) => const OtherScreen(),
+      '/documnent': (context) => const DocumnentScreen()
     },
   ));
 }

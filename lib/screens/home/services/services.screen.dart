@@ -22,7 +22,7 @@ class ServicesScreen extends StatelessWidget {
                   child: ServiceCard(
                     svg: "assets/svg/registration.svg",
                     label: "Registration",
-                    gradients: [0xFFf83600, 0xFFfe8c00],
+                    gradients: [0xFF6681ED, 0xFF66B7ED],
                     onTap: () {
                       Navigator.pushNamed(context, '/registration');
                     },
@@ -33,7 +33,7 @@ class ServicesScreen extends StatelessWidget {
                   child: ServiceCard(
                     svg: "assets/svg/compliance.svg",
                     label: "Compliance",
-                    gradients: [0xFFf83600, 0xFFfe8c00],
+                    gradients: [0xFF0CAD57, 0xFF18DE75],
                     onTap: () {
                       Navigator.pushNamed(context, '/compliance');
                     },
@@ -48,7 +48,7 @@ class ServicesScreen extends StatelessWidget {
                   child: ServiceCard(
                     svg: "assets/svg/accounting.svg",
                     label: "Accounting",
-                    gradients: [0xFFf83600, 0xFFfe8c00],
+                    gradients: [0xFF63A3DB, 0xFF0884F0],
                     onTap: () {
                       Navigator.pushNamed(context, '/accounting');
                     },
@@ -59,7 +59,7 @@ class ServicesScreen extends StatelessWidget {
                   child: ServiceCard(
                     svg: "assets/svg/tax.svg",
                     label: "Taxation",
-                    gradients: [0xFFf83600, 0xFFfe8c00],
+                    gradients: [0xFF5C6CE6, 0xFF6D40DE],
                     onTap: () {
                       Navigator.push(
                           context,
@@ -78,7 +78,7 @@ class ServicesScreen extends StatelessWidget {
                   child: ServiceCard(
                     svg: "assets/svg/bank.svg",
                     label: "Bank Works",
-                    gradients: [0xFFf83600, 0xFFfe8c00],
+                    gradients: [0xFFFF03AF, 0xFFFF03AF],
                     onTap: () {
                       Navigator.pushNamed(context, '/bank');
                     },
@@ -89,7 +89,7 @@ class ServicesScreen extends StatelessWidget {
                   child: ServiceCard(
                     svg: "assets/svg/job-interview.svg",
                     label: "Advisory",
-                    gradients: [0xFFf83600, 0xFFfe8c00],
+                    gradients: [0xFF6F33C4, 0xFF5400C9],
                     onTap: () {
                       Navigator.pushNamed(context, '/advisory');
                     },
@@ -115,7 +115,7 @@ class ServicesScreen extends StatelessWidget {
                   child: ServiceCard(
                     svg: "assets/svg/gift.svg",
                     label: "Special Packages",
-                    gradients: [0xFFf83600, 0xFFfe8c00],
+                    gradients: [0xFFFA1946, 0xFFC4062C],
                     onTap: () {
                       Navigator.pushNamed(context, '/packages');
                     },
@@ -130,7 +130,7 @@ class ServicesScreen extends StatelessWidget {
                   child: ServiceCard(
                     svg: "assets/svg/certificate.svg",
                     label: "Renewals",
-                    gradients: [0xFFf83600, 0xFFfe8c00],
+                    gradients: [0xFFBFAC06, 0xFFF0DA11],
                     onTap: () {
                       Navigator.pushNamed(context, '/renewals');
                     },
@@ -141,7 +141,7 @@ class ServicesScreen extends StatelessWidget {
                   child: ServiceCard(
                     svg: "assets/svg/conversion.svg",
                     label: "Conversion",
-                    gradients: [0xFFf83600, 0xFFfe8c00],
+                    gradients: [0xFF09F00D, 0xFF09A80B],
                     onTap: () {
                       Navigator.pushNamed(context, '/conversion');
                     },

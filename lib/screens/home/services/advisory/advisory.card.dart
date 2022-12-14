@@ -24,7 +24,7 @@ class AdvisoryCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
           gradient: const LinearGradient(
               colors: [
-                Color(0xFF00C6FF),
+                Color.fromARGB(255, 212, 0, 255),
                 Color(0xFF0072FF),
               ],
               begin: FractionalOffset(0.0, 0.0),

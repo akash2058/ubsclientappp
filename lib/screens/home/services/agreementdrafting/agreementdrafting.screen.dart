@@ -141,9 +141,9 @@ class AgreementdraftingScreen extends StatelessWidget {
                     onTap: () {
                       callRemoteService(
                         context,
-                        parentServiceID: '101',
+                        parentServiceID: '70',
                         service: 'Agreement Drafting',
-                        serviceID: '',
+                        serviceID: '101',
                       );
                     },
                   ),
@@ -158,26 +158,9 @@ class AgreementdraftingScreen extends StatelessWidget {
                     onTap: () {
                       callRemoteService(
                         context,
-                        parentServiceID: '105',
+                        parentServiceID: '70',
                         service: 'Agreement Drafting',
-                        serviceID: '',
-                      );
-                    },
-                  ),
-                ],
-              ),
-              AgreementdraftingCard(
-                title: "Legal Notices",
-                serviceDetailCards: [
-                  AgreementdraftingServiceDetail(
-                    title: "Starting From",
-                    amount: "3000",
-                    onTap: () {
-                      callRemoteService(
-                        context,
-                        parentServiceID: '105',
-                        service: 'Agreement Drafting',
-                        serviceID: '',
+                        serviceID: '105',
                       );
                     },
                   ),
@@ -192,9 +175,9 @@ class AgreementdraftingScreen extends StatelessWidget {
                     onTap: () {
                       callRemoteService(
                         context,
-                        parentServiceID: '102',
+                        parentServiceID: '70',
                         service: 'Agreement Drafting',
-                        serviceID: '',
+                        serviceID: '102',
                       );
                     },
                   ),
@@ -209,9 +192,9 @@ class AgreementdraftingScreen extends StatelessWidget {
                     onTap: () {
                       callRemoteService(
                         context,
-                        parentServiceID: '102',
+                        parentServiceID: '70',
                         service: 'Agreement Drafting',
-                        serviceID: '',
+                        serviceID: '103',
                       );
                     },
                   ),
@@ -226,9 +209,9 @@ class AgreementdraftingScreen extends StatelessWidget {
                     onTap: () {
                       callRemoteService(
                         context,
-                        parentServiceID: '103',
+                        parentServiceID: '70',
                         service: 'Agreement Drafting',
-                        serviceID: '',
+                        serviceID: '104',
                       );
                     },
                   ),

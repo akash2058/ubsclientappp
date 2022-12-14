@@ -140,9 +140,9 @@ class BankScreen extends StatelessWidget {
                     onTap: () {
                       callRemoteService(
                         context,
-                        parentServiceID: '50',
+                        parentServiceID: '77',
                         service: 'Bank Works',
-                        serviceID: '',
+                        serviceID: '50',
                       );
                     },
                   ),
@@ -152,9 +152,9 @@ class BankScreen extends StatelessWidget {
                     onTap: () {
                       callRemoteService(
                         context,
-                        parentServiceID: '135',
+                        parentServiceID: '77',
                         service: 'Bank Works',
-                        serviceID: '',
+                        serviceID: '135',
                       );
                     },
                   ),
@@ -164,9 +164,9 @@ class BankScreen extends StatelessWidget {
                     onTap: () {
                       callRemoteService(
                         context,
-                        parentServiceID: '136',
+                        parentServiceID: '77',
                         service: 'Bank Works',
-                        serviceID: '114',
+                        serviceID: '136',
                       );
                     },
                   ),
@@ -176,9 +176,9 @@ class BankScreen extends StatelessWidget {
                     onTap: () {
                       callRemoteService(
                         context,
-                        parentServiceID: '139',
+                        parentServiceID: '70',
                         service: 'Bank Works',
-                        serviceID: '114',
+                        serviceID: '139',
                       );
                     },
                   ),
@@ -193,9 +193,9 @@ class BankScreen extends StatelessWidget {
                     onTap: () {
                       callRemoteService(
                         context,
-                        parentServiceID: '140',
+                        parentServiceID: '77',
                         service: 'Bank Works',
-                        serviceID: '114',
+                        serviceID: '140',
                       );
                     },
                   ),
@@ -205,9 +205,9 @@ class BankScreen extends StatelessWidget {
                     onTap: () {
                       callRemoteService(
                         context,
-                        parentServiceID: '137',
+                        parentServiceID: '77',
                         service: 'Bank Works',
-                        serviceID: '114',
+                        serviceID: '137',
                       );
                     },
                   ),
@@ -217,9 +217,9 @@ class BankScreen extends StatelessWidget {
                     onTap: () {
                       callRemoteService(
                         context,
-                        parentServiceID: '138',
+                        parentServiceID: '77',
                         service: 'Bank Works',
-                        serviceID: '114',
+                        serviceID: '138',
                       );
                     },
                   ),
@@ -229,9 +229,9 @@ class BankScreen extends StatelessWidget {
                     onTap: () {
                       callRemoteService(
                         context,
-                        parentServiceID: '140',
+                        parentServiceID: '77',
                         service: 'Bank Works',
-                        serviceID: '114',
+                        serviceID: '140',
                       );
                     },
                   ),
@@ -246,9 +246,9 @@ class BankScreen extends StatelessWidget {
                     onTap: () {
                       callRemoteService(
                         context,
-                        parentServiceID: '73',
+                        parentServiceID: '77',
                         service: 'Bank Works',
-                        serviceID: '114',
+                        serviceID: '73',
                       );
                     },
                   ),
@@ -258,7 +258,7 @@ class BankScreen extends StatelessWidget {
                     onTap: () {
                       callRemoteService(
                         context,
-                        parentServiceID: '73',
+                        parentServiceID: '77',
                         service: 'Bank Works',
                         serviceID: '114',
                       );
@@ -405,9 +405,9 @@ class BankScreen extends StatelessWidget {
                     onTap: () {
                       callRemoteService(
                         context,
-                        parentServiceID: '73',
+                        parentServiceID: '77',
                         service: 'Bank Works',
-                        serviceID: '114',
+                        serviceID: '137',
                       );
                     },
                   ),
@@ -422,9 +422,9 @@ class BankScreen extends StatelessWidget {
                     onTap: () {
                       callRemoteService(
                         context,
-                        parentServiceID: '73',
+                        parentServiceID: '77',
                         service: 'Bank Works',
-                        serviceID: '',
+                        serviceID: '138',
                       );
                     },
                   ),

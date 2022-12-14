@@ -24,8 +24,8 @@ class AccountingCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
           gradient: const LinearGradient(
               colors: [
-                Color(0xFF00C6FF),
-                Color(0xFF0072FF),
+                Color.fromARGB(255, 79, 182, 237),
+                Color.fromARGB(255, 98, 0, 255),
               ],
               begin: FractionalOffset(0.0, 0.0),
               end: FractionalOffset(1.0, 0.0),
@@ -56,7 +56,10 @@ class AccountingCard extends StatelessWidget {
                           padding: const EdgeInsets.all(8.0),
                           child: Text(
                             title,
-                            style: const TextStyle(fontSize: 18, fontWeight: FontWeight.w500, color: Colors.white),
+                            style: const TextStyle(
+                                fontSize: 18,
+                                fontWeight: FontWeight.w500,
+                                color: Colors.white),
                           ),
                         ),
                         ...serviceDetailCards
@@ -85,7 +88,7 @@ class AccountingServiceDetail extends StatelessWidget {
     required this.title,
     required this.amount,
     this.icon = "assets/svg/accounting.svg",
-     this.onTap,
+    this.onTap,
   }) : super(key: key);
 
   @override
@@ -95,7 +98,8 @@ class AccountingServiceDetail extends StatelessWidget {
       child: Card(
           margin: const EdgeInsets.only(bottom: 12),
           elevation: 3,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(36)),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(36)),
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
             child: Row(

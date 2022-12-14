@@ -1,5 +1,6 @@
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
+import 'package:ubsclient/screens/home/analytics/Dashboard/dashboardpage.dart';
 import 'package:ubsclient/screens/home/dashboard/activekaam.dart';
 import 'package:ubsclient/screens/home/services/services.screen.dart';
 import 'package:ubsclient/screens/home/history/history.screen.dart';
@@ -29,25 +30,36 @@ class _DashboardScreenState extends State<DashboardScreen> {
           automaticallyImplyLeading: false,
           actions: [
             IconButton(
+              color: Colors.black,
               onPressed: (() {
-                Navigator.pushNamed(context, '/notification');
+                Navigator.pushNamed(
+                  context,
+                  '/notification',
+                );
               }),
-              icon: Badge(ignorePointer: true, badgeColor: Colors.red, badgeContent: Text('0'), child: Icon(Icons.notifications)),
+              icon: Badge(
+                  ignorePointer: true,
+                  badgeColor: Colors.red,
+                  badgeContent: Text('0'),
+                  child: Icon(Icons.notifications)),
             )
           ],
           centerTitle: true,
-          backgroundColor: Colors.lightBlueAccent[20],
-          title: Text("$currentDashboardPageTitle"),
+          backgroundColor: Colors.white,
+          title: Text(
+            "$currentDashboardPageTitle",
+            style: TextStyle(color: Colors.black),
+          ),
         ),
         floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
         floatingActionButton: FloatingActionButton(
           onPressed: (() {
             setState(() {
-              currentDashboardPageTitle = "Active Kaam";
-              currentDashboardPage = Activepage();
+              currentDashboardPageTitle = "Serivces";
+              currentDashboardPage = ServicesScreen();
             });
           }),
-          backgroundColor: Colors.blue[200],
+          backgroundColor: Color.fromARGB(255, 31, 104, 231),
           splashColor: Colors.redAccent,
           elevation: 0,
           child: const Icon(Icons.home),
@@ -56,7 +68,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
         bottomNavigationBar: BottomAppBar(
           notchMargin: 1.0,
           shape: const CircularNotchedRectangle(),
-          color: Colors.blue[200],
+          color: Colors.white,
           child: SizedBox(
             height: 75,
             child: Row(
@@ -69,13 +81,13 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       onPressed: () {
                         setState(() {
                           currentDashboardPageTitle = 'Services';
-                          currentDashboardPage = ServicesScreen();
+                          //currentDashboardPage = ServicesScreen();
                         });
                       },
                       icon: const Icon(Icons.date_range),
                     ),
                     const Text(
-                      "Services",
+                      "Gallery",
                     ),
                   ],
                 ),
@@ -109,7 +121,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       color: Colors.transparent,
                     ),
                     const Text(
-                      "Active Kaam ",
+                      "Services",
                     ),
                   ],
                 ),
@@ -119,14 +131,14 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       highlightColor: Colors.deepPurpleAccent,
                       onPressed: () {
                         setState(() {
-                          currentDashboardPageTitle = "My Packages";
-                          //currentDashboardPage = MyPackagescreen();
+                          currentDashboardPageTitle = "Dashboard";
+                          currentDashboardPage = DashboardPage();
                         });
                       },
                       icon: const Icon(Icons.card_giftcard),
                     ),
                     const Text(
-                      "My Packages",
+                      "Dashboard",
                     ),
                   ],
                 ),

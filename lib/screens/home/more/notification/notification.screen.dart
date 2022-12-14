@@ -53,7 +53,7 @@ class NotificationScreen extends StatelessWidget {
                             itemCount: data.length,
                             itemBuilder: (context, index) {
                               return Container(
-                                margin: EdgeInsets.all(8),
+                                margin: const EdgeInsets.all(8),
                                 child: Column(
                                   crossAxisAlignment:
                                       CrossAxisAlignment.stretch,
