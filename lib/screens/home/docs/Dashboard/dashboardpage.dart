@@ -5,12 +5,9 @@ class DashboardPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const DefaultTabController(
-      length: 2,
-      child: TabBar(
-        labelColor: Colors.black,
-        tabs: [Tab(text: 'Active Page'), Tab(text: 'Packages')],
-      ),
+    return const Center(
+      child: Text('No Active Kaam',
+          style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold)),
     );
   }
 }
