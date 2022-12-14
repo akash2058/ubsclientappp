@@ -5,10 +5,12 @@ import 'package:shared_preferences/shared_preferences.dart';
 import 'package:http/http.dart' as http;
 
 class OtherScreen extends StatelessWidget {
-  const OtherScreen({super.key});
+  OtherScreen({super.key});
+
   Future<void> callRemoteService(BuildContext context,
       {required String serviceID,
       required String parentServiceID,
+      required String remarks,
       required String service}) async {
     await showDialog(
       context: context,
@@ -48,7 +50,7 @@ class OtherScreen extends StatelessWidget {
                   String phone = sharedPreferences.getString('phoneno') ?? "";
                   http.Response response = await http.post(
                       Uri.parse(
-                          'https://api.ubs.com.np/index.php?method=add_app_request'),
+                          'https://api.ubs.com.np/index.php?method=add_app_other_request'),
                       body: {
                         "user": user,
                         "name": name,
@@ -57,6 +59,7 @@ class OtherScreen extends StatelessWidget {
                         "serviceID": serviceID,
                         "parentServiceID": parentServiceID,
                         "service": service,
+                        "remarks": remarks,
                       });
                   var responseData = jsonDecode(response.body.toString());
 
@@ -119,6 +122,7 @@ class OtherScreen extends StatelessWidget {
     );
   }
 
+  final TextEditingController controller = TextEditingController();
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -169,6 +173,8 @@ class OtherScreen extends StatelessWidget {
                     style: TextStyle(color: Colors.blue),
                   ),
                   TextFormField(
+                    initialValue: "-",
+                    controller: controller,
                     cursorHeight: 40,
                     decoration: InputDecoration(
                         border: OutlineInputBorder(
@@ -183,7 +189,13 @@ class OtherScreen extends StatelessWidget {
                             borderRadius: BorderRadius.circular(20)),
                         backgroundColor: Colors.blue,
                       ),
-                      onPressed: () {},
+                      onPressed: () {
+                        callRemoteService(context,
+                            serviceID: '28',
+                            parentServiceID: '67',
+                            remarks: controller.text,
+                            service: 'Other');
+                      },
                       child: const Text('Confirm'))
                 ],
               ),
@@ -225,7 +237,7 @@ class Header extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 4),
             color: Colors.blue.shade800,
             child: const Text(
-              "Upaya Services Ltd.",
+              "Upaya Business Solutions",
               style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w500,
