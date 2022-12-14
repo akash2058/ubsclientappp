@@ -198,7 +198,7 @@ class _OTPScreenState extends State<OTPScreen> {
                                 }
                               }
                               setState(() {
-                                isLoading = true;
+                                isLoading = false;
                               });
                             },
                             child: Text("Verify"),
