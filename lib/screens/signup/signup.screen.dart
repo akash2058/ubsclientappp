@@ -154,6 +154,7 @@ class Signup extends StatelessWidget {
                       ),
                       TextFormField(
                         obscureText: true,
+                        controller: confirmpasswordController,
                         decoration: InputDecoration(
                             border: OutlineInputBorder(
                               borderSide: const BorderSide(
