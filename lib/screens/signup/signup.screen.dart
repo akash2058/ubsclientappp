@@ -15,20 +15,20 @@ class Signup extends StatelessWidget {
   TextEditingController passwordController = TextEditingController();
   TextEditingController confirmpasswordController = TextEditingController();
 
-  Future<bool> signup(String fullname, phone, email, password) async {
+  Future<bool> signup(String fullname, String phone, String email, String password) async {
     try {
-      Response response = await post(
-          Uri.parse('https://api.ubs.com.np/index.php?method=register_user'),
-          body: {
-            'fullname': fullname,
-            'usertype': '6',
-            'phone': phone,
-            'register_form': 'Android',
-            'password': password,
-            'email': email
-          });
+      Response response = await post(Uri.parse('https://api.ubs.com.np/index.php?method=register_user'), body: {
+        'fullname': fullname,
+        'usertype': 'Service Seeker',
+        'phone': phone,
+        'register_form': 'Android',
+        'password': password,
+        'email': email
+      });
       var responseData = jsonDecode(response.body.toString());
       if (responseData["response"] == "success") {
+        return true;
+      } else if (responseData["response"] == "exists") {
         return true;
       }
       return false;
@@ -51,8 +51,7 @@ class Signup extends StatelessWidget {
             Flexible(
               flex: 2,
               child: Padding(
-                padding:
-                    const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+                padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
                 child: SingleChildScrollView(
                   child: Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
@@ -214,22 +213,14 @@ class Signup extends StatelessWidget {
                           children: [
                             ElevatedButton(
                                 style: ElevatedButton.styleFrom(
-                                    backgroundColor: Colors.blue,
-                                    shape: RoundedRectangleBorder(
-                                        borderRadius:
-                                            BorderRadius.circular(10))),
+                                    backgroundColor: Colors.blue, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
                                 onPressed: () async {
-                                  if (await signup(
-                                      nameController.text.toString(),
-                                      phoneController.text.toString(),
-                                      emailController.text.toString(),
-                                      passwordController.text.toString())) {
+                                  if (await signup(nameController.text.toString(), phoneController.text.toString(),
+                                      emailController.text.toString(), passwordController.text.toString())) {
                                     Navigator.pushNamed(context, "/login");
                                   } else {
-                                    ScaffoldMessenger.of(context)
-                                        .showSnackBar(const SnackBar(
-                                      content:
-                                          Text("Failed to sign up. Try again."),
+                                    ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                                      content: Text("Failed to sign up. Try again."),
                                       backgroundColor: Colors.blue,
                                     ));
                                   }
@@ -300,10 +291,7 @@ class Header extends StatelessWidget {
             color: Colors.blue.shade800,
             child: const Text(
               "Upaya Services Ltd.",
-              style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.w500,
-                  color: Colors.white),
+              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500, color: Colors.white),
             ),
           ),
           const SizedBox(
