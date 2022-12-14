@@ -16,6 +16,7 @@ import 'package:ubsclient/screens/home/services/bank/bank.screen.dart';
 import 'package:ubsclient/screens/home/services/renewals/renewals.screen.dart';
 import 'package:ubsclient/screens/home/services/special%20packages/packages.screen.dart';
 import 'package:ubsclient/screens/login/login.screen.dart';
+import 'package:ubsclient/screens/signup/otp.screen.dart';
 import 'package:ubsclient/screens/signup/signup.screen.dart';
 import 'package:ubsclient/screens/home/more/Reviews.screen.dart';
 import 'package:ubsclient/screens/home/more/blog/blog.screen.dart';
@@ -52,7 +53,8 @@ void main() {
       '/reneval': (context) => const RenewalScreen(),
       '/conversion': (context) => const ConversionScreen(),
       '/package': (context) => const PackagesScreen(),
-      '/other': (context) => const OtherScreen()
+      '/other': (context) => const OtherScreen(),
+      '/otp': (context) => const OTPScreen()
     },
   ));
 }
