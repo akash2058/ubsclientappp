@@ -107,7 +107,7 @@ class _OTPScreenState extends State<OTPScreen> {
         ));
       } else if (responseData["response"] == "invalid code") {
         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-          content: Text("CIncorrect verification code! Please request new code."),
+          content: Text("Incorrect verification code! Please request new code."),
           backgroundColor: Colors.red,
         ));
       } else if (responseData["response"] == "activation failed") {
@@ -189,14 +189,17 @@ class _OTPScreenState extends State<OTPScreen> {
                             color: Colors.green.shade400,
                             textColor: Colors.white,
                             onPressed: () async {
+                              setState(() {
+                                isLoading = true;
+                              });
                               if (_formKey.currentState!.validate()) {
-                                setState(() {
-                                  isLoading = true;
-                                });
                                 if (await verifyOTP()) {
                                   Navigator.pushNamed(context, "/login");
                                 }
                               }
+                              setState(() {
+                                isLoading = true;
+                              });
                             },
                             child: Text("Verify"),
                           ),
