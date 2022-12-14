@@ -280,20 +280,12 @@ class Header extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 4),
             color: Colors.blue.shade800,
             child: const Text(
-              "Upaya Services Ltd.",
+              "Upaya Business Solutions",
               style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500, color: Colors.white),
             ),
           ),
           const SizedBox(
             height: 20,
-          ),
-          const Text(
-            "OTP Verification",
-            style: TextStyle(fontSize: 28, fontWeight: FontWeight.w500),
-          ),
-          Text(
-            "Let's get ready to go!",
-            style: TextStyle(fontSize: 28, color: Colors.grey.shade600),
           ),
         ],
       ),
