@@ -29,11 +29,11 @@ class Signup extends StatelessWidget {
       if (responseData["response"] == "success") {
         return true;
       } else if (responseData["response"] == "exists") {
-        return true;
+        return false;
       }
-      return false;
+      throw Exception();
     } catch (e) {
-      return false;
+      throw Exception(e);
     }
   }
 
@@ -222,13 +222,24 @@ class Signup extends StatelessWidget {
                                       backgroundColor: Colors.red,
                                     ));
                                   } else {
-                                    bool done = await signup(nameController.text.toString(), phoneController.text.toString(),
-                                        emailController.text.toString(), passwordController.text.toString());
-                                    if (done) {
-                                      Navigator.pushNamed(context, "/login");
-                                    } else {
+                                    try {
+                                      bool done = await signup(nameController.text.toString(), phoneController.text.toString(),
+                                          emailController.text.toString(), passwordController.text.toString());
+                                      if (done) {
+                                        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                                          content: Text("Signup successfully."),
+                                          backgroundColor: Colors.green,
+                                        ));
+                                        Navigator.pushNamed(context, "/login");
+                                      } else {
+                                        ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                                          content: Text("User Already Exists. Please Login with your number."),
+                                          backgroundColor: Colors.blue,
+                                        ));
+                                      }
+                                    } catch (err) {
                                       ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                                        content: Text("Failed to sign up. Try again."),
+                                        content: Text("Failed to sign up. Please Try again."),
                                         backgroundColor: Colors.red,
                                       ));
                                     }
