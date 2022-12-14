@@ -97,8 +97,8 @@ class _OTPScreenState extends State<OTPScreen> {
       var responseData = jsonDecode(response.body.toString());
       if (responseData["response"] == "success") {
         ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-          content: Text("Verification code has been resent"),
-          backgroundColor: Colors.blue,
+          content: Text("Successfully Verified. Please login."),
+          backgroundColor: Colors.green,
         ));
         return true;
       } else if (responseData["response"] == "expired") {
