@@ -215,14 +215,22 @@ class Signup extends StatelessWidget {
                                 style: ElevatedButton.styleFrom(
                                     backgroundColor: Colors.blue, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
                                 onPressed: () async {
-                                  if (await signup(nameController.text.toString(), phoneController.text.toString(),
-                                      emailController.text.toString(), passwordController.text.toString())) {
-                                    Navigator.pushNamed(context, "/login");
-                                  } else {
+                                  if (passwordController.text.compareTo(confirmpasswordController.text) != 0) {
                                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                                      content: Text("Failed to sign up. Try again."),
-                                      backgroundColor: Colors.blue,
+                                      content: Text("Passwords do not match."),
+                                      backgroundColor: Colors.red,
                                     ));
+                                  } else {
+                                    bool done = await signup(nameController.text.toString(), phoneController.text.toString(),
+                                        emailController.text.toString(), passwordController.text.toString());
+                                    if (done) {
+                                      Navigator.pushNamed(context, "/login");
+                                    } else {
+                                      ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                                        content: Text("Failed to sign up. Try again."),
+                                        backgroundColor: Colors.red,
+                                      ));
+                                    }
                                   }
                                 },
                                 child: const Text(
