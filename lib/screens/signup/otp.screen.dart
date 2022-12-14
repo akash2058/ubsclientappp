@@ -70,7 +70,7 @@ class _OTPScreenState extends State<OTPScreen> {
     }
   }
 
-  Future<bool> verifyOTP() async {
+  Future<bool> verifyOTP(String code) async {
     SharedPreferences pref = await SharedPreferences.getInstance();
     String verifyUser = pref.getString("verify_user") ?? "";
     String verifyPhone = pref.getString("verify_phone") ?? "";
@@ -91,6 +91,7 @@ class _OTPScreenState extends State<OTPScreen> {
           'verify_user': verifyUser,
           'verify_phone': verifyPhone,
           'verify_email': verifyEmail,
+          'code': code,
         },
       );
       var responseData = jsonDecode(response.body.toString());
@@ -193,7 +194,7 @@ class _OTPScreenState extends State<OTPScreen> {
                                 isLoading = true;
                               });
                               if (_formKey.currentState!.validate()) {
-                                if (await verifyOTP()) {
+                                if (await verifyOTP(controller.text)) {
                                   Navigator.pushNamed(context, "/login");
                                 }
                               }
