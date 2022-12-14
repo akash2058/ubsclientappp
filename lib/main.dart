@@ -49,7 +49,7 @@ void main() {
       '/packages': (context) => const PackagesScreen(),
       '/accounting': (context) => const AccountingScreen(),
       '/agreement': (context) => const AgreementdraftingScreen(),
-      '/reneval': (context) => const RenewalScreen(),
+      '/renewals': (context) => const RenewalScreen(),
       '/conversion': (context) => const ConversionScreen(),
       '/package': (context) => const PackagesScreen(),
       '/other': (context) => const OtherScreen()

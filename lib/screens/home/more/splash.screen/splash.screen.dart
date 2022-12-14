@@ -32,7 +32,7 @@ class _SplashScreenState extends State<SplashScreen> {
             image: AssetImage('assets/images/logo.jpg'),
           ),
           Text(
-            'Upaya Services.PVT.LTD',
+            'Upaya Business Solutions',
             style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 21),
           ),
           SpinKitFadingCircle(

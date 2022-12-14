@@ -138,17 +138,7 @@ class PackagesScreen extends StatelessWidget {
                   PackagesServiceDetail(
                     title: "Starting From",
                     amount: "20,000",
-                    onTap: () {},
-                  ),
-                ],
-              ),
-              PackagesCard(
-                title: "Retainership",
-                serviceDetailCards: [
-                  PackagesServiceDetail(
-                    title: "Starting From",
-                    amount: "20,000",
-                    onTap: (){
+                     onTap: () {
                       callRemoteService(
                         context,
                         parentServiceID: '75',
@@ -160,20 +150,64 @@ class PackagesScreen extends StatelessWidget {
                 ],
               ),
               PackagesCard(
+                title: "Retainership",
+                serviceDetailCards: [
+                  PackagesServiceDetail(
+                    title: "Starting From",
+                    amount: "10,000",
+                    onTap: () {
+                      callRemoteService(
+                        context,
+                        parentServiceID: '75',
+                        service: 'Packages',
+                        serviceID: '130',
+                      );
+                    },
+                  ),
+                ],
+              ),
+              PackagesCard(
                 title: "Registration Package",
                 serviceDetailCards: [
                   PackagesServiceDetail(
                     title: "Private Comapany Registration",
-                    amount: "12000",
-                    onTap: () {},
+                    amount: "8,000",
+                     onTap: () {
+                      callRemoteService(
+                        context,
+                        parentServiceID: '75',
+                        service: 'Packages',
+                        serviceID: 'registration_package',
+                      );
+                    },
                   ),
-                  PackagesServiceDetail(
-                    title: "New Company",
-                    amount: "15000",
-                    onTap: () {},
+                    PackagesServiceDetail(
+                    title: "PAN/VAT Registration",
+                    amount: "3,500",
+                     onTap: () {
+                      callRemoteService(
+                        context,
+                        parentServiceID: '75',
+                        service: 'Packages',
+                        serviceID: 'registration_package',
+                      );
+                    },
+                  ),  PackagesServiceDetail(
+                    title: "Ward Registration",
+                    amount: "5000",
+                     onTap: () {
+                      callRemoteService(
+                        context,
+                        parentServiceID: '75',
+                        service: 'Packages',
+                        serviceID: 'registration_package',
+                      );
+                    },
                   ),
+                  
                 ],
               ),
+              
             ],
           ),
         ));

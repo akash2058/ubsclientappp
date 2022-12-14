@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:ubsclient/screens/home/services/registration/registration.card.dart';
 
-import 'agreementdraftingcardscreen.dart';
+import 'agreementdrafting.card.dart';
 
 class AgreementdraftingScreen extends StatelessWidget {
   const AgreementdraftingScreen({super.key});

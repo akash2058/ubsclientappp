@@ -87,7 +87,7 @@ class TaxationServiceDetail extends StatelessWidget {
     Key? key,
     required this.title,
     required this.amount,
-    this.icon = "assets/svg/accounting.svg",
+    this.icon = "assets/svg/tax.svg",
     this.onTap,
   }) : super(key: key);
 
