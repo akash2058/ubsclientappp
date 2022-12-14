@@ -215,7 +215,7 @@ class Signup extends StatelessWidget {
                                 style: ElevatedButton.styleFrom(
                                     backgroundColor: Colors.blue, shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(10))),
                                 onPressed: () async {
-                                  if (passwordController.text.compareTo(confirmpasswordController.text) != 0) {
+                                  if (passwordController.text != confirmpasswordController.text) {
                                     ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
                                       content: Text("Passwords do not match."),
                                       backgroundColor: Colors.red,
