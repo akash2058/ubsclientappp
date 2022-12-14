@@ -86,7 +86,7 @@ class RenevalsServiceDetail extends StatelessWidget {
     Key? key,
     required this.title,
     required this.amount,
-    this.icon = "assets/svg/accounting.svg",
+    this.icon = "assets/svg/certificate.svg",
     this.onTap
   }) : super(key: key);
 

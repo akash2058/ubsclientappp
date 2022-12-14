@@ -87,7 +87,7 @@ class ComplianceServiceDetail extends StatelessWidget {
     Key? key,
     required this.title,
     required this.amount,
-    this.icon = "assets/svg/accounting.svg",
+    this.icon = "assets/svg/compliance.svg",
     this.onTap,
   }) : super(key: key);
 

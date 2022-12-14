@@ -1,7 +1,13 @@
 import 'package:flutter/material.dart';
 
+
 class ResetScreen extends StatelessWidget {
-  const ResetScreen({Key? key}) : super(key: key);
+ ResetScreen({Key? key}) : super(key: key);
+
+
+ 
+
+  
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +28,7 @@ class ResetScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
+                 
                     const Center(
                       child: Text(
                         "Reset Password",

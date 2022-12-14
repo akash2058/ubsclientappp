@@ -133,17 +133,24 @@ class AccountingScreen extends StatelessWidget {
           child: Column(
             children: [
               AccountingCard(
-                title: "Three Month's Return of Company",
+                title: "Monthly Financial Reporting",
                 serviceDetailCards: [
                   AccountingServiceDetail(
                     title: "Fee",
-                    amount: "2500",
-                    onTap: () {},
+                    amount: "5000",
+                   onTap: () {
+                      callRemoteService(
+                        context,
+                        parentServiceID: '73',
+                        service: 'Accounting',
+                        serviceID: '114',
+                      );
+                    },
                   ),
                 ],
               ),
               AccountingCard(
-                title: "Monthly Finanacial Reporting",
+                title: "Preparation of Financial Statements",
                 serviceDetailCards: [
                   AccountingServiceDetail(
                     title: "Starting From",
@@ -153,40 +160,163 @@ class AccountingScreen extends StatelessWidget {
                         context,
                         parentServiceID: '73',
                         service: 'Accounting',
-                        serviceID: '114',
+                        serviceID: '51',
                       );
                     },
                   ),
-                  AccountingServiceDetail(
-                    title: "Annual Return of Public",
-                    amount: "6000",
-                    onTap: () {},
-                  ),
-                  AccountingServiceDetail(
-                    title: "Annual Return of Not for Profit",
-                    amount: "6000",
-                    onTap: () {},
-                  ),
-                  AccountingServiceDetail(
-                    title: "Annual Return of Foreign Company/Branch",
-                    amount: "6000",
-                    onTap: () {},
-                  ),
+                
+                  
+               
                 ],
               ),
               AccountingCard(
-                title: "Share Lagat",
+                title: "Charts of Accounts",
                 serviceDetailCards: [
                   AccountingServiceDetail(
-                    title: "Old Company",
-                    amount: "12000",
-                    onTap: () {},
+                    title: "Fee",
+                    amount: "5000",
+                    onTap: () {
+                      callRemoteService(
+                        context,
+                        parentServiceID: '73',
+                        service: 'Accounting',
+                        serviceID: '117',
+                      );
+                    },
                   ),
+               
+                ],
+              ),
+                      AccountingCard(
+                title: "Finance and Accouting Manual((FAM)",
+                serviceDetailCards: [
                   AccountingServiceDetail(
-                    title: "New Company",
-                    amount: "15000",
-                    onTap: () {},
+                    title: "Starting From",
+                    amount: "20,000",
+                    onTap: () {
+                      callRemoteService(
+                        context,
+                        parentServiceID: '73',
+                        service: 'Accounting',
+                        serviceID: '119',
+                      );
+                    },
                   ),
+                
+                  
+               
+                ],
+              ),
+                   AccountingCard(
+                title: "Due Diligence Review",
+                serviceDetailCards: [
+                  AccountingServiceDetail(
+                    title: "Starting From",
+                    amount: "25,000",
+                    onTap: () {
+                      callRemoteService(
+                        context,
+                        parentServiceID: '73',
+                        service: 'Accounting',
+                        serviceID: '115',
+                      );
+                    },
+                  ),
+               
+                ],
+              ),
+                   AccountingCard(
+                title: "Special Reveiws",
+                serviceDetailCards: [
+                  AccountingServiceDetail(
+                    title: "Revenue Verification",
+                    amount: "5000",
+                    onTap: () {
+                      callRemoteService(
+                        context,
+                        parentServiceID: '73',
+                        service: 'Accounting',
+                        serviceID: '115',
+                      );
+                    },
+                  ),
+                   AccountingServiceDetail(
+                    title: "Physical Verification",
+                    amount: "10,500",
+                    onTap: () {
+                      callRemoteService(
+                        context,
+                        parentServiceID: '73',
+                        service: 'Accounting',
+                        serviceID: '117',
+                      );
+                    },
+                  ),
+
+                ],
+              ),
+
+                AccountingCard(
+                title: "HR Manual",
+                serviceDetailCards: [
+                  AccountingServiceDetail(
+                    title: "Starting From",
+                    amount: "10,000",
+                    onTap: () {
+                      callRemoteService(
+                        context,
+                        parentServiceID: '73',
+                        service: 'Accounting',
+                        serviceID: '117',
+                      );
+                    },
+                  ),
+               
+                ],
+              ),
+              
+                AccountingCard(
+                title: "Admin Manual",
+                serviceDetailCards: [
+                  AccountingServiceDetail(
+                    title: "Starting From",
+                    amount: "10,000",
+                    onTap: () {
+                      callRemoteService(
+                        context,
+                        parentServiceID: '73',
+                        service: 'Accounting',
+                        serviceID: '117',
+                      );
+                    },
+                  ),
+               
+                ],
+              ),
+              
+                AccountingCard(
+                title: "Procurement Manual",
+                serviceDetailCards: [
+                  AccountingServiceDetail(
+                    title: "Starting From",
+                    amount: "10,000",
+                    onTap: () {
+                      callRemoteService(
+                        context,
+                        parentServiceID: '73',
+                        service: 'Accounting',
+                        serviceID: '117',
+                      );
+                    },
+                  ),
+               
+                ],
+              ),
+              
+                AccountingCard(
+                title: "Other Customized Services",
+                serviceDetailCards: [
+                
                 ],
               ),
             ],

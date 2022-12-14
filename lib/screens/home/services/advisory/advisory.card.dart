@@ -24,7 +24,7 @@ class AdvisoryCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
           gradient: const LinearGradient(
               colors: [
-                Color.fromARGB(255, 212, 0, 255),
+                Color(0xFFD400FF),
                 Color(0xFF0072FF),
               ],
               begin: FractionalOffset(0.0, 0.0),
@@ -87,7 +87,7 @@ class AdvisoryServiceDetail extends StatelessWidget {
     Key? key,
     required this.title,
     required this.amount,
-    this.icon = "assets/svg/accounting.svg",
+    this.icon = "assets/svg/job-interview.svg",
     this.onTap,
   }) : super(key: key);
 

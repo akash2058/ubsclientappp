@@ -138,7 +138,14 @@ class ComplianceScreen extends StatelessWidget {
                   ComplianceServiceDetail(
                     title: "Fee",
                     amount: "2500",
-                    onTap: () {},
+                      onTap: () {
+                      callRemoteService(
+                        context,
+                        parentServiceID: '69',
+                        service: 'Compliance',
+                        serviceID: '58',
+                      );
+                    },
                   ),
                 ],
               ),
@@ -160,17 +167,38 @@ class ComplianceScreen extends StatelessWidget {
                   ComplianceServiceDetail(
                     title: "Annual Return of Public",
                     amount: "6000",
-                    onTap: () {},
+                      onTap: () {
+                      callRemoteService(
+                        context,
+                        parentServiceID: '69',
+                        service: 'Compliance',
+                        serviceID: '7',
+                      );
+                    },
                   ),
                   ComplianceServiceDetail(
                     title: "Annual Return of Not for Profit",
                     amount: "6000",
-                    onTap: () {},
+                       onTap: () {
+                      callRemoteService(
+                        context,
+                        parentServiceID: '69',
+                        service: 'Compliance',
+                        serviceID: '16',
+                      );
+                    },
                   ),
                   ComplianceServiceDetail(
                     title: "Annual Return of Foreign Company/Branch",
                     amount: "6000",
-                    onTap: () {},
+                      onTap: () {
+                      callRemoteService(
+                        context,
+                        parentServiceID: '69',
+                        service: 'Compliance',
+                        serviceID: '34',
+                      );
+                    },
                   ),
                 ],
               ),
@@ -180,12 +208,164 @@ class ComplianceScreen extends StatelessWidget {
                   ComplianceServiceDetail(
                     title: "Old Company",
                     amount: "12000",
-                    onTap: () {},
+                     onTap: () {
+                      callRemoteService(
+                        context,
+                        parentServiceID: '69',
+                        service: 'Compliance',
+                        serviceID: '86',
+                      );
+                    },
                   ),
                   ComplianceServiceDetail(
                     title: "New Company",
                     amount: "15000",
-                    onTap: () {},
+                       onTap: () {
+                      callRemoteService(
+                        context,
+                        parentServiceID: '69',
+                        service: 'Compliance',
+                        serviceID: '87',
+                      );
+                    },
+                  ),
+                ],
+              ),
+               ComplianceCard(
+                title: "Amendment works related to Company",
+                serviceDetailCards: [
+                  ComplianceServiceDetail(
+                    title: "Name Change",
+                    amount: "8,500",
+                    onTap: () {
+                      callRemoteService(
+                        context,
+                        parentServiceID: '69',
+                        service: 'Compliance',
+                        serviceID: '91',
+                      );
+                    },
+                  ),
+                  ComplianceServiceDetail(
+                    title: "Address Change",
+                    amount: "8,500",
+                   onTap: () {
+                      callRemoteService(
+                        context,
+                        parentServiceID: '69',
+                        service: 'Compliance',
+                        serviceID: '90',
+                      );
+                    },
+                  ),
+                  ComplianceServiceDetail(
+                    title: "Capital Change",
+                    amount: "8,500",
+                    onTap: () {
+                      callRemoteService(
+                        context,
+                        parentServiceID: '69',
+                        service: 'Compliance',
+                        serviceID: '92',
+                      );
+                    },
+                  ),
+                  ComplianceServiceDetail(
+                    title: "Objective Change",
+                    amount: "8,500",
+                  onTap: () {
+                      callRemoteService(
+                        context,
+                        parentServiceID: '69',
+                        service: 'Compliance',
+                        serviceID: '93',
+                      );
+                    },
+                  ),
+                    ComplianceServiceDetail(
+                    title: "Change in Shareholder",
+                    amount: "8,500",
+                  onTap: () {
+                      callRemoteService(
+                        context,
+                        parentServiceID: '69',
+                        service: 'Compliance',
+                        serviceID: '94',
+                      );
+                    },
+                  ),
+                  
+                ],
+              ),
+                   ComplianceCard(
+                title: "Sakha Kayam/Thausari at IRD",
+                serviceDetailCards: [
+                  ComplianceServiceDetail(
+                    title: "Fee",
+                    amount: "3,500",
+                     onTap: () {
+                      callRemoteService(
+                        context,
+                        parentServiceID: '69',
+                        service: 'Compliance',
+                        serviceID: '88',
+                      );
+                    },
+                  ),
+                  
+                
+                ],
+              ),
+              ComplianceCard(
+                title: "Adhyawadik Letter",
+                serviceDetailCards: [
+                  ComplianceServiceDetail(
+                    title: "Adhyawadik Letter of Private",
+                    amount: "4,000",
+                    onTap: () {
+                      callRemoteService(
+                        context,
+                        parentServiceID: '69',
+                        service: 'Compliance',
+                        serviceID: '97',
+                      );
+                    },
+                  ),
+                  ComplianceServiceDetail(
+                    title: "Adhyawadik Letter of Public",
+                    amount: "8,000",
+                    onTap: () {
+                      callRemoteService(
+                        context,
+                        parentServiceID: '69',
+                        service: 'Compliance',
+                        serviceID: '98',
+                      );
+                    },
+                  ),
+                  ComplianceServiceDetail(
+                    title: "Adhyawadik Letter of Not for Profit",
+                    amount: "4,000",
+                       onTap: () {
+                      callRemoteService(
+                        context,
+                        parentServiceID: '69',
+                        service: 'Compliance',
+                        serviceID: '99',
+                      );
+                    },
+                  ),
+                  ComplianceServiceDetail(
+                    title: "Adhyawadik Letter of Foreign Company/Branch",
+                    amount: "5,000",
+                       onTap: () {
+                      callRemoteService(
+                        context,
+                        parentServiceID: '69',
+                        service: 'Compliance',
+                        serviceID: '100',
+                      );
+                    },
                   ),
                 ],
               ),

@@ -146,7 +146,7 @@ class RegistrationScreen extends StatelessWidget {
                           context,
                           parentServiceID: '68',
                           service: 'Registrations',
-                          serviceID: '78',
+                          serviceID: '79',
                         );
                       }),
                   RegistrationServiceDetail(
@@ -157,7 +157,7 @@ class RegistrationScreen extends StatelessWidget {
                           context,
                           parentServiceID: '68',
                           service: 'Registrations',
-                          serviceID: '79',
+                          serviceID: '78',
                         );
                       }),
                 ],
@@ -183,7 +183,7 @@ class RegistrationScreen extends StatelessWidget {
                 serviceDetailCards: [
                   RegistrationServiceDetail(
                       title: "Fee",
-                      amount: "17000",
+                      amount: "25,000",
                       onTap: () {
                         callRemoteService(
                           context,
@@ -199,7 +199,7 @@ class RegistrationScreen extends StatelessWidget {
                 serviceDetailCards: [
                   RegistrationServiceDetail(
                       title: "Fee",
-                      amount: "17000",
+                      amount: "30,000",
                       onTap: () {
                         callRemoteService(
                           context,
@@ -215,7 +215,7 @@ class RegistrationScreen extends StatelessWidget {
                 serviceDetailCards: [
                   RegistrationServiceDetail(
                       title: "Fee",
-                      amount: "17000",
+                      amount: "20,000",
                       onTap: () {
                         callRemoteService(
                           context,
@@ -231,7 +231,7 @@ class RegistrationScreen extends StatelessWidget {
                 serviceDetailCards: [
                   RegistrationServiceDetail(
                       title: "Fee",
-                      amount: "17000",
+                      amount: "8,000",
                       onTap: () {
                         callRemoteService(
                           context,
@@ -247,7 +247,7 @@ class RegistrationScreen extends StatelessWidget {
                 serviceDetailCards: [
                   RegistrationServiceDetail(
                       title: "Fee",
-                      amount: "17000",
+                      amount: "10,000",
                       onTap: () {
                         callRemoteService(
                           context,
@@ -263,7 +263,7 @@ class RegistrationScreen extends StatelessWidget {
                 serviceDetailCards: [
                   RegistrationServiceDetail(
                       title: "Fee",
-                      amount: "17000",
+                      amount: "3,500",
                       onTap: () {
                         callRemoteService(
                           context,
@@ -279,7 +279,7 @@ class RegistrationScreen extends StatelessWidget {
                 serviceDetailCards: [
                   RegistrationServiceDetail(
                       title: "Starting Form",
-                      amount: "17000",
+                      amount: "5,000",
                       onTap: () {
                         callRemoteService(
                           context,
@@ -295,13 +295,13 @@ class RegistrationScreen extends StatelessWidget {
                 serviceDetailCards: [
                   RegistrationServiceDetail(
                       title: "Fee",
-                      amount: "17000",
+                      amount: "5,000",
                       onTap: () {
                         callRemoteService(
                           context,
                           parentServiceID: '68',
                           service: 'Registrations',
-                          serviceID: '',
+                          serviceID: '81',
                         );
                       }),
                 ],
@@ -311,7 +311,7 @@ class RegistrationScreen extends StatelessWidget {
                 serviceDetailCards: [
                   RegistrationServiceDetail(
                       title: "Employer:",
-                      amount: "17000",
+                      amount: "5,000",
                       onTap: () {
                         callRemoteService(
                           context,
@@ -322,7 +322,7 @@ class RegistrationScreen extends StatelessWidget {
                       }),
                   RegistrationServiceDetail(
                       title: "Per Employee:",
-                      amount: "17000",
+                      amount: "250",
                       onTap: () {
                         callRemoteService(
                           context,
@@ -333,7 +333,7 @@ class RegistrationScreen extends StatelessWidget {
                       }),
                   RegistrationServiceDetail(
                       title: "(if less than 4 employee,Minimum):",
-                      amount: "17000",
+                      amount: "1,000",
                       onTap: () {
                         callRemoteService(
                           context,
@@ -349,7 +349,7 @@ class RegistrationScreen extends StatelessWidget {
                 serviceDetailCards: [
                   RegistrationServiceDetail(
                       title: "Starting Form",
-                      amount: "17000",
+                      amount: "40,000",
                       onTap: () {
                         callRemoteService(
                           context,
@@ -365,7 +365,7 @@ class RegistrationScreen extends StatelessWidget {
                 serviceDetailCards: [
                   RegistrationServiceDetail(
                       title: "Starting Form",
-                      amount: "17000",
+                      amount: "25,000",
                       onTap: () {
                         callRemoteService(
                           context,
@@ -381,13 +381,13 @@ class RegistrationScreen extends StatelessWidget {
                 serviceDetailCards: [
                   RegistrationServiceDetail(
                       title: "Starting Form",
-                      amount: "17000",
+                      amount: "50,000",
                       onTap: () {
                         callRemoteService(
                           context,
                           parentServiceID: '68',
                           service: 'Registrations',
-                          serviceID: '',
+                          serviceID: '84',
                         );
                       }),
                 ],
@@ -397,13 +397,13 @@ class RegistrationScreen extends StatelessWidget {
                 serviceDetailCards: [
                   RegistrationServiceDetail(
                       title: "Starting From",
-                      amount: "17000",
+                      amount: "25,000",
                       onTap: () {
                         callRemoteService(
                           context,
                           parentServiceID: '68',
                           service: 'Registrations',
-                          serviceID: '',
+                          serviceID: '85',
                         );
                       }),
                 ],

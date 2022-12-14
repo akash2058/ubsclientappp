@@ -133,22 +133,12 @@ class AdvisoryScreen extends StatelessWidget {
           child: Column(
             children: [
               AdvisoryCard(
-                title: "Three Month's Return of Company",
-                serviceDetailCards: [
-                  AdvisoryServiceDetail(
-                    title: "Fee",
-                    amount: "2500",
-                    onTap: () {},
-                  ),
-                ],
-              ),
-              AdvisoryCard(
                 title: "Company Secretary",
                 serviceDetailCards: [
                   AdvisoryServiceDetail(
                     title: "Per Month",
                     amount: "20,000",
-                    onTap: () {
+                  onTap: () {
                       callRemoteService(
                         context,
                         parentServiceID: '76',
@@ -157,38 +147,78 @@ class AdvisoryScreen extends StatelessWidget {
                       );
                     },
                   ),
-                  AdvisoryServiceDetail(
-                    title: "Annual Return of Public",
-                    amount: "6000",
-                    onTap: () {},
-                  ),
-                  AdvisoryServiceDetail(
-                    title: "Annual Return of Not for Profit",
-                    amount: "6000",
-                    onTap: () {},
-                  ),
-                  AdvisoryServiceDetail(
-                    title: "Annual Return of Foreign Company/Branch",
-                    amount: "6000",
-                    onTap: () {},
-                  ),
                 ],
               ),
-              AdvisoryCard(
-                title: "Share Lagat",
+                  AdvisoryCard(
+                title: "FDI Consulting",
                 serviceDetailCards: [
                   AdvisoryServiceDetail(
-                    title: "Old Company",
-                    amount: "12000",
-                    onTap: () {},
-                  ),
-                  AdvisoryServiceDetail(
-                    title: "New Company",
-                    amount: "15000",
-                    onTap: () {},
+                    title: "Per Month",
+                    amount: "20,000",
+                  onTap: () {
+                      callRemoteService(
+                        context,
+                        parentServiceID: '76',
+                        service: 'Advisory',
+                        serviceID: '49',
+                      );
+                    },
                   ),
                 ],
               ),
+                  AdvisoryCard(
+                title: "FDI Approval",
+                serviceDetailCards: [
+                  AdvisoryServiceDetail(
+                    title: "Per Month",
+                    amount: "20,000",
+                  onTap: () {
+                      callRemoteService(
+                        context,
+                        parentServiceID: '76',
+                        service: 'Advisory',
+                        serviceID: '132',
+                      );
+                    },
+                  ),
+                ],
+              ),
+                  AdvisoryCard(
+                title: "Financial Consulting",
+                serviceDetailCards: [
+                  AdvisoryServiceDetail(
+                    title: "Per Month",
+                    amount: "2,000",
+                  onTap: () {
+                      callRemoteService(
+                        context,
+                        parentServiceID: '76',
+                        service: 'Advisory',
+                        serviceID: '133',
+                      );
+                    },
+                  ),
+                ],
+              ),
+                AdvisoryCard(
+                title: "Corporate Law Consulting",
+                serviceDetailCards: [
+                  AdvisoryServiceDetail(
+                    title: "Per Month",
+                    amount: "2,000",
+                  onTap: () {
+                      callRemoteService(
+                        context,
+                        parentServiceID: '76',
+                        service: 'Advisory',
+                        serviceID: '134',
+                      );
+                    },
+                  ),
+                ],
+              ),
+               
+              
             ],
           ),
         ));

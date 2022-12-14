@@ -27,16 +27,19 @@ class _SignupState extends State<Signup> {
 
   TextEditingController confirmpasswordController = TextEditingController();
 
-  Future<bool> signup(String fullname, String phone, String email, String password) async {
+  Future<bool> signup(
+      String fullname, String phone, String email, String password) async {
     try {
-      Response response = await post(Uri.parse('https://api.ubs.com.np/index.php?method=register_user'), body: {
-        'fullname': fullname,
-        'usertype': 'Service Seeker',
-        'phone': phone,
-        'register_form': 'Android',
-        'password': password,
-        'email': email
-      }).timeout(const Duration(seconds: 30));
+      Response response = await post(
+          Uri.parse('https://api.ubs.com.np/index.php?method=register_user'),
+          body: {
+            'fullname': fullname,
+            'usertype': 'Service Seeker',
+            'phone': phone,
+            'register_form': 'Android',
+            'password': password,
+            'email': email
+          }).timeout(const Duration(seconds: 30));
       var responseData = jsonDecode(response.body.toString());
       if (responseData["response"] == "success") {
         SharedPreferences pref = await SharedPreferences.getInstance();
@@ -44,7 +47,8 @@ class _SignupState extends State<Signup> {
         pref.setString("verify_phone", phone);
         pref.setString("verify_email", email);
         return true;
-      } else if (responseData["response"] == "exists" || responseData["response"] == "inactive") {
+      } else if (responseData["response"] == "exists" ||
+          responseData["response"] == "inactive") {
         return false;
       }
       throw Exception();
@@ -73,7 +77,8 @@ class _SignupState extends State<Signup> {
                   Flexible(
                     flex: 2,
                     child: Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 40, vertical: 20),
+                      padding: const EdgeInsets.symmetric(
+                          horizontal: 40, vertical: 20),
                       child: SingleChildScrollView(
                         child: Column(
                           crossAxisAlignment: CrossAxisAlignment.start,
@@ -238,17 +243,21 @@ class _SignupState extends State<Signup> {
                                       style: ElevatedButton.styleFrom(
                                         backgroundColor: Colors.blue,
                                         shape: RoundedRectangleBorder(
-                                          borderRadius: BorderRadius.circular(10),
+                                          borderRadius:
+                                              BorderRadius.circular(10),
                                         ),
                                       ),
                                       onPressed: () async {
                                         setState(() {
                                           isLoading = true;
                                         });
-                                        if (passwordController.text != confirmpasswordController.text) {
-                                          ScaffoldMessenger.of(context).showSnackBar(
+                                        if (passwordController.text !=
+                                            confirmpasswordController.text) {
+                                          ScaffoldMessenger.of(context)
+                                              .showSnackBar(
                                             const SnackBar(
-                                              content: Text("Passwords do not match."),
+                                              content: Text(
+                                                  "Passwords do not match."),
                                               backgroundColor: Colors.red,
                                             ),
                                           );
@@ -258,26 +267,34 @@ class _SignupState extends State<Signup> {
                                               nameController.text.toString(),
                                               phoneController.text.toString(),
                                               emailController.text.toString(),
-                                              passwordController.text.toString(),
+                                              passwordController.text
+                                                  .toString(),
                                             );
                                             if (done) {
-                                              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                                                content: Text("Signup successfully."),
+                                              ScaffoldMessenger.of(context)
+                                                  .showSnackBar(const SnackBar(
+                                                content: Text(
+                                                    "Signup successfully."),
                                                 backgroundColor: Colors.green,
                                               ));
-                                              Navigator.pushNamed(context, "/otp");
+                                              Navigator.pushNamed(
+                                                  context, "/otp");
                                             } else {
-                                              ScaffoldMessenger.of(context).showSnackBar(
+                                              ScaffoldMessenger.of(context)
+                                                  .showSnackBar(
                                                 const SnackBar(
-                                                  content: Text("User Already Exists. Please Login with your number."),
+                                                  content: Text(
+                                                      "User Already Exists. Please Login with your number."),
                                                   backgroundColor: Colors.blue,
                                                 ),
                                               );
                                             }
                                           } catch (err) {
-                                            ScaffoldMessenger.of(context).showSnackBar(
+                                            ScaffoldMessenger.of(context)
+                                                .showSnackBar(
                                               const SnackBar(
-                                                content: Text("Failed to sign up. Please Try again."),
+                                                content: Text(
+                                                    "Failed to sign up. Please Try again."),
                                                 backgroundColor: Colors.red,
                                               ),
                                             );
@@ -295,7 +312,8 @@ class _SignupState extends State<Signup> {
                                       )),
                                   Center(
                                     child: Row(
-                                      mainAxisAlignment: MainAxisAlignment.center,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
                                       children: [
                                         const Text("Already have an account ?"),
                                         TextButton(
@@ -303,7 +321,8 @@ class _SignupState extends State<Signup> {
                                             setState(() {
                                               isLoading = false;
                                             });
-                                            Navigator.pushNamed(context, "/login");
+                                            Navigator.pushNamed(
+                                                context, "/login");
                                           },
                                           child: const Text(
                                             "Sign In",
@@ -372,20 +391,15 @@ class Header extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 4),
             color: Colors.blue.shade800,
             child: const Text(
-              "Upaya Services Ltd.",
-              style: TextStyle(fontSize: 18, fontWeight: FontWeight.w500, color: Colors.white),
+              "Upaya Business Solutions",
+              style: TextStyle(
+                  fontSize: 18,
+                  fontWeight: FontWeight.w500,
+                  color: Colors.white),
             ),
           ),
           const SizedBox(
             height: 20,
-          ),
-          const Text(
-            "Sign Out",
-            style: TextStyle(fontSize: 28, fontWeight: FontWeight.w500),
-          ),
-          Text(
-            "Let's get ready to go!",
-            style: TextStyle(fontSize: 28, color: Colors.grey.shade600),
           ),
         ],
       ),
