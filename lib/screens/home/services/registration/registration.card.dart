@@ -38,7 +38,7 @@ class RegistrationCard extends StatelessWidget {
               bottom: -18,
               width: 80,
               child: Image.asset(
-                "assets/images/DD.png",
+                "assets/images/registration.png",
               ),
             ),
             Padding(

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class MoreScreen extends StatelessWidget {
   const MoreScreen({super.key});
@@ -17,58 +18,6 @@ class MoreScreen extends StatelessWidget {
             children: [
               const ListTile(
                   title: Text(
-                    'Account',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  tileColor: Color.fromARGB(255, 226, 218, 218)),
-              ListTile(
-                onTap: () {
-                  Navigator.pushNamed(context, '/profile');
-                },
-                title: const Text('Profile'),
-                trailing: IconButton(
-                  onPressed: () {
-                    Navigator.pushNamed(context, '/profile');
-                  },
-                  icon: const Icon(Icons.arrow_forward_ios),
-                ),
-                leading: const Icon(Icons.person),
-              ),
-              const Divider(
-                color: Colors.black,
-                height: 15,
-                thickness: 1,
-                indent: 20,
-                endIndent: 20,
-              ),
-              ListTile(
-                onTap: (() {
-                  Navigator.pushNamed(context, '/change');
-                }),
-                title: const Text(' Change Password'),
-                trailing: const Icon(
-                  (Icons.arrow_forward_ios),
-                ),
-                leading: const Icon(Icons.lock_open_outlined),
-              ),
-            ],
-          ),
-        ),
-        const SizedBox(
-          height: 20,
-        ),
-        Card(
-          elevation: 5,
-          shape: RoundedRectangleBorder(
-            borderRadius: BorderRadius.circular(0),
-          ),
-          child: Column(
-            children: [
-              const ListTile(
-                  title: Text(
                     'Kaam',
                     style: TextStyle(
                       fontSize: 20,
@@ -77,9 +26,12 @@ class MoreScreen extends StatelessWidget {
                   ),
                   tileColor: Color.fromARGB(255, 226, 218, 218)),
               ListTile(
-                title: const Text('Documents'),
+                title: Text('Documents'),
                 trailing: const Icon(Icons.arrow_forward_ios),
-                leading: const Icon(Icons.copy),
+                leading: Image(
+                  height: 25,
+                  image: AssetImage('assets/images/folder.png'),
+                ),
                 onTap: () {
                   Navigator.pushNamed(context, '/documnent');
                 },
@@ -93,7 +45,10 @@ class MoreScreen extends StatelessWidget {
               ),
               ListTile(
                 trailing: const Icon(Icons.arrow_forward_ios),
-                leading: const Icon(Icons.star),
+                leading: Image(
+                  height: 25,
+                  image: AssetImage('assets/images/star.png'),
+                ),
                 onTap: () {
                   Navigator.pushNamed(context, '/review');
                 },
@@ -120,12 +75,33 @@ class MoreScreen extends StatelessWidget {
                   tileColor: Color.fromARGB(255, 226, 218, 218)),
               ListTile(
                 trailing: const Icon(Icons.arrow_forward_ios),
-                leading: const Icon(Icons.gif_rounded),
+                leading: Image(
+                  height: 25,
+                  image: AssetImage('assets/images/blog.png'),
+                ),
                 onTap: () {
                   Navigator.pushNamed(context, '/blog');
                 },
                 focusColor: Colors.purpleAccent,
                 title: const Text('Blog'),
+              ),
+              const Divider(
+                color: Colors.black,
+                height: 15,
+                thickness: 1,
+                indent: 20,
+                endIndent: 20,
+              ),
+              ListTile(
+                trailing: const Icon(Icons.arrow_forward_ios),
+                leading: Image(
+                  height: 25,
+                  image: AssetImage('assets/images/info.png'),
+                ),
+                onTap: () =>
+                    launchUrl(Uri.parse("https://upaya.com.np/about_us.html")),
+                focusColor: Colors.purpleAccent,
+                title: const Text('About Us'),
               ),
             ],
           ),
@@ -135,7 +111,6 @@ class MoreScreen extends StatelessWidget {
         ),
         Card(
           elevation: 5,
-          shape: const RoundedRectangleBorder(),
           child: Column(
             children: [
               const ListTile(
@@ -146,7 +121,10 @@ class MoreScreen extends StatelessWidget {
                   tileColor: Color.fromARGB(255, 226, 218, 218)),
               ListTile(
                 trailing: const Icon(Icons.arrow_forward_ios),
-                leading: const Icon(Icons.flood),
+                leading: Image(
+                  height: 25,
+                  image: AssetImage('assets/images/terms-and-conditions.png'),
+                ),
                 onTap: () {
                   Navigator.pushNamed(context, '/terms');
                 },
@@ -161,14 +139,14 @@ class MoreScreen extends StatelessWidget {
               ),
               ListTile(
                 trailing: const Icon(Icons.arrow_forward_ios),
-                leading: const Icon(Icons.folder),
+                leading: Image(
+                  height: 25,
+                  image: AssetImage('assets/images/insurance.png'),
+                ),
                 onTap: () {
                   Navigator.pushNamed(context, '/privacy');
                 },
                 title: const Text('Privacy and policy'),
-              ),
-              const SizedBox(
-                height: 20,
               ),
             ],
           ),
@@ -178,14 +156,14 @@ class MoreScreen extends StatelessWidget {
         ),
         Card(
           elevation: 5,
-          shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(0),
-              side: const BorderSide(width: 0.5)),
           child: Column(
             children: [
               ListTile(
                 trailing: const Icon(Icons.arrow_forward_ios),
-                leading: const Icon(Icons.logout),
+                leading: Image(
+                  height: 25,
+                  image: AssetImage('assets/images/exit.png'),
+                ),
                 onTap: () {
                   showDialog(
                       context: context,

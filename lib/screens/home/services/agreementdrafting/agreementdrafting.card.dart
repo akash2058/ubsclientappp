@@ -38,7 +38,7 @@ class AgreementdraftingCard extends StatelessWidget {
               bottom: -18,
               width: 80,
               child: Image.asset(
-                "assets/images/DD.png",
+                "assets/images/agreement.png",
               ),
             ),
             Padding(
@@ -86,7 +86,7 @@ class AgreementdraftingServiceDetail extends StatelessWidget {
       {Key? key,
       required this.title,
       required this.amount,
-      this.icon = "assets/svg/accounting.svg",
+      this.icon = "assets/svg/agreement.svg",
       this.onTap})
       : super(key: key);
 

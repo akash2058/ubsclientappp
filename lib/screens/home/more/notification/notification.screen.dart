@@ -37,10 +37,11 @@ class NotificationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+            backgroundColor: Colors.white,
+            iconTheme: IconThemeData(color: Colors.black),
             centerTitle: true,
-            title: const Text(
-              'Notifications',
-            )),
+            title: const Text('Notifications',
+                style: TextStyle(color: Colors.black))),
         body: Column(
           children: [
             Expanded(
@@ -129,7 +130,11 @@ class NotificationScreen extends StatelessWidget {
                               );
                             });
                       }
-                      return Center(child: const Text("No notifications"));
+                      return Center(
+                          child: Image(
+                              height: 150,
+                              image:
+                                  AssetImage('assets/images/dark-data.png')));
                     })))
           ],
         ));

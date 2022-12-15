@@ -39,7 +39,7 @@ class TaxationCard extends StatelessWidget {
               bottom: -18,
               width: 80,
               child: Image.asset(
-                "assets/images/DD.png",
+                "assets/images/tax.png",
               ),
             ),
             Padding(
@@ -98,7 +98,8 @@ class TaxationServiceDetail extends StatelessWidget {
       child: Card(
           margin: const EdgeInsets.only(bottom: 12),
           elevation: 3,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(36)),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(36)),
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
             child: Row(

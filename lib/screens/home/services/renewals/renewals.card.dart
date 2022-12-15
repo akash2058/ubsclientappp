@@ -23,8 +23,8 @@ class RenewalCard extends StatelessWidget {
           borderRadius: BorderRadius.circular(16),
           gradient: const LinearGradient(
               colors: [
-                Color.fromARGB(255, 255, 255, 0),
-                Color.fromARGB(255, 255, 174, 0),
+                Color.fromARGB(255, 177, 177, 69),
+                Color.fromARGB(255, 249, 212, 4),
               ],
               begin: FractionalOffset(0.0, 0.0),
               end: FractionalOffset(1.0, 0.0),
@@ -38,7 +38,7 @@ class RenewalCard extends StatelessWidget {
               bottom: -18,
               width: 80,
               child: Image.asset(
-                "assets/images/DD.png",
+                "assets/images/certificate.png",
               ),
             ),
             Padding(
@@ -82,13 +82,13 @@ class RenevalsServiceDetail extends StatelessWidget {
   final String icon;
   final VoidCallback? onTap;
 
-  const RenevalsServiceDetail({
-    Key? key,
-    required this.title,
-    required this.amount,
-    this.icon = "assets/svg/certificate.svg",
-    this.onTap
-  }) : super(key: key);
+  const RenevalsServiceDetail(
+      {Key? key,
+      required this.title,
+      required this.amount,
+      this.icon = "assets/svg/certificate.svg",
+      this.onTap})
+      : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -97,7 +97,8 @@ class RenevalsServiceDetail extends StatelessWidget {
       child: Card(
           margin: const EdgeInsets.only(bottom: 12),
           elevation: 3,
-          shape: RoundedRectangleBorder(borderRadius: BorderRadius.circular(36)),
+          shape:
+              RoundedRectangleBorder(borderRadius: BorderRadius.circular(36)),
           child: Container(
             padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 8),
             child: Row(

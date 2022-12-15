@@ -1,13 +1,7 @@
 import 'package:flutter/material.dart';
 
-
 class ResetScreen extends StatelessWidget {
- ResetScreen({Key? key}) : super(key: key);
-
-
- 
-
-  
+  ResetScreen({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +22,6 @@ class ResetScreen extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.center,
                   children: [
-                 
                     const Center(
                       child: Text(
                         "Reset Password",
@@ -115,7 +108,7 @@ class Head extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 12),
             color: Colors.blue.shade800,
             child: const Text(
-              "Upaya Service Ltd.",
+              "Upaya Business Solutions.",
               style: TextStyle(
                 color: Colors.white,
                 fontSize: 18,

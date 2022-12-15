@@ -8,18 +8,19 @@ class ConditionScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        backgroundColor: Colors.deepOrange,
+        backgroundColor: Colors.blueGrey,
         onPressed: () {},
         child: Icon(Icons.add),
       ),
       appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.black),
         centerTitle: true,
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.white,
         title: const Text(
-          'Terms and Condition',
+          'Terms and Conditions',
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            color: Colors.white,
+            color: Colors.black,
           ),
         ),
       ),

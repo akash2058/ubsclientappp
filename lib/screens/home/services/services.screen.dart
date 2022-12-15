@@ -150,13 +150,13 @@ class ServicesScreen extends StatelessWidget {
               ],
             ),
             ServiceCard(
-              svg: "assets/svg/gift.svg",
               label: "Other Services",
               isOtherService: true,
               gradients: [0xFFfc00ff, 0xFF00dbde],
               onTap: () {
                 Navigator.pushNamed(context, '/other');
               },
+              svg: 'assets/svg/otherservices.png.svg',
             ),
             SizedBox(
               height: 40,
@@ -177,13 +177,14 @@ class ServiceCard extends StatelessWidget {
 
   final VoidCallback? onTap;
 
-  const ServiceCard(
-      {super.key,
-      required this.label,
-      required this.svg,
-      required this.gradients,
-      this.isOtherService = false,
-      this.onTap});
+  const ServiceCard({
+    super.key,
+    required this.label,
+    required this.svg,
+    required this.gradients,
+    this.isOtherService = false,
+    this.onTap,
+  });
 
   @override
   Widget build(BuildContext context) {

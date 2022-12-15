@@ -5,12 +5,17 @@ class Historypage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: Text('No History',
-          style: TextStyle(
-            fontSize: 20,
-            fontWeight: FontWeight.bold,
-          )),
+    return Center(
+      child: Column(
+        children: [
+          Image(height: 150, image: AssetImage('assets/images/dark-data.png')),
+          Text('No History',
+              style: TextStyle(
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              )),
+        ],
+      ),
     );
   }
 }

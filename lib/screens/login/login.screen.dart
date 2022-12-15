@@ -32,7 +32,8 @@ class _LoginScreenState extends State<LoginScreen> {
       );
 
       if (responseData["response"] == "success") {
-        final SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+        final SharedPreferences sharedPreferences =
+            await SharedPreferences.getInstance();
         var userData = responseData["data"];
         sharedPreferences.setBool('isLoggedIn', true);
         sharedPreferences.setInt('user', int.parse(userData["user"]));
@@ -40,7 +41,8 @@ class _LoginScreenState extends State<LoginScreen> {
         sharedPreferences.setString('fullname', userData["fullname"]);
         sharedPreferences.setString('email', userData["email"]);
         sharedPreferences.setString('image', userData["image"]);
-        sharedPreferences.setString('profileCompleted', userData["profileCompleted"]);
+        sharedPreferences.setString(
+            'profileCompleted', userData["profileCompleted"]);
         sharedPreferences.setString('phoneno', email);
         sharedPreferences.setString('password', password);
 
@@ -60,10 +62,13 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   void checkSavedCredentials() async {
-    final SharedPreferences sharedPreferences = await SharedPreferences.getInstance();
+    final SharedPreferences sharedPreferences =
+        await SharedPreferences.getInstance();
     setState(() {
-      emailController = TextEditingController(text: sharedPreferences.getString('phoneno') ?? "");
-      passwordController = TextEditingController(text: sharedPreferences.getString('password') ?? "");
+      emailController = TextEditingController(
+          text: sharedPreferences.getString('phoneno') ?? "");
+      passwordController = TextEditingController(
+          text: sharedPreferences.getString('password') ?? "");
     });
   }
 
@@ -145,7 +150,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                     hidePassword = !hidePassword;
                                   });
                                 },
-                                icon: (hidePassword) ? const Icon(Icons.visibility) : const Icon(Icons.visibility_off),
+                                icon: (hidePassword)
+                                    ? const Icon(Icons.visibility)
+                                    : const Icon(Icons.visibility_off),
                               ),
                               border: OutlineInputBorder(
                                 borderRadius: BorderRadius.circular(30),
@@ -264,29 +271,35 @@ class _LoginScreenState extends State<LoginScreen> {
                           setState(() {
                             isLoading = true;
                           });
-                          if (emailController.text.isNotEmpty && passwordController.text.isNotEmpty) {
+                          if (emailController.text.isNotEmpty &&
+                              passwordController.text.isNotEmpty) {
                             bool isLoggedIn = await login(
                               emailController.text.toString(),
                               passwordController.text.toString(),
                             );
                             if (isLoggedIn) {
-                              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
+                              ScaffoldMessenger.of(context)
+                                  .showSnackBar(const SnackBar(
                                 behavior: SnackBarBehavior.floating,
                                 content: Text("Successfully Logged In"),
                                 backgroundColor: Colors.green,
                               ));
                               Navigator.pushNamed(context, "/dashboard");
                             } else {
-                              ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                                  behavior: SnackBarBehavior.floating,
-                                  content: Text("Invalid Username or Password"),
-                                  backgroundColor: Colors.red));
+                              ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(
+                                      behavior: SnackBarBehavior.floating,
+                                      content:
+                                          Text("Invalid Username or Password"),
+                                      backgroundColor: Colors.red));
                             }
                           } else {
-                            ScaffoldMessenger.of(context).showSnackBar(const SnackBar(
-                                behavior: SnackBarBehavior.floating,
-                                content: Text("Invalid Username or Password"),
-                                backgroundColor: Colors.red));
+                            ScaffoldMessenger.of(context).showSnackBar(
+                                const SnackBar(
+                                    behavior: SnackBarBehavior.floating,
+                                    content:
+                                        Text("Invalid Username or Password"),
+                                    backgroundColor: Colors.red));
                           }
                           setState(() {
                             isLoading = false;
