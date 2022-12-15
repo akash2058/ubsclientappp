@@ -125,8 +125,13 @@ class ConversionScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.white,
+          iconTheme: IconThemeData(color: Colors.black),
           centerTitle: true,
-          title: const Text('Conversion'),
+          title: const Text(
+            'Conversion',
+            style: TextStyle(color: Colors.black),
+          ),
         ),
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
@@ -138,7 +143,7 @@ class ConversionScreen extends StatelessWidget {
                   ConversionServiceDetail(
                     title: "Fee",
                     amount: "1200",
-                     onTap: () {
+                    onTap: () {
                       callRemoteService(
                         context,
                         parentServiceID: '71',
@@ -172,7 +177,7 @@ class ConversionScreen extends StatelessWidget {
                   ConversionServiceDetail(
                     title: "Fee",
                     amount: "8000",
-                     onTap: () {
+                    onTap: () {
                       callRemoteService(
                         context,
                         parentServiceID: '71',
@@ -189,7 +194,7 @@ class ConversionScreen extends StatelessWidget {
                   ConversionServiceDetail(
                     title: "Fee",
                     amount: "8000",
-                     onTap: () {
+                    onTap: () {
                       callRemoteService(
                         context,
                         parentServiceID: '71',

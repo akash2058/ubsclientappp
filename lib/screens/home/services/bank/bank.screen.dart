@@ -124,8 +124,14 @@ class BankScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          elevation: 10,
+          backgroundColor: Colors.white,
+          iconTheme: IconThemeData(color: Colors.black),
           centerTitle: true,
-          title: const Text('Bank'),
+          title: const Text(
+            'Bank',
+            style: TextStyle(color: Colors.black),
+          ),
         ),
         backgroundColor: Colors.white,
         body: SingleChildScrollView(

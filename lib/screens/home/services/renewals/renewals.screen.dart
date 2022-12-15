@@ -125,8 +125,13 @@ class RenewalScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          iconTheme: IconThemeData(color: Colors.black),
+          backgroundColor: Colors.white,
           centerTitle: true,
-          title: const Text('Renewals'),
+          title: const Text(
+            'Renewals',
+            style: TextStyle(color: Colors.black),
+          ),
         ),
         backgroundColor: Colors.white,
         body: SingleChildScrollView(

@@ -125,8 +125,13 @@ class AccountingScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.white,
+          iconTheme: IconThemeData(color: Colors.black),
           centerTitle: true,
-          title: const Text('Accounting'),
+          title: const Text(
+            'Accounting',
+            style: TextStyle(color: Colors.black),
+          ),
         ),
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
@@ -138,7 +143,7 @@ class AccountingScreen extends StatelessWidget {
                   AccountingServiceDetail(
                     title: "Fee",
                     amount: "5000",
-                   onTap: () {
+                    onTap: () {
                       callRemoteService(
                         context,
                         parentServiceID: '73',
@@ -164,9 +169,6 @@ class AccountingScreen extends StatelessWidget {
                       );
                     },
                   ),
-                
-                  
-               
                 ],
               ),
               AccountingCard(
@@ -184,10 +186,9 @@ class AccountingScreen extends StatelessWidget {
                       );
                     },
                   ),
-               
                 ],
               ),
-                      AccountingCard(
+              AccountingCard(
                 title: "Finance and Accouting Manual((FAM)",
                 serviceDetailCards: [
                   AccountingServiceDetail(
@@ -202,12 +203,9 @@ class AccountingScreen extends StatelessWidget {
                       );
                     },
                   ),
-                
-                  
-               
                 ],
               ),
-                   AccountingCard(
+              AccountingCard(
                 title: "Due Diligence Review",
                 serviceDetailCards: [
                   AccountingServiceDetail(
@@ -222,10 +220,9 @@ class AccountingScreen extends StatelessWidget {
                       );
                     },
                   ),
-               
                 ],
               ),
-                   AccountingCard(
+              AccountingCard(
                 title: "Special Reveiws",
                 serviceDetailCards: [
                   AccountingServiceDetail(
@@ -240,7 +237,7 @@ class AccountingScreen extends StatelessWidget {
                       );
                     },
                   ),
-                   AccountingServiceDetail(
+                  AccountingServiceDetail(
                     title: "Physical Verification",
                     amount: "10,500",
                     onTap: () {
@@ -252,11 +249,9 @@ class AccountingScreen extends StatelessWidget {
                       );
                     },
                   ),
-
                 ],
               ),
-
-                AccountingCard(
+              AccountingCard(
                 title: "HR Manual",
                 serviceDetailCards: [
                   AccountingServiceDetail(
@@ -271,11 +266,9 @@ class AccountingScreen extends StatelessWidget {
                       );
                     },
                   ),
-               
                 ],
               ),
-              
-                AccountingCard(
+              AccountingCard(
                 title: "Admin Manual",
                 serviceDetailCards: [
                   AccountingServiceDetail(
@@ -290,11 +283,9 @@ class AccountingScreen extends StatelessWidget {
                       );
                     },
                   ),
-               
                 ],
               ),
-              
-                AccountingCard(
+              AccountingCard(
                 title: "Procurement Manual",
                 serviceDetailCards: [
                   AccountingServiceDetail(
@@ -309,15 +300,11 @@ class AccountingScreen extends StatelessWidget {
                       );
                     },
                   ),
-               
                 ],
               ),
-              
-                AccountingCard(
+              AccountingCard(
                 title: "Other Customized Services",
-                serviceDetailCards: [
-                
-                ],
+                serviceDetailCards: [],
               ),
             ],
           ),

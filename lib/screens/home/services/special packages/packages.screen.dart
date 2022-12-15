@@ -125,8 +125,13 @@ class PackagesScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.white,
+          iconTheme: IconThemeData(color: Colors.black),
           centerTitle: true,
-          title: const Text('Packages'),
+          title: const Text(
+            'Packages',
+            style: TextStyle(color: Colors.black),
+          ),
         ),
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
@@ -138,7 +143,7 @@ class PackagesScreen extends StatelessWidget {
                   PackagesServiceDetail(
                     title: "Starting From",
                     amount: "20,000",
-                     onTap: () {
+                    onTap: () {
                       callRemoteService(
                         context,
                         parentServiceID: '75',
@@ -172,7 +177,7 @@ class PackagesScreen extends StatelessWidget {
                   PackagesServiceDetail(
                     title: "Private Comapany Registration",
                     amount: "8,000",
-                     onTap: () {
+                    onTap: () {
                       callRemoteService(
                         context,
                         parentServiceID: '75',
@@ -181,21 +186,10 @@ class PackagesScreen extends StatelessWidget {
                       );
                     },
                   ),
-                    PackagesServiceDetail(
+                  PackagesServiceDetail(
                     title: "PAN/VAT Registration",
                     amount: "3,500",
-                     onTap: () {
-                      callRemoteService(
-                        context,
-                        parentServiceID: '75',
-                        service: 'Packages',
-                        serviceID: 'registration_package',
-                      );
-                    },
-                  ),  PackagesServiceDetail(
-                    title: "Ward Registration",
-                    amount: "5000",
-                     onTap: () {
+                    onTap: () {
                       callRemoteService(
                         context,
                         parentServiceID: '75',
@@ -204,10 +198,20 @@ class PackagesScreen extends StatelessWidget {
                       );
                     },
                   ),
-                  
+                  PackagesServiceDetail(
+                    title: "Ward Registration",
+                    amount: "5000",
+                    onTap: () {
+                      callRemoteService(
+                        context,
+                        parentServiceID: '75',
+                        service: 'Packages',
+                        serviceID: 'registration_package',
+                      );
+                    },
+                  ),
                 ],
               ),
-              
             ],
           ),
         ));

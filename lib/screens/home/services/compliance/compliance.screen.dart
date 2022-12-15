@@ -125,8 +125,13 @@ class ComplianceScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.white,
+          iconTheme: IconThemeData(color: Colors.black),
           centerTitle: true,
-          title: const Text('Compliance'),
+          title: const Text(
+            'Compliance',
+            style: TextStyle(color: Colors.black),
+          ),
         ),
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
@@ -138,7 +143,7 @@ class ComplianceScreen extends StatelessWidget {
                   ComplianceServiceDetail(
                     title: "Fee",
                     amount: "2500",
-                      onTap: () {
+                    onTap: () {
                       callRemoteService(
                         context,
                         parentServiceID: '69',
@@ -167,7 +172,7 @@ class ComplianceScreen extends StatelessWidget {
                   ComplianceServiceDetail(
                     title: "Annual Return of Public",
                     amount: "6000",
-                      onTap: () {
+                    onTap: () {
                       callRemoteService(
                         context,
                         parentServiceID: '69',
@@ -179,7 +184,7 @@ class ComplianceScreen extends StatelessWidget {
                   ComplianceServiceDetail(
                     title: "Annual Return of Not for Profit",
                     amount: "6000",
-                       onTap: () {
+                    onTap: () {
                       callRemoteService(
                         context,
                         parentServiceID: '69',
@@ -191,7 +196,7 @@ class ComplianceScreen extends StatelessWidget {
                   ComplianceServiceDetail(
                     title: "Annual Return of Foreign Company/Branch",
                     amount: "6000",
-                      onTap: () {
+                    onTap: () {
                       callRemoteService(
                         context,
                         parentServiceID: '69',
@@ -208,7 +213,7 @@ class ComplianceScreen extends StatelessWidget {
                   ComplianceServiceDetail(
                     title: "Old Company",
                     amount: "12000",
-                     onTap: () {
+                    onTap: () {
                       callRemoteService(
                         context,
                         parentServiceID: '69',
@@ -220,7 +225,7 @@ class ComplianceScreen extends StatelessWidget {
                   ComplianceServiceDetail(
                     title: "New Company",
                     amount: "15000",
-                       onTap: () {
+                    onTap: () {
                       callRemoteService(
                         context,
                         parentServiceID: '69',
@@ -231,7 +236,7 @@ class ComplianceScreen extends StatelessWidget {
                   ),
                 ],
               ),
-               ComplianceCard(
+              ComplianceCard(
                 title: "Amendment works related to Company",
                 serviceDetailCards: [
                   ComplianceServiceDetail(
@@ -249,7 +254,7 @@ class ComplianceScreen extends StatelessWidget {
                   ComplianceServiceDetail(
                     title: "Address Change",
                     amount: "8,500",
-                   onTap: () {
+                    onTap: () {
                       callRemoteService(
                         context,
                         parentServiceID: '69',
@@ -273,7 +278,7 @@ class ComplianceScreen extends StatelessWidget {
                   ComplianceServiceDetail(
                     title: "Objective Change",
                     amount: "8,500",
-                  onTap: () {
+                    onTap: () {
                       callRemoteService(
                         context,
                         parentServiceID: '69',
@@ -282,10 +287,10 @@ class ComplianceScreen extends StatelessWidget {
                       );
                     },
                   ),
-                    ComplianceServiceDetail(
+                  ComplianceServiceDetail(
                     title: "Change in Shareholder",
                     amount: "8,500",
-                  onTap: () {
+                    onTap: () {
                       callRemoteService(
                         context,
                         parentServiceID: '69',
@@ -294,16 +299,15 @@ class ComplianceScreen extends StatelessWidget {
                       );
                     },
                   ),
-                  
                 ],
               ),
-                   ComplianceCard(
+              ComplianceCard(
                 title: "Sakha Kayam/Thausari at IRD",
                 serviceDetailCards: [
                   ComplianceServiceDetail(
                     title: "Fee",
                     amount: "3,500",
-                     onTap: () {
+                    onTap: () {
                       callRemoteService(
                         context,
                         parentServiceID: '69',
@@ -312,8 +316,6 @@ class ComplianceScreen extends StatelessWidget {
                       );
                     },
                   ),
-                  
-                
                 ],
               ),
               ComplianceCard(
@@ -346,7 +348,7 @@ class ComplianceScreen extends StatelessWidget {
                   ComplianceServiceDetail(
                     title: "Adhyawadik Letter of Not for Profit",
                     amount: "4,000",
-                       onTap: () {
+                    onTap: () {
                       callRemoteService(
                         context,
                         parentServiceID: '69',
@@ -358,7 +360,7 @@ class ComplianceScreen extends StatelessWidget {
                   ComplianceServiceDetail(
                     title: "Adhyawadik Letter of Foreign Company/Branch",
                     amount: "5,000",
-                       onTap: () {
+                    onTap: () {
                       callRemoteService(
                         context,
                         parentServiceID: '69',

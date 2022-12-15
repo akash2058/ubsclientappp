@@ -125,8 +125,13 @@ class TaxationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          backgroundColor: Colors.white,
+          iconTheme: IconThemeData(color: Colors.black),
           centerTitle: true,
-          title: const Text('Taxation'),
+          title: const Text(
+            'Taxation',
+            style: TextStyle(color: Colors.black),
+          ),
         ),
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
@@ -164,7 +169,7 @@ class TaxationScreen extends StatelessWidget {
                       amount: "1,000"),
                 ],
               ),
-               TaxationCard(
+              TaxationCard(
                 title: "Tax Returns Filing",
                 serviceDetailCards: [
                   TaxationServiceDetail(

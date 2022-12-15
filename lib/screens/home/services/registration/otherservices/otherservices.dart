@@ -123,13 +123,14 @@ class OtherScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
+        iconTheme: IconThemeData(color: Colors.black),
         centerTitle: true,
-        backgroundColor: Colors.blue,
+        backgroundColor: Colors.white,
         title: const Text(
           'Other Services',
           style: TextStyle(
             fontWeight: FontWeight.bold,
-            color: Colors.white,
+            color: Colors.black,
           ),
         ),
       ),
@@ -225,7 +226,7 @@ class Header extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 4),
             color: Colors.blue.shade800,
             child: const Text(
-              "Upaya Services Ltd.",
+              "Upaya Business Solutions",
               style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w500,

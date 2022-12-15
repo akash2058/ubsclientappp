@@ -127,9 +127,13 @@ class RegistrationScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.blue,
+          iconTheme: IconThemeData(color: Colors.black),
+          backgroundColor: Colors.white,
           centerTitle: true,
-          title: const Text('Registration'),
+          title: const Text(
+            'Registration',
+            style: TextStyle(color: Colors.black),
+          ),
         ),
         backgroundColor: Colors.white,
         body: SingleChildScrollView(

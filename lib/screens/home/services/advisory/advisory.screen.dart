@@ -125,8 +125,14 @@ class AdvisoryScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          elevation: 10,
+          backgroundColor: Colors.white,
+          iconTheme: IconThemeData(color: Colors.black),
           centerTitle: true,
-          title: const Text('Advisory'),
+          title: const Text(
+            'Advisory',
+            style: TextStyle(color: Colors.black),
+          ),
         ),
         backgroundColor: Colors.white,
         body: SingleChildScrollView(
@@ -138,7 +144,7 @@ class AdvisoryScreen extends StatelessWidget {
                   AdvisoryServiceDetail(
                     title: "Per Month",
                     amount: "20,000",
-                  onTap: () {
+                    onTap: () {
                       callRemoteService(
                         context,
                         parentServiceID: '76',
@@ -149,13 +155,13 @@ class AdvisoryScreen extends StatelessWidget {
                   ),
                 ],
               ),
-                  AdvisoryCard(
+              AdvisoryCard(
                 title: "FDI Consulting",
                 serviceDetailCards: [
                   AdvisoryServiceDetail(
                     title: "Per Month",
                     amount: "20,000",
-                  onTap: () {
+                    onTap: () {
                       callRemoteService(
                         context,
                         parentServiceID: '76',
@@ -166,13 +172,13 @@ class AdvisoryScreen extends StatelessWidget {
                   ),
                 ],
               ),
-                  AdvisoryCard(
+              AdvisoryCard(
                 title: "FDI Approval",
                 serviceDetailCards: [
                   AdvisoryServiceDetail(
                     title: "Per Month",
                     amount: "20,000",
-                  onTap: () {
+                    onTap: () {
                       callRemoteService(
                         context,
                         parentServiceID: '76',
@@ -183,13 +189,13 @@ class AdvisoryScreen extends StatelessWidget {
                   ),
                 ],
               ),
-                  AdvisoryCard(
+              AdvisoryCard(
                 title: "Financial Consulting",
                 serviceDetailCards: [
                   AdvisoryServiceDetail(
                     title: "Per Month",
                     amount: "2,000",
-                  onTap: () {
+                    onTap: () {
                       callRemoteService(
                         context,
                         parentServiceID: '76',
@@ -200,13 +206,13 @@ class AdvisoryScreen extends StatelessWidget {
                   ),
                 ],
               ),
-                AdvisoryCard(
+              AdvisoryCard(
                 title: "Corporate Law Consulting",
                 serviceDetailCards: [
                   AdvisoryServiceDetail(
                     title: "Per Month",
                     amount: "2,000",
-                  onTap: () {
+                    onTap: () {
                       callRemoteService(
                         context,
                         parentServiceID: '76',
@@ -217,8 +223,6 @@ class AdvisoryScreen extends StatelessWidget {
                   ),
                 ],
               ),
-               
-              
             ],
           ),
         ));
