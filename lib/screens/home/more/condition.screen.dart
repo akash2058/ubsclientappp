@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class ConditionScreen extends StatelessWidget {
   const ConditionScreen({super.key});
@@ -36,35 +37,44 @@ class ConditionScreen extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Text(
-                    'https://ubs.com.np/',
-                    style: TextStyle(
-                        color: Colors.blueAccent,
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    'terms_and_conditions.html',
-                    style: TextStyle(
-                        color: Colors.blueAccent,
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(
-                    height: 60,
-                  ),
-                  Text(
-                    'For Terms and Conditions,',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
+                  Container(
+                    height: 100,
+                    child: Card(
+                      margin: EdgeInsets.all(20),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20)),
+                      child: InkWell(
+                        onTap: () {
+                          launchUrl(Uri.parse(
+                              'https://upaya.com.np/terms_and_conditions.html'));
+                        },
+                        child: Text(
+                          textAlign: TextAlign.center,
+                          'https://upaya.com.np/terms_and_conditions.html',
+                          style: TextStyle(
+                              color: Colors.blue,
+                              fontSize: 17,
+                              fontWeight: FontWeight.bold),
+                        ),
+                      ),
                     ),
                   ),
-                  Text(
-                    'Please Go through this link.,',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
+                  Center(
+                    child: Text(
+                      'For terms and conditions,',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Center(
+                    child: Text(
+                      'Please Go through this link.,',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ],
@@ -94,7 +104,7 @@ class Header extends StatelessWidget {
           const Center(
             child: Image(
               image: AssetImage("assets/images/logo-blue.png"),
-              height: 50,
+              height: 40,
             ),
           ),
           const SizedBox(
@@ -102,10 +112,10 @@ class Header extends StatelessWidget {
             width: 20,
           ),
           Container(
-            padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 4),
+            padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 4),
             color: Colors.blue.shade800,
             child: const Text(
-              "Upaya Services Ltd.",
+              "Upaya business Solutions",
               style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w500,

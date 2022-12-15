@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class PrivacyScreen extends StatelessWidget {
   const PrivacyScreen({super.key});
@@ -12,13 +13,13 @@ class PrivacyScreen extends StatelessWidget {
         child: const Icon(Icons.add),
       ),
       appBar: AppBar(
-        shadowColor: Colors.black,
+        iconTheme: IconThemeData(color: Colors.black),
         centerTitle: true,
         title: const Text('Privacy Policy',
             style: TextStyle(
               color: Colors.black,
             )),
-        backgroundColor: Colors.lightBlueAccent,
+        backgroundColor: Colors.white,
       ),
       body: Column(
         children: [
@@ -33,36 +34,43 @@ class PrivacyScreen extends StatelessWidget {
               flex: 2,
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
-                children: const [
-                  Text(
-                    'https://ubs.com.np/',
-                    style: TextStyle(
-                        color: Colors.blueAccent,
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  Text(
-                    'terms_and_conditions.html',
-                    style: TextStyle(
-                        color: Colors.blueAccent,
-                        fontSize: 25,
-                        fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(
-                    height: 60,
-                  ),
-                  Text(
-                    'For Privacy and Policy,',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
+                children: [
+                  Container(
+                    height: 100,
+                    child: Card(
+                      margin: EdgeInsets.all(20),
+                      shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20)),
+                      child: InkWell(
+                        onTap: () {
+                          launchUrl(Uri.parse(
+                              'https://upaya.com.np/privacy_policy.html'));
+                        },
+                        child: Center(
+                          child: Text(
+                            'https://upaya.com.np/privacy_policy.html',
+                            style: TextStyle(color: Colors.blue),
+                          ),
+                        ),
+                      ),
                     ),
                   ),
-                  Text(
-                    'Please Go through this link.,',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
+                  Center(
+                    child: Text(
+                      'For Privacy and Policy,',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
+                    ),
+                  ),
+                  Center(
+                    child: Text(
+                      'Please Go through this link.,',
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                      ),
                     ),
                   ),
                 ],
@@ -103,7 +111,7 @@ class Header extends StatelessWidget {
             padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 4),
             color: Colors.blue.shade800,
             child: const Text(
-              "Upaya Services Ltd.",
+              "Upaya Business Solutions.",
               style: TextStyle(
                   fontSize: 18,
                   fontWeight: FontWeight.w500,

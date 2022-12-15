@@ -45,11 +45,12 @@ class _BlogScreenState extends State<BlogScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.lightBlueAccent,
+        iconTheme: IconThemeData(color: Colors.black),
+        backgroundColor: Colors.white,
         centerTitle: true,
         title: const Text(
           'Blog',
-          style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold),
+          style: TextStyle(color: Colors.black, fontWeight: FontWeight.bold),
         ),
       ),
       body: Column(
@@ -59,122 +60,7 @@ class _BlogScreenState extends State<BlogScreen> {
             child: SingleChildScrollView(
               scrollDirection: Axis.horizontal,
               child: Row(
-                children: [
-                  const Text(
-                    'Gategory:',
-                    style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
-                  ),
-                  SizedBox(width: 15),
-                  OutlinedButton(
-                      style: ButtonStyle(
-                          side: MaterialStateProperty.all(
-                              const BorderSide(color: Colors.black)),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(18.0),
-                          ))),
-                      onPressed: () {
-                        setState(() {});
-                      },
-                      child: const Text(
-                        'All',
-                        style: TextStyle(
-                            color: Colors.black, fontWeight: FontWeight.bold),
-                      )),
-                  const SizedBox(
-                    width: 15,
-                  ),
-                  OutlinedButton(
-                      style: ButtonStyle(
-                          side: MaterialStateProperty.all(
-                              const BorderSide(color: Colors.black)),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(18.0),
-                          ))),
-                      onPressed: () {
-                        Navigator.pushNamed(context, '/bussiness');
-                      },
-                      child: const Text(
-                        'Bussiness',
-                        style: TextStyle(
-                            color: Colors.black, fontWeight: FontWeight.bold),
-                      )),
-                  const SizedBox(
-                    width: 15,
-                  ),
-                  OutlinedButton(
-                      style: ButtonStyle(
-                          side: MaterialStateProperty.all(
-                              const BorderSide(color: Colors.black)),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(18.0),
-                          ))),
-                      onPressed: () {},
-                      child: const Text(
-                        'Malpot',
-                        style: TextStyle(
-                            color: Colors.black, fontWeight: FontWeight.bold),
-                      )),
-                  const SizedBox(
-                    width: 15,
-                  ),
-                  OutlinedButton(
-                      style: ButtonStyle(
-                          side: MaterialStateProperty.all(
-                              const BorderSide(color: Colors.black)),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(18.0),
-                          ))),
-                      onPressed: () {},
-                      child: const Text(
-                        'OCR',
-                        style: TextStyle(
-                            color: Colors.black, fontWeight: FontWeight.bold),
-                      )),
-                  const SizedBox(
-                    width: 15,
-                  ),
-                  OutlinedButton(
-                      style: ButtonStyle(
-                          side: MaterialStateProperty.all(
-                              const BorderSide(color: Colors.black)),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(18.0),
-                          ))),
-                      onPressed: () {},
-                      child: const Text(
-                        'Notice',
-                        style: TextStyle(
-                            color: Colors.black, fontWeight: FontWeight.bold),
-                      )),
-                  const SizedBox(
-                    width: 15,
-                  ),
-                  OutlinedButton(
-                      style: ButtonStyle(
-                          side: MaterialStateProperty.all(
-                              const BorderSide(color: Colors.black)),
-                          shape:
-                              MaterialStateProperty.all<RoundedRectangleBorder>(
-                                  RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(18.0),
-                          ))),
-                      onPressed: () {},
-                      child: const Text(
-                        'Upaya',
-                        style: TextStyle(
-                            color: Colors.black, fontWeight: FontWeight.bold),
-                      )),
-                ],
+                children: [],
               ),
             ),
           ),

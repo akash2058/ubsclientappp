@@ -192,7 +192,7 @@ class MoreScreen extends StatelessWidget {
                       builder: (context) {
                         return Center(
                           child: Dialog(
-                            backgroundColor: Colors.blue[200],
+                            backgroundColor: Colors.white,
                             shape: RoundedRectangleBorder(
                                 borderRadius: BorderRadius.circular(10)),
                             child: Container(
@@ -204,19 +204,19 @@ class MoreScreen extends StatelessWidget {
                                   const CircleAvatar(
                                     radius: 50,
                                     backgroundImage:
-                                        AssetImage('assets/images/vv.png'),
+                                        AssetImage('assets/images/logout.png'),
                                   ),
                                   const Text(
                                     'Are you Sure you want to ',
                                     style: TextStyle(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         fontSize: 18,
                                         fontWeight: FontWeight.bold),
                                   ),
                                   const Text(
                                     'Logout ?',
                                     style: TextStyle(
-                                        color: Colors.white,
+                                        color: Colors.black,
                                         fontSize: 18,
                                         fontWeight: FontWeight.bold),
                                   ),
