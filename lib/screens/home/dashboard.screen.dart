@@ -1,6 +1,6 @@
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
-import 'package:ubsclient/screens/home/docs/Dashboard/dashboardpage.dart';
+import 'package:ubsclient/screens/home/dashboard/dashboardpage.dart';
 import 'package:ubsclient/screens/home/services/services.screen.dart';
 import 'package:ubsclient/screens/home/history/history.screen.dart';
 import 'package:ubsclient/screens/home/more/more.screen.dart';

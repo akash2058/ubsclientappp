@@ -130,11 +130,21 @@ class NotificationScreen extends StatelessWidget {
                               );
                             });
                       }
-                      return Center(
-                          child: Image(
-                              height: 150,
-                              image:
-                                  AssetImage('assets/images/dark-data.png')));
+                      return Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Center(
+                              child: Image(
+                                  height: 150,
+                                  image: AssetImage(
+                                      'assets/images/dark-data.png'))),
+                          Text(
+                            'No Notifications',
+                            style: TextStyle(
+                                fontSize: 20, fontWeight: FontWeight.bold),
+                          )
+                        ],
+                      );
                     })))
           ],
         ));

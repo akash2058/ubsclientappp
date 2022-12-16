@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 
-class Historypage extends StatelessWidget {
-  const Historypage({super.key});
+class DashboardPage extends StatelessWidget {
+  const DashboardPage({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -12,8 +12,8 @@ class Historypage extends StatelessWidget {
           Image(height: 130, image: AssetImage('assets/images/dark-data.png')),
           Center(
               child: Text(
-            'No History',
-            style: TextStyle(fontSize: 20),
+            'No Active Kaam',
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           )),
         ],
       ),

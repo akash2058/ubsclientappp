@@ -40,7 +40,8 @@ class ReviewScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.lightBlueAccent,
+        iconTheme: IconThemeData(color: Colors.black),
+        backgroundColor: Colors.white,
         centerTitle: true,
         title: const Text(
           'Reviews',
@@ -75,13 +76,9 @@ class ReviewScreen extends StatelessWidget {
                           margin: const EdgeInsets.all(8),
                           padding: const EdgeInsets.all(5),
                           child: Container(
-                            decoration: const BoxDecoration(boxShadow: [
-                              BoxShadow(
-                                blurStyle: BlurStyle.normal,
-                                blurRadius: 5.0,
-                              )
-                            ]),
+                            decoration: const BoxDecoration(boxShadow: []),
                             child: Card(
+                              elevation: 10,
                               color: Colors.white,
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.center,
