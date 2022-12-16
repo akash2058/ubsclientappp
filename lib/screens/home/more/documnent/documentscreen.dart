@@ -7,7 +7,8 @@ class DocumnentScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          backgroundColor: Colors.grey,
+          iconTheme: IconThemeData(color: Colors.black),
+          backgroundColor: Colors.white,
           title: const Text(
             'Documents',
             style: TextStyle(color: Colors.black),
@@ -41,7 +42,18 @@ class DocumnentScreen extends StatelessWidget {
                       borderRadius: BorderRadius.circular(10)),
                   margin: const EdgeInsets.all(15),
                   elevation: 5,
-                  child: const Center(child: Text('No documents added yet.')),
+                  child: Padding(
+                    padding: const EdgeInsets.all(8.0),
+                    child: Row(
+                      mainAxisAlignment: MainAxisAlignment.center,
+                      children: [
+                        Image(
+                            height: 25,
+                            image: AssetImage('assets/images/folder.png')),
+                        Text('No documents added yet.'),
+                      ],
+                    ),
+                  ),
                 ),
               ),
               Center(
