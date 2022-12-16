@@ -1,6 +1,7 @@
 import 'package:badges/badges.dart';
 import 'package:flutter/material.dart';
 import 'package:ubsclient/screens/home/dashboard/dashboardpage.dart';
+import 'package:ubsclient/screens/home/gallery/gallery.screen.dart';
 import 'package:ubsclient/screens/home/services/services.screen.dart';
 import 'package:ubsclient/screens/home/history/history.screen.dart';
 import 'package:ubsclient/screens/home/more/more.screen.dart';
@@ -58,7 +59,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
               currentDashboardPage = ServicesScreen();
             });
           }),
-          backgroundColor: Color.fromARGB(255, 31, 104, 231),
+          backgroundColor: Color(0xFF1F68E7),
           splashColor: Colors.redAccent,
           elevation: 0,
           child: const Icon(Icons.home),
@@ -79,8 +80,8 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       highlightColor: Colors.deepPurpleAccent,
                       onPressed: () {
                         setState(() {
-                          currentDashboardPageTitle = 'Services';
-                          //currentDashboardPage = ServicesScreen();
+                          currentDashboardPageTitle = 'Gallery';
+                          currentDashboardPage = GalleryPage();
                         });
                       },
                       icon: const Icon(Icons.date_range),

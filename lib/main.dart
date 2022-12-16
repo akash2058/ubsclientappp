@@ -54,7 +54,7 @@ void main() {
       '/renewals': (context) => const RenewalScreen(),
       '/conversion': (context) => const ConversionScreen(),
       '/package': (context) => const PackagesScreen(),
-      '/other': (context) => const OtherScreen(),
+      '/other': (context) =>  OtherScreen(),
       '/documnent': (context) => const DocumnentScreen(),
       '/otp': (context) => const OTPScreen()
     },

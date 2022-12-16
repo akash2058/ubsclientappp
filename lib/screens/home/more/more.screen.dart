@@ -9,6 +9,58 @@ class MoreScreen extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
       child: ListView(children: [
+        // Card(
+        //   elevation: 5,
+        //   shape: RoundedRectangleBorder(
+        //     borderRadius: BorderRadius.circular(0),
+        //   ),
+        //   child: Column(
+        //     children: [
+        //       const ListTile(
+        //           title: Text(
+        //             'Account',
+        //             style: TextStyle(
+        //               fontSize: 20,
+        //               fontWeight: FontWeight.bold,
+        //             ),
+        //           ),
+        //           tileColor: Color.fromARGB(255, 226, 218, 218)),
+        //       ListTile(
+        //         onTap: () {
+        //           Navigator.pushNamed(context, '/profile');
+        //         },
+        //         title: const Text('Profile'),
+        //         trailing: IconButton(
+        //           onPressed: () {
+        //             Navigator.pushNamed(context, '/profile');
+        //           },
+        //           icon: const Icon(Icons.arrow_forward_ios),
+        //         ),
+        //         leading: const Icon(Icons.person),
+        //       ),
+        //       const Divider(
+        //         color: Colors.black,
+        //         height: 15,
+        //         thickness: 1,
+        //         indent: 20,
+        //         endIndent: 20,
+        //       ),
+        //       ListTile(
+        //         onTap: (() {
+        //           Navigator.pushNamed(context, '/change');
+        //         }),
+        //         title: const Text(' Change Password'),
+        //         trailing: const Icon(
+        //           (Icons.arrow_forward_ios),
+        //         ),
+        //         leading: const Icon(Icons.lock_open_outlined),
+        //       ),
+        //     ],
+        //   ),
+        // ),
+        const SizedBox(
+          height: 20,
+        ),
         Card(
           elevation: 5,
           shape: RoundedRectangleBorder(
