@@ -77,10 +77,9 @@ class _BlogScreenState extends State<BlogScreen> {
                           margin: const EdgeInsets.all(8),
                           padding: const EdgeInsets.all(5),
                           child: Card(
+                            elevation: 10,
                             margin: EdgeInsets.all(4),
-                            shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(0),
-                                side: const BorderSide(width: 0)),
+                            shape: RoundedRectangleBorder(),
                             child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.stretch,
                                 mainAxisAlignment:
@@ -93,11 +92,15 @@ class _BlogScreenState extends State<BlogScreen> {
                                         image: NetworkImage(
                                             data[index].thumbnail.toString()),
                                       )),
-                                  Text(
-                                    data[index].title.toString(),
-                                    style: const TextStyle(
-                                        fontSize: 25,
-                                        fontWeight: FontWeight.bold),
+                                  InkWell(
+                                    onTap: () => launchUrl(Uri.parse(
+                                        "https://nepalkhabar.com/economy/49387-2021-02-05-09-49-29")),
+                                    child: Text(
+                                      data[index].title.toString(),
+                                      style: const TextStyle(
+                                          fontSize: 25,
+                                          fontWeight: FontWeight.bold),
+                                    ),
                                   ),
                                   Row(
                                     children: [
