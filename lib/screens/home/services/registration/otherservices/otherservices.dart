@@ -174,7 +174,6 @@ class OtherScreen extends StatelessWidget {
                     style: TextStyle(color: Colors.blue),
                   ),
                   TextFormField(
-                    initialValue: "-",
                     controller: controller,
                     cursorHeight: 40,
                     decoration: InputDecoration(

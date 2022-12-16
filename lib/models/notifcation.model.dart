@@ -3,18 +3,18 @@ import 'dart:convert';
 
 class NotificationModel {
   String notification_msg;
-  String tid;
+  String? tid;
   String notification_type;
   String notification_status;
-  String accept_status;
+  String? accept_status;
   String notification_date;
   String? cimID;
   NotificationModel({
     required this.notification_msg,
-    required this.tid,
+    this.tid,
     required this.notification_type,
     required this.notification_status,
-    required this.accept_status,
+    this.accept_status,
     required this.notification_date,
     this.cimID,
   });
@@ -54,10 +54,11 @@ class NotificationModel {
   factory NotificationModel.fromMap(Map<String, dynamic> map) {
     return NotificationModel(
       notification_msg: map['notification_msg'] as String,
-      tid: map['tid'] as String,
+      tid: map['tid'] != null ? map['tid'] as String : null,
       notification_type: map['notification_type'] as String,
       notification_status: map['notification_status'] as String,
-      accept_status: map['accept_status'] as String,
+      accept_status:
+          map['accept_status'] != null ? map['accept_status'] as String : null,
       notification_date: map['notification_date'] as String,
       cimID: map['cimID'] != null ? map['cimID'] as String : null,
     );

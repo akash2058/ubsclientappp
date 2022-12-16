@@ -60,6 +60,7 @@ class NotificationScreen extends StatelessWidget {
                                       CrossAxisAlignment.stretch,
                                   children: [
                                     Card(
+                                      elevation: 10,
                                       shadowColor: Colors.black,
                                       child: Column(
                                         crossAxisAlignment:
