@@ -13,7 +13,7 @@ class Historypage extends StatelessWidget {
           Center(
               child: Text(
             'No History',
-            style: TextStyle(fontSize: 20),
+            style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           )),
         ],
       ),
