@@ -40,7 +40,7 @@ class DocumnentScreen extends StatelessWidget {
                 child: Card(
                   shape: RoundedRectangleBorder(
                       borderRadius: BorderRadius.circular(10)),
-                  margin: const EdgeInsets.all(15),
+                  margin: const EdgeInsets.all(10),
                   elevation: 5,
                   child: Padding(
                     padding: const EdgeInsets.all(8.0),
