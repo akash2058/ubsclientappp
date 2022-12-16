@@ -83,9 +83,6 @@ class ReviewScreen extends StatelessWidget {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  Image(
-                                      image:
-                                          NetworkImage(data[index].imageURL)),
                                   Text(data[index].transactionID),
                                   Text(data[index].clientID),
                                   Text(data[index].companyName),

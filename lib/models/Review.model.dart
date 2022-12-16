@@ -10,7 +10,7 @@ class ReviewModel {
   String companyName;
   String clientID;
   String fullname;
-  String imageURL;
+  String? imageURL;
   String rating;
   String review;
   String reviewedOn;
@@ -19,7 +19,7 @@ class ReviewModel {
     required this.companyName,
     required this.clientID,
     required this.fullname,
-    required this.imageURL,
+    this.imageURL,
     required this.rating,
     required this.review,
     required this.reviewedOn,
@@ -66,7 +66,7 @@ class ReviewModel {
       companyName: map['companyName'] as String,
       clientID: map['clientID'] as String,
       fullname: map['fullname'] as String,
-      imageURL: map['imageURL'] as String,
+      imageURL: map['imageURL'] != null ? map['imageURL'] as String : null,
       rating: map['rating'] as String,
       review: map['review'] as String,
       reviewedOn: map['reviewedOn'] as String,
