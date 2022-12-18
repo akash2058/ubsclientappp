@@ -4,8 +4,6 @@
 
 import 'dart:convert';
 
-import 'package:ubsclient/screens/home/Documnent/Serivces/registrationscreen.dart';
-
 class Analytics {
   Analytics({
     required this.response,

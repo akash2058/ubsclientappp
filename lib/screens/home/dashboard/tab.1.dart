@@ -12,7 +12,6 @@ class firstpage extends StatelessWidget {
           Container(
               margin: EdgeInsets.all(10.0),
               child: Card(
-                  surfaceTintColor: Colors.red,
                   borderOnForeground: true,
                   child: Column(
                       mainAxisSize: MainAxisSize.min,
