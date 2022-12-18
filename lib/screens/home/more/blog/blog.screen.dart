@@ -127,7 +127,9 @@ class _BlogScreenState extends State<BlogScreen> {
                       },
                     );
                   }
-                  return const Text('loading');
+                  return Center(
+                    child: CircularProgressIndicator(color: Colors.red),
+                  );
                 }),
           )
         ],
