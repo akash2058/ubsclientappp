@@ -12,7 +12,7 @@ class DashboardPage extends StatelessWidget {
           Image(height: 130, image: AssetImage('assets/images/dark-data.png')),
           Center(
               child: Text(
-            'No Active Kaam',
+            'No Dashboard',
             style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
           )),
         ],
