@@ -10,7 +10,7 @@ class HistoryModel {
   String phone;
   String kaam_status;
   String fee;
-  String? fee_staus;
+  String fee_status;
   HistoryModel({
     required this.t_id,
     required this.date_assigned,
@@ -20,7 +20,7 @@ class HistoryModel {
     required this.phone,
     required this.kaam_status,
     required this.fee,
-    this.fee_staus,
+    required this.fee_status,
   });
 
   HistoryModel copyWith({
@@ -32,7 +32,7 @@ class HistoryModel {
     String? phone,
     String? kaam_status,
     String? fee,
-    String? fee_staus,
+    String? fee_status,
   }) {
     return HistoryModel(
       t_id: t_id ?? this.t_id,
@@ -43,7 +43,7 @@ class HistoryModel {
       phone: phone ?? this.phone,
       kaam_status: kaam_status ?? this.kaam_status,
       fee: fee ?? this.fee,
-      fee_staus: fee_staus ?? this.fee_staus,
+      fee_status: fee_status ?? this.fee_status,
     );
   }
 
@@ -57,7 +57,7 @@ class HistoryModel {
       'phone': phone,
       'kaam_status': kaam_status,
       'fee': fee,
-      'fee_staus': fee_staus,
+      'fee_status': fee_status,
     };
   }
 
@@ -71,7 +71,7 @@ class HistoryModel {
       phone: map['phone'] as String,
       kaam_status: map['kaam_status'] as String,
       fee: map['fee'] as String,
-      fee_staus: map['fee_staus'] != null ? map['fee_staus'] as String : null,
+      fee_status: map['fee_status'] as String,
     );
   }
 
@@ -82,7 +82,7 @@ class HistoryModel {
 
   @override
   String toString() {
-    return 'HistoryModel(t_id: $t_id, date_assigned: $date_assigned, kaam: $kaam, sub_kaam: $sub_kaam, expert: $expert, phone: $phone, kaam_status: $kaam_status, fee: $fee, fee_staus: $fee_staus)';
+    return 'HistoryModel(t_id: $t_id, date_assigned: $date_assigned, kaam: $kaam, sub_kaam: $sub_kaam, expert: $expert, phone: $phone, kaam_status: $kaam_status, fee: $fee, fee_status: $fee_status)';
   }
 
   @override
@@ -97,7 +97,7 @@ class HistoryModel {
         other.phone == phone &&
         other.kaam_status == kaam_status &&
         other.fee == fee &&
-        other.fee_staus == fee_staus;
+        other.fee_status == fee_status;
   }
 
   @override
@@ -110,6 +110,6 @@ class HistoryModel {
         phone.hashCode ^
         kaam_status.hashCode ^
         fee.hashCode ^
-        fee_staus.hashCode;
+        fee_status.hashCode;
   }
 }
