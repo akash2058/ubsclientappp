@@ -50,6 +50,7 @@ class DocumnentScreen extends StatelessWidget {
                         Image(
                             height: 25,
                             image: AssetImage('assets/images/folder.png')),
+                        SizedBox(width: 5),
                         Text('No documents added yet.'),
                       ],
                     ),

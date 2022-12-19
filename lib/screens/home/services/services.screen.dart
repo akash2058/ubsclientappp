@@ -174,7 +174,6 @@ class ServiceCard extends StatelessWidget {
   final double borderRadius = 22;
   final bool isOtherService;
   final List<int> gradients;
-
   final VoidCallback? onTap;
 
   const ServiceCard({
