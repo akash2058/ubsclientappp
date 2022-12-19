@@ -87,14 +87,14 @@ class _BlogScreenState extends State<BlogScreen> {
                                 children: [
                                   InkWell(
                                       onTap: () => launchUrl(Uri.parse(
-                                          "https://nepalkhabar.com/economy/49387-2021-02-05-09-49-29")),
+                                          data[index].author_link.toString())),
                                       child: Image(
                                         image: NetworkImage(
                                             data[index].thumbnail.toString()),
                                       )),
                                   InkWell(
                                     onTap: () => launchUrl(Uri.parse(
-                                        "https://nepalkhabar.com/economy/49387-2021-02-05-09-49-29")),
+                                        data[index].author_link.toString())),
                                     child: Text(
                                       data[index].title.toString(),
                                       style: const TextStyle(
