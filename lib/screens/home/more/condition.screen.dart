@@ -36,26 +36,29 @@ class ConditionScreen extends StatelessWidget {
           Flexible(
               flex: 2,
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
                     height: 100,
+                    width: 350,
                     child: Card(
+                      elevation: 5,
                       margin: EdgeInsets.all(20),
                       shape: RoundedRectangleBorder(
                           borderRadius: BorderRadius.circular(20)),
                       child: InkWell(
                         onTap: () {
-                          launchUrl(Uri.parse(
-                              'https://upaya.com.np/terms_and_conditions.html'));
+                          launchUrl(Uri.parse('https://www.ubs.com.np/'));
                         },
-                        child: Text(
-                          textAlign: TextAlign.center,
-                          'https://upaya.com.np/terms_and_conditions.html',
-                          style: TextStyle(
-                              color: Colors.blue,
-                              fontSize: 17,
-                              fontWeight: FontWeight.bold),
+                        child: Center(
+                          child: Text(
+                            textAlign: TextAlign.center,
+                            'https://www.ubs.com.np/',
+                            style: TextStyle(
+                                color: Colors.blue,
+                                fontSize: 17,
+                                fontWeight: FontWeight.bold),
+                          ),
                         ),
                       ),
                     ),
