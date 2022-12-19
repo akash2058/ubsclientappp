@@ -150,8 +150,8 @@ class MoreScreen extends StatelessWidget {
                   height: 25,
                   image: AssetImage('assets/images/info.png'),
                 ),
-                onTap: () =>
-                    launchUrl(Uri.parse("https://upaya.com.np/about_us.html")),
+                onTap: () => launchUrl(
+                    Uri.parse("https://www.ubs.com.np/about_us.html")),
                 focusColor: Colors.purpleAccent,
                 title: const Text('About Us'),
               ),

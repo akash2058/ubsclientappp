@@ -43,12 +43,11 @@ class PrivacyScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(20)),
                       child: InkWell(
                         onTap: () {
-                          launchUrl(Uri.parse(
-                              'https://upaya.com.np/privacy_policy.html'));
+                          launchUrl(Uri.parse('https://www.ubs.com.np/'));
                         },
                         child: Center(
                           child: Text(
-                            'https://upaya.com.np/privacy_policy.html',
+                            'https://www.ubs.com.np/',
                             style: TextStyle(color: Colors.blue),
                           ),
                         ),
