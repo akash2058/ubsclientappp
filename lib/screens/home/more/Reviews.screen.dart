@@ -15,12 +15,10 @@ class ReviewScreen extends StatelessWidget {
       final pref = await SharedPreferences.getInstance();
       int user = pref.getInt('user')!;
       final response = await http.post(
-          Uri.parse(
-              'https://api.ubs.com.np/index.php?method=get_reviews_up_app'),
+          Uri.parse('https://api.ubs.com.np/index.php?method=get_reviews'),
           body: {
             "user": user.toString(),
-            "start": "0",
-            "limit": "10",
+            "usertype": "Service Seeker",
           });
       var resposeData = jsonDecode(response.body.toString());
       if (resposeData["response"] == "success") {
@@ -83,9 +81,12 @@ class ReviewScreen extends StatelessWidget {
                               child: Column(
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
-                                  Text(data[index].transactionID),
-                                  Text(data[index].clientID),
-                                  Text(data[index].companyName),
+                                  CircleAvatar(
+                                    backgroundImage:
+                                        NetworkImage(data[index].client_image),
+                                  ),
+                                  Text(data[index].client_name),
+                                  Text(data[index].expert_name),
                                   RatingBar.builder(
                                     ignoreGestures: false,
                                     initialRating:
@@ -98,9 +99,10 @@ class ReviewScreen extends StatelessWidget {
                                     minRating: 1,
                                     onRatingUpdate: (rating) => (value) => 3,
                                   ),
-                                  Text(data[index].fullname),
+                                  Text(data[index].remarks),
                                   Text(data[index].review),
-                                  Text(data[index].reviewedOn),
+                                  Text(data[index].review_status),
+                                  Text(data[index].review_time),
                                 ],
                               ),
                             ),

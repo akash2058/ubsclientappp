@@ -6,70 +6,89 @@
 import 'dart:convert';
 
 class ReviewModel {
-  String transactionID;
-  String companyName;
-  String clientID;
-  String fullname;
-  String? imageURL;
+  String client_name;
+  String service;
+  String remarks;
   String rating;
+  String client_address;
+  String client_image;
+  String expert_name;
   String review;
-  String reviewedOn;
+  String? admin_comment;
+  String review_status;
+  String review_time;
   ReviewModel({
-    required this.transactionID,
-    required this.companyName,
-    required this.clientID,
-    required this.fullname,
-    this.imageURL,
+    required this.client_name,
+    required this.service,
+    required this.remarks,
     required this.rating,
+    required this.client_address,
+    required this.client_image,
+    required this.expert_name,
     required this.review,
-    required this.reviewedOn,
+    this.admin_comment,
+    required this.review_status,
+    required this.review_time,
   });
 
   ReviewModel copyWith({
-    String? transactionID,
-    String? companyName,
-    String? clientID,
-    String? fullname,
-    String? imageURL,
+    String? client_name,
+    String? service,
+    String? remarks,
     String? rating,
+    String? client_address,
+    String? client_image,
+    String? expert_name,
     String? review,
-    String? reviewedOn,
+    String? admin_comment,
+    String? review_status,
+    String? review_time,
   }) {
     return ReviewModel(
-      transactionID: transactionID ?? this.transactionID,
-      companyName: companyName ?? this.companyName,
-      clientID: clientID ?? this.clientID,
-      fullname: fullname ?? this.fullname,
-      imageURL: imageURL ?? this.imageURL,
+      client_name: client_name ?? this.client_name,
+      service: service ?? this.service,
+      remarks: remarks ?? this.remarks,
       rating: rating ?? this.rating,
+      client_address: client_address ?? this.client_address,
+      client_image: client_image ?? this.client_image,
+      expert_name: expert_name ?? this.expert_name,
       review: review ?? this.review,
-      reviewedOn: reviewedOn ?? this.reviewedOn,
+      admin_comment: admin_comment ?? this.admin_comment,
+      review_status: review_status ?? this.review_status,
+      review_time: review_time ?? this.review_time,
     );
   }
 
   Map<String, dynamic> toMap() {
     return <String, dynamic>{
-      'transactionID': transactionID,
-      'companyName': companyName,
-      'clientID': clientID,
-      'fullname': fullname,
-      'imageURL': imageURL,
+      'client_name': client_name,
+      'service': service,
+      'remarks': remarks,
       'rating': rating,
+      'client_address': client_address,
+      'client_image': client_image,
+      'expert_name': expert_name,
       'review': review,
-      'reviewedOn': reviewedOn,
+      'admin_comment': admin_comment,
+      'review_status': review_status,
+      'review_time': review_time,
     };
   }
 
   factory ReviewModel.fromMap(Map<String, dynamic> map) {
     return ReviewModel(
-      transactionID: map['transactionID'] as String,
-      companyName: map['companyName'] as String,
-      clientID: map['clientID'] as String,
-      fullname: map['fullname'] as String,
-      imageURL: map['imageURL'] != null ? map['imageURL'] as String : null,
+      client_name: map['client_name'] as String,
+      service: map['service'] as String,
+      remarks: map['remarks'] as String,
       rating: map['rating'] as String,
+      client_address: map['client_address'] as String,
+      client_image: map['client_image'] as String,
+      expert_name: map['expert_name'] as String,
       review: map['review'] as String,
-      reviewedOn: map['reviewedOn'] as String,
+      admin_comment:
+          map['admin_comment'] != null ? map['admin_comment'] as String : null,
+      review_status: map['review_status'] as String,
+      review_time: map['review_time'] as String,
     );
   }
 
@@ -80,32 +99,38 @@ class ReviewModel {
 
   @override
   String toString() {
-    return 'ReviewModel(transactionID: $transactionID, companyName: $companyName, clientID: $clientID, fullname: $fullname, imageURL: $imageURL, rating: $rating, review: $review, reviewedOn: $reviewedOn)';
+    return 'ReviewModel(client_name: $client_name, service: $service, remarks: $remarks, rating: $rating, client_address: $client_address, client_image: $client_image, expert_name: $expert_name, review: $review, admin_comment: $admin_comment, review_status: $review_status, review_time: $review_time)';
   }
 
   @override
   bool operator ==(covariant ReviewModel other) {
     if (identical(this, other)) return true;
 
-    return other.transactionID == transactionID &&
-        other.companyName == companyName &&
-        other.clientID == clientID &&
-        other.fullname == fullname &&
-        other.imageURL == imageURL &&
+    return other.client_name == client_name &&
+        other.service == service &&
+        other.remarks == remarks &&
         other.rating == rating &&
+        other.client_address == client_address &&
+        other.client_image == client_image &&
+        other.expert_name == expert_name &&
         other.review == review &&
-        other.reviewedOn == reviewedOn;
+        other.admin_comment == admin_comment &&
+        other.review_status == review_status &&
+        other.review_time == review_time;
   }
 
   @override
   int get hashCode {
-    return transactionID.hashCode ^
-        companyName.hashCode ^
-        clientID.hashCode ^
-        fullname.hashCode ^
-        imageURL.hashCode ^
+    return client_name.hashCode ^
+        service.hashCode ^
+        remarks.hashCode ^
         rating.hashCode ^
+        client_address.hashCode ^
+        client_image.hashCode ^
+        expert_name.hashCode ^
         review.hashCode ^
-        reviewedOn.hashCode;
+        admin_comment.hashCode ^
+        review_status.hashCode ^
+        review_time.hashCode;
   }
 }

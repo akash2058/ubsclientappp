@@ -98,7 +98,7 @@ class _DashboardScreenState extends State<DashboardScreen> {
                       onPressed: () {
                         setState(() {
                           currentDashboardPageTitle = "History";
-                          currentDashboardPage = const Historypage();
+                          currentDashboardPage = const HistoryScreen();
                         });
                       },
                       icon: const Icon(Icons.history),
