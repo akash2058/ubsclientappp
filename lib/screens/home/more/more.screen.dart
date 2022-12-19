@@ -198,7 +198,7 @@ class MoreScreen extends StatelessWidget {
                 onTap: () {
                   Navigator.pushNamed(context, '/privacy');
                 },
-                title: const Text('Privacy and policy'),
+                title: const Text('Privacy and Policy'),
               ),
             ],
           ),
