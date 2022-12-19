@@ -66,78 +66,96 @@ class HistoryScreen extends StatelessWidget {
                             child: Container(
                                 decoration: const BoxDecoration(boxShadow: []),
                                 child: Card(
-                                    elevation: 10,
+                                    elevation: 5,
                                     color: Colors.white,
-                                    child: Card(
-                                        borderOnForeground: true,
-                                        child: Column(
-                                            crossAxisAlignment:
-                                                CrossAxisAlignment.stretch,
-                                            children: [
-                                              Row(
+                                    child: Container(
+                                      margin: EdgeInsets.all(10),
+                                      child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.stretch,
+                                          children: [
+                                            Row(
+                                              children: [
+                                                Text(data[index].t_id),
+                                                SizedBox(
+                                                  width: 50,
+                                                ),
+                                                Text(data[index].date_assigned),
+                                              ],
+                                            ),
+                                            SizedBox(
+                                              height: 8,
+                                            ),
+                                            Column(
+                                                crossAxisAlignment:
+                                                    CrossAxisAlignment.start,
                                                 children: [
-                                                  Text(data[index].t_id),
-                                                  SizedBox(
-                                                    width: 50,
-                                                  ),
-                                                  Text(data[index]
-                                                      .date_assigned),
-                                                ],
-                                              ),
-                                              Column(
-                                                  crossAxisAlignment:
-                                                      CrossAxisAlignment.start,
-                                                  children: [
-                                                    Text(data[index].kaam),
-                                                    Text(
-                                                      data[index].sub_kaam,
-                                                      style: TextStyle(
-                                                        fontWeight:
-                                                            FontWeight.bold,
-                                                      ),
+                                                  Text(data[index].kaam),
+                                                  Text(
+                                                    data[index].sub_kaam,
+                                                    style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
                                                     ),
-                                                    Text(
-                                                      'Proffessional',
-                                                      style: TextStyle(
+                                                  ),
+                                                  SizedBox(
+                                                    height: 8,
+                                                  ),
+                                                  Text(
+                                                    'Proffessional',
+                                                    style: TextStyle(
+                                                      color: Colors
+                                                          .deepOrangeAccent,
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                    ),
+                                                  ),
+                                                  SizedBox(
+                                                    height: 8,
+                                                  ),
+                                                  Text(
+                                                    data[index].expert,
+                                                    style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                    ),
+                                                  ),
+                                                  SizedBox(
+                                                    height: 8,
+                                                  ),
+                                                  Text(
+                                                    '30th Dec 2020',
+                                                    style: TextStyle(
+                                                      fontWeight:
+                                                          FontWeight.bold,
+                                                    ),
+                                                  ),
+                                                  SizedBox(
+                                                    height: 8,
+                                                  ),
+                                                  Row(
+                                                    children: [
+                                                      Icon(
+                                                        Icons.circle,
                                                         color: Colors
                                                             .deepOrangeAccent,
-                                                        fontWeight:
-                                                            FontWeight.bold,
                                                       ),
-                                                    ),
-                                                    Text(
-                                                      data[index].expert,
-                                                      style: TextStyle(
-                                                        fontWeight:
-                                                            FontWeight.bold,
+                                                      SizedBox(
+                                                        width: 8,
                                                       ),
-                                                    ),
-                                                    Text(
-                                                      '30th Dec 2020',
-                                                      style: TextStyle(
+                                                      Text(data[index]
+                                                          .kaam_status)
+                                                    ],
+                                                  ),
+                                                  Text(
+                                                    data[index].fee,
+                                                    style: TextStyle(
                                                         fontWeight:
-                                                            FontWeight.bold,
-                                                      ),
-                                                    ),
-                                                    Row(
-                                                      children: [
-                                                        Icon(
-                                                          Icons.circle,
-                                                          color: Colors
-                                                              .deepOrangeAccent,
-                                                        ),
-                                                        Text(data[index]
-                                                            .kaam_status)
-                                                      ],
-                                                    ),
-                                                    Text(
-                                                      data[index].fee,
-                                                      style: TextStyle(
-                                                          fontWeight:
-                                                              FontWeight.bold),
-                                                    ),
-                                                  ]),
-                                            ])))));
+                                                            FontWeight.bold),
+                                                  ),
+                                                ]),
+                                          ]),
+                                    ))));
                       },
                     );
                   }
