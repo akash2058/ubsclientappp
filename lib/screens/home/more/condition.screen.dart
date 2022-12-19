@@ -36,11 +36,11 @@ class ConditionScreen extends StatelessWidget {
           Flexible(
               flex: 2,
               child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
                   Container(
                     height: 100,
-                    width: 400,
+                    width: 350,
                     child: Card(
                       elevation: 5,
                       margin: EdgeInsets.all(20),
@@ -50,13 +50,15 @@ class ConditionScreen extends StatelessWidget {
                         onTap: () {
                           launchUrl(Uri.parse('https://www.ubs.com.np/'));
                         },
-                        child: Text(
-                          textAlign: TextAlign.center,
-                          'https://www.ubs.com.np/',
-                          style: TextStyle(
-                              color: Colors.blue,
-                              fontSize: 17,
-                              fontWeight: FontWeight.bold),
+                        child: Center(
+                          child: Text(
+                            textAlign: TextAlign.center,
+                            'https://www.ubs.com.np/',
+                            style: TextStyle(
+                                color: Colors.blue,
+                                fontSize: 17,
+                                fontWeight: FontWeight.bold),
+                          ),
                         ),
                       ),
                     ),
