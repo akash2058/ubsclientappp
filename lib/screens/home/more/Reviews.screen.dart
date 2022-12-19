@@ -109,7 +109,9 @@ class ReviewScreen extends StatelessWidget {
                       },
                     );
                   }
-                  return const Text('loading');
+                  return Center(
+                    child: CircularProgressIndicator(color: Colors.red),
+                  );
                 }),
           )
         ],
