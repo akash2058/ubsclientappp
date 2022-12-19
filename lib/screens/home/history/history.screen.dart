@@ -81,8 +81,12 @@ class HistoryScreen extends StatelessWidget {
                                                   width: 50,
                                                 ),
                                                 Text(data[index].date_assigned),
-                                                SizedBox(width: 90),
-                                                Text(data[index].fee_status),
+                                                SizedBox(width: 150),
+                                                Text(
+                                                  data[index].fee_status,
+                                                  style: TextStyle(
+                                                      color: Colors.green),
+                                                ),
                                               ],
                                             ),
                                             SizedBox(
