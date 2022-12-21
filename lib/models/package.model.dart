@@ -1,8 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
 import 'dart:convert';
 
-import 'package:http/http.dart';
-
 class PackageModel {
   String pid;
   String addedDate;
@@ -14,8 +12,6 @@ class PackageModel {
   String endDate;
   String price;
   String packageType;
-  String services;
-  String dueFee;
   PackageModel({
     required this.pid,
     required this.addedDate,
@@ -27,8 +23,6 @@ class PackageModel {
     required this.endDate,
     required this.price,
     required this.packageType,
-    required this.services,
-    required this.dueFee,
   });
 
   PackageModel copyWith({
@@ -42,8 +36,6 @@ class PackageModel {
     String? endDate,
     String? price,
     String? packageType,
-    String? services,
-    String? dueFee,
   }) {
     return PackageModel(
       pid: pid ?? this.pid,
@@ -56,8 +48,6 @@ class PackageModel {
       endDate: endDate ?? this.endDate,
       price: price ?? this.price,
       packageType: packageType ?? this.packageType,
-      services: services ?? this.services,
-      dueFee: dueFee ?? this.dueFee,
     );
   }
 
@@ -73,8 +63,6 @@ class PackageModel {
       'endDate': endDate,
       'price': price,
       'packageType': packageType,
-      'services': services,
-      'dueFee': dueFee,
     };
   }
 
@@ -90,8 +78,6 @@ class PackageModel {
       endDate: map['endDate'] as String,
       price: map['price'] as String,
       packageType: map['packageType'] as String,
-      services: map['services'] as String,
-      dueFee: map['dueFee'] as String,
     );
   }
 
@@ -102,7 +88,7 @@ class PackageModel {
 
   @override
   String toString() {
-    return 'ActiveKaamModel(pid: $pid, addedDate: $addedDate, clientName: $clientName, companyName: $companyName, visit: $visit, invoicePeriod: $invoicePeriod, startDate: $startDate, endDate: $endDate, price: $price, packageType: $packageType, services: $services, dueFee: $dueFee)';
+    return 'PackageModel(pid: $pid, addedDate: $addedDate, clientName: $clientName, companyName: $companyName, visit: $visit, invoicePeriod: $invoicePeriod, startDate: $startDate, endDate: $endDate, price: $price, packageType: $packageType)';
   }
 
   @override
@@ -118,9 +104,7 @@ class PackageModel {
         other.startDate == startDate &&
         other.endDate == endDate &&
         other.price == price &&
-        other.packageType == packageType &&
-        other.services == services &&
-        other.dueFee == dueFee;
+        other.packageType == packageType;
   }
 
   @override
@@ -134,8 +118,6 @@ class PackageModel {
         startDate.hashCode ^
         endDate.hashCode ^
         price.hashCode ^
-        packageType.hashCode ^
-        services.hashCode ^
-        dueFee.hashCode;
+        packageType.hashCode;
   }
 }

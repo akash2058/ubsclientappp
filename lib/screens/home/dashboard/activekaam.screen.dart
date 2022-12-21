@@ -5,12 +5,14 @@ class ActivekaamPage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      body: Column(
-        children: [
-          Text('My active kaam'),
-        ],
-      ),
-    );
+    return Container(
+        child: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
+      Image(height: 130, image: AssetImage('assets/images/dark-data.png')),
+      Center(
+          child: Text(
+        'No Active Added Yet',
+        style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+      ))
+    ]));
   }
 }

@@ -1,12 +1,44 @@
+import 'dart:convert';
+
 import 'package:flutter/material.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+import 'package:url_launcher/url_launcher.dart';
+import '../../../../models/documentmodel.dart';
+import 'package:http/http.dart' as http;
 
 class DocumnentScreen extends StatelessWidget {
   const DocumnentScreen({super.key});
+  Future<List<DocumentModel>> postData() async {
+    try {
+      List<DocumentModel> documentlist = [];
+
+      final pref = await SharedPreferences.getInstance();
+      int user = pref.getInt('user')!;
+      final response = await http.post(
+          Uri.parse(
+              'https://api.ubs.com.np/index.php?method=get_seeker_documents'),
+          body: {
+            "user": user.toString(),
+          });
+      var resposeData = jsonDecode(response.body.toString());
+      if (resposeData["response"] == "success") {
+        for (Map<String, dynamic> index in resposeData["document"]) {
+          documentlist.add(DocumentModel.fromMap(index));
+        }
+        return documentlist;
+      } else {
+        return documentlist;
+      }
+    } catch (err) {
+      throw Exception(err);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
+          elevation: 2,
           iconTheme: IconThemeData(color: Colors.black),
           backgroundColor: Colors.white,
           title: const Text(
@@ -15,59 +47,51 @@ class DocumnentScreen extends StatelessWidget {
           ),
           centerTitle: true,
         ),
-        body: Container(
-          margin: EdgeInsets.all(15),
-          child: Column(
-            children: [
-              const Text(
-                'Documents(Citizenship and other relevant documents)',
-                style: TextStyle(
-                  fontSize: 18,
-                  fontWeight: FontWeight.bold,
-                ),
-              ),
-              Center(
-                child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20)),
-                        backgroundColor: Colors.green[300]),
-                    onPressed: () {},
-                    child: Text('Upload Documents')),
-              ),
-              Container(
-                height: 90,
-                child: Card(
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(10)),
-                  margin: const EdgeInsets.all(10),
-                  elevation: 5,
-                  child: Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Image(
-                            height: 25,
-                            image: AssetImage('assets/images/folder.png')),
-                        SizedBox(width: 5),
-                        Text('No documents added yet.'),
-                      ],
-                    ),
-                  ),
-                ),
-              ),
-              Center(
-                child: ElevatedButton(
-                    style: ElevatedButton.styleFrom(
-                        shape: RoundedRectangleBorder(
-                            borderRadius: BorderRadius.circular(20)),
-                        backgroundColor: Colors.blue[800]),
-                    onPressed: () {},
-                    child: const Text('Update Documents')),
-              ),
-            ],
-          ),
+        body: FutureBuilder(
+          future: postData(),
+          builder: (context, snapshot) {
+            if (snapshot.hasData) {
+              var data = snapshot.data!;
+              return ListView.builder(
+                  itemCount: data.length,
+                  itemBuilder: ((context, index) {
+                    return Card(
+                        margin: EdgeInsets.all(10),
+                        child: Container(
+                          margin: EdgeInsets.all(10),
+                          child: Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(data[index].userID),
+                              SizedBox(
+                                height: 5,
+                              ),
+                              Text(
+                                data[index].documentName,
+                                style: TextStyle(
+                                    fontSize: 15, fontWeight: FontWeight.bold),
+                              ),
+                              Row(
+                                children: [
+                                  Text(data[index].addeddate),
+                                  SizedBox(
+                                    width: 211,
+                                  ),
+                                  InkWell(
+                                      onTap: () => launchUrl(
+                                          Uri.parse(data[index].documentLink)),
+                                      child: Icon(Icons.visibility)),
+                                ],
+                              )
+                            ],
+                          ),
+                        ));
+                  }));
+            }
+            return Center(
+              child: CircularProgressIndicator(color: Colors.red),
+            );
+          },
         ));
   }
 }
