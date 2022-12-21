@@ -68,14 +68,6 @@ class NotificationScreen extends StatelessWidget {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            data[index].tid.toString(),
-                                            style: const TextStyle(
-                                                fontWeight: FontWeight.bold),
-                                          ),
-                                          const SizedBox(
-                                            height: 10,
-                                          ),
-                                          Text(
                                             data[index]
                                                 .notification_msg
                                                 .toString(),
@@ -105,22 +97,6 @@ class NotificationScreen extends StatelessWidget {
                                                 style: const TextStyle(
                                                   fontWeight: FontWeight.bold,
                                                 ),
-                                              ),
-                                              const SizedBox(
-                                                width: 110,
-                                              ),
-                                              const Icon(
-                                                Icons.check,
-                                                color: Colors.green,
-                                              ),
-                                              Text(
-                                                data[index]
-                                                    .accept_status
-                                                    .toString(),
-                                                style: const TextStyle(
-                                                    fontWeight: FontWeight.bold,
-                                                    fontSize: 15,
-                                                    color: Colors.green),
                                               ),
                                             ],
                                           ),
