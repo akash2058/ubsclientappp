@@ -178,7 +178,8 @@ class MoreScreen extends StatelessWidget {
                   image: AssetImage('assets/images/terms-and-conditions.png'),
                 ),
                 onTap: () {
-                  Navigator.pushNamed(context, '/terms');
+                  launchUrl(Uri.parse(
+                      'https://upaya.com.np/terms_and_conditions.html'));
                 },
                 title: const Text('Terms and Conditions'),
               ),
@@ -196,7 +197,8 @@ class MoreScreen extends StatelessWidget {
                   image: AssetImage('assets/images/insurance.png'),
                 ),
                 onTap: () {
-                  Navigator.pushNamed(context, '/privacy');
+                  launchUrl(
+                      Uri.parse('https://upaya.com.np/privacy_policy.html'));
                 },
                 title: const Text('Privacy and Policy'),
               ),
