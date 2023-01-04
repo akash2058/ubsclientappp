@@ -11,36 +11,6 @@ class MoreScreen extends StatelessWidget {
       child: ListView(children: [
         Card(
           elevation: 5,
-          shape: RoundedRectangleBorder(),
-          child: Column(
-            children: [
-              const ListTile(
-                  title: Text(
-                    'Account',
-                    style: TextStyle(
-                      fontSize: 20,
-                      fontWeight: FontWeight.bold,
-                    ),
-                  ),
-                  tileColor: Color.fromARGB(255, 226, 218, 218)),
-              ListTile(
-                  onTap: () {
-                    Navigator.pushNamed(context, '/profile');
-                  },
-                  title: const Text('Profile'),
-                  trailing: const Icon(Icons.arrow_forward_ios),
-                  leading: Image(
-                    height: 25,
-                    image: AssetImage('assets/images/user.png'),
-                  )),
-            ],
-          ),
-        ),
-        const SizedBox(
-          height: 20,
-        ),
-        Card(
-          elevation: 5,
           shape: RoundedRectangleBorder(
             borderRadius: BorderRadius.circular(0),
           ),
