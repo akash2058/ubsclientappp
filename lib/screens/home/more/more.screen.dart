@@ -9,55 +9,33 @@ class MoreScreen extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 10),
       child: ListView(children: [
-        // Card(
-        //   elevation: 5,
-        //   shape: RoundedRectangleBorder(
-        //     borderRadius: BorderRadius.circular(0),
-        //   ),
-        //   child: Column(
-        //     children: [
-        //       const ListTile(
-        //           title: Text(
-        //             'Account',
-        //             style: TextStyle(
-        //               fontSize: 20,
-        //               fontWeight: FontWeight.bold,
-        //             ),
-        //           ),
-        //           tileColor: Color.fromARGB(255, 226, 218, 218)),
-        //       ListTile(
-        //         onTap: () {
-        //           Navigator.pushNamed(context, '/profile');
-        //         },
-        //         title: const Text('Profile'),
-        //         trailing: IconButton(
-        //           onPressed: () {
-        //             Navigator.pushNamed(context, '/profile');
-        //           },
-        //           icon: const Icon(Icons.arrow_forward_ios),
-        //         ),
-        //         leading: const Icon(Icons.person),
-        //       ),
-        //       const Divider(
-        //         color: Colors.black,
-        //         height: 15,
-        //         thickness: 1,
-        //         indent: 20,
-        //         endIndent: 20,
-        //       ),
-        //       ListTile(
-        //         onTap: (() {
-        //           Navigator.pushNamed(context, '/change');
-        //         }),
-        //         title: const Text(' Change Password'),
-        //         trailing: const Icon(
-        //           (Icons.arrow_forward_ios),
-        //         ),
-        //         leading: const Icon(Icons.lock_open_outlined),
-        //       ),
-        //     ],
-        //   ),
-        // ),
+        Card(
+          elevation: 5,
+          shape: RoundedRectangleBorder(),
+          child: Column(
+            children: [
+              const ListTile(
+                  title: Text(
+                    'Account',
+                    style: TextStyle(
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  tileColor: Color.fromARGB(255, 226, 218, 218)),
+              ListTile(
+                  onTap: () {
+                    Navigator.pushNamed(context, '/profile');
+                  },
+                  title: const Text('Profile'),
+                  trailing: const Icon(Icons.arrow_forward_ios),
+                  leading: Image(
+                    height: 25,
+                    image: AssetImage('assets/images/user.png'),
+                  )),
+            ],
+          ),
+        ),
         const SizedBox(
           height: 20,
         ),
@@ -150,8 +128,8 @@ class MoreScreen extends StatelessWidget {
                   height: 25,
                   image: AssetImage('assets/images/info.png'),
                 ),
-                onTap: () => launchUrl(
-                    Uri.parse("https://www.ubs.com.np/about_us.html")),
+                onTap: () =>
+                    launchUrl(Uri.parse("https:www.ubs.com.np/about_us.html")),
                 focusColor: Colors.purpleAccent,
                 title: const Text('About Us'),
               ),
@@ -179,7 +157,7 @@ class MoreScreen extends StatelessWidget {
                 ),
                 onTap: () {
                   launchUrl(Uri.parse(
-                      'https://upaya.com.np/terms_and_conditions.html'));
+                      'https:upaya.com.np/terms_and_conditions.html'));
                 },
                 title: const Text('Terms and Conditions'),
               ),
@@ -198,7 +176,7 @@ class MoreScreen extends StatelessWidget {
                 ),
                 onTap: () {
                   launchUrl(
-                      Uri.parse('https://upaya.com.np/privacy_policy.html'));
+                      Uri.parse('https:upaya.com.np/privacy_policy.html'));
                 },
                 title: const Text('Privacy and Policy'),
               ),

@@ -82,6 +82,7 @@ class ReviewScreen extends StatelessWidget {
                                 crossAxisAlignment: CrossAxisAlignment.center,
                                 children: [
                                   CircleAvatar(
+                                    radius: 30,
                                     backgroundImage:
                                         NetworkImage(data[index].client_image),
                                   ),
@@ -101,8 +102,17 @@ class ReviewScreen extends StatelessWidget {
                                   ),
                                   Text(data[index].remarks),
                                   Text(data[index].review),
-                                  Text(data[index].review_status),
-                                  Text(data[index].review_time),
+                                  Text(
+                                    data[index].review_status,
+                                    style: TextStyle(
+                                        fontWeight: FontWeight.bold,
+                                        color: Colors.green),
+                                  ),
+                                  Text(
+                                    data[index].review_time,
+                                    style:
+                                        TextStyle(fontWeight: FontWeight.bold),
+                                  ),
                                 ],
                               ),
                             ),
