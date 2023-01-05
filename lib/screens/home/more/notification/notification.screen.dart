@@ -61,41 +61,44 @@ class NotificationScreen extends StatelessWidget {
                                       CrossAxisAlignment.stretch,
                                   children: [
                                     Card(
-                                      elevation: 10,
+                                      elevation: 2,
                                       shadowColor: Colors.black,
                                       child: Column(
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
-                                          Text(
-                                            data[index]
-                                                .notification_msg
-                                                .toString(),
-                                            style: TextStyle(fontSize: 16),
+                                          Padding(
+                                            padding: EdgeInsets.all(6),
+                                            child: Text(
+                                              data[index]
+                                                  .notification_msg
+                                                  .toString(),
+                                              style: TextStyle(fontSize: 16),
+                                            ),
                                           ),
-                                          const SizedBox(
-                                            height: 10,
-                                          ),
-                                          Text(
-                                            data[index]
-                                                .notification_type
-                                                .toString(),
-                                            style: const TextStyle(
-                                                fontSize: 16,
-                                                color: Colors.blue,
-                                                fontWeight: FontWeight.bold),
-                                          ),
-                                          const SizedBox(
-                                            height: 10,
+                                          Padding(
+                                            padding: EdgeInsets.all(6),
+                                            child: Text(
+                                              data[index]
+                                                  .notification_type
+                                                  .toString(),
+                                              style: const TextStyle(
+                                                  fontSize: 16,
+                                                  color: Colors.blue,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
                                           ),
                                           Row(
                                             children: [
-                                              Text(
-                                                data[index]
-                                                    .notification_date
-                                                    .toString(),
-                                                style: const TextStyle(
-                                                  fontWeight: FontWeight.bold,
+                                              Padding(
+                                                padding: EdgeInsets.all(5),
+                                                child: Text(
+                                                  data[index]
+                                                      .notification_date
+                                                      .toString(),
+                                                  style: const TextStyle(
+                                                    fontWeight: FontWeight.bold,
+                                                  ),
                                                 ),
                                               ),
                                             ],

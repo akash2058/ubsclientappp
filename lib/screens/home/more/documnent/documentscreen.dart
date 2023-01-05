@@ -78,8 +78,10 @@ class DocumnentScreen extends StatelessWidget {
                                     width: 211,
                                   ),
                                   InkWell(
-                                      onTap: () => launchUrl(
-                                          Uri.parse(data[index].documentLink)),
+                                      onTap: () async {
+                                        String url = data[index].documentLink;
+                                        await launchUrl(Uri.parse(url));
+                                      },
                                       child: Icon(Icons.visibility)),
                                 ],
                               )
