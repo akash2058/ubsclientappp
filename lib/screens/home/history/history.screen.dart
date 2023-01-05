@@ -77,12 +77,30 @@ class HistoryScreen extends StatelessWidget {
                                           children: [
                                             Row(
                                               children: [
+                                                Text(
+                                                  'TID:',
+                                                  style: TextStyle(
+                                                      color: Colors.blue,
+                                                      fontWeight:
+                                                          FontWeight.bold),
+                                                ),
+                                                SizedBox(
+                                                  width: 2,
+                                                ),
                                                 Text(data[index].t_id),
                                                 SizedBox(
-                                                  width: 50,
+                                                  width: 70,
                                                 ),
+                                                Text(
+                                                  'Date:',
+                                                  style: TextStyle(
+                                                      color: Colors.blue,
+                                                      fontWeight:
+                                                          FontWeight.bold),
+                                                ),
+                                                SizedBox(width: 2),
                                                 Text(data[index].date_assigned),
-                                                SizedBox(width: 150),
+                                                SizedBox(width: 68),
                                                 Text(
                                                   data[index].fee_status,
                                                   style: TextStyle(
@@ -100,6 +118,7 @@ class HistoryScreen extends StatelessWidget {
                                                   Text(
                                                     'Kaam',
                                                     style: TextStyle(
+                                                        color: Colors.blue,
                                                         fontWeight:
                                                             FontWeight.bold),
                                                   ),
@@ -129,7 +148,7 @@ class HistoryScreen extends StatelessWidget {
                                                     ),
                                                   ),
                                                   SizedBox(
-                                                    height: 8,
+                                                    height: 5,
                                                   ),
                                                   Text(
                                                     data[index].expert,
@@ -138,35 +157,26 @@ class HistoryScreen extends StatelessWidget {
                                                           FontWeight.bold,
                                                     ),
                                                   ),
+                                                  SizedBox(height: 10),
+                                                  Text(
+                                                    'Status:',
+                                                    style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        color: Colors.blue),
+                                                  ),
                                                   SizedBox(
-                                                    height: 8,
+                                                    width: 5,
                                                   ),
                                                   Text(
-                                                    '30th Dec 2020',
+                                                    data[index].kaam_status,
                                                     style: TextStyle(
-                                                      fontWeight:
-                                                          FontWeight.bold,
-                                                    ),
+                                                        fontWeight:
+                                                            FontWeight.bold),
                                                   ),
                                                   SizedBox(
-                                                    height: 8,
+                                                    height: 5,
                                                   ),
-                                                  Row(
-                                                    children: [
-                                                      Icon(
-                                                        size: 15,
-                                                        Icons.circle,
-                                                        color: Colors
-                                                            .deepOrangeAccent,
-                                                      ),
-                                                      SizedBox(
-                                                        width: 8,
-                                                      ),
-                                                      Text(data[index]
-                                                          .kaam_status)
-                                                    ],
-                                                  ),
-                                                  SizedBox(height: 5),
                                                   Text(
                                                     'Fee',
                                                     style: TextStyle(
