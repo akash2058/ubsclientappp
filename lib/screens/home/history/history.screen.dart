@@ -64,6 +64,7 @@ class HistoryScreen extends StatelessWidget {
                             margin: const EdgeInsets.all(8),
                             padding: const EdgeInsets.all(5),
                             child: Container(
+                                padding: EdgeInsets.all(2),
                                 decoration: const BoxDecoration(boxShadow: []),
                                 child: Card(
                                     elevation: 5,
@@ -96,7 +97,19 @@ class HistoryScreen extends StatelessWidget {
                                                 crossAxisAlignment:
                                                     CrossAxisAlignment.start,
                                                 children: [
+                                                  Text(
+                                                    'Kaam',
+                                                    style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold),
+                                                  ),
+                                                  SizedBox(
+                                                    height: 5,
+                                                  ),
                                                   Text(data[index].kaam),
+                                                  SizedBox(
+                                                    height: 5,
+                                                  ),
                                                   Text(
                                                     data[index].sub_kaam,
                                                     style: TextStyle(
@@ -108,10 +121,9 @@ class HistoryScreen extends StatelessWidget {
                                                     height: 8,
                                                   ),
                                                   Text(
-                                                    'Proffessional',
+                                                    'Expert',
                                                     style: TextStyle(
-                                                      color: Colors
-                                                          .deepOrangeAccent,
+                                                      color: Colors.blue,
                                                       fontWeight:
                                                           FontWeight.bold,
                                                     ),
@@ -142,6 +154,7 @@ class HistoryScreen extends StatelessWidget {
                                                   Row(
                                                     children: [
                                                       Icon(
+                                                        size: 15,
                                                         Icons.circle,
                                                         color: Colors
                                                             .deepOrangeAccent,
@@ -153,6 +166,15 @@ class HistoryScreen extends StatelessWidget {
                                                           .kaam_status)
                                                     ],
                                                   ),
+                                                  SizedBox(height: 5),
+                                                  Text(
+                                                    'Fee',
+                                                    style: TextStyle(
+                                                        fontWeight:
+                                                            FontWeight.bold,
+                                                        color: Colors.blue),
+                                                  ),
+                                                  SizedBox(height: 5),
                                                   Text(
                                                     data[index].fee,
                                                     style: TextStyle(
