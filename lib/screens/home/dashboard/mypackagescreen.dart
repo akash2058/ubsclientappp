@@ -122,7 +122,7 @@ class PackagePage extends StatelessWidget {
                                             ),
                                             SizedBox(height: 8),
                                             Text(
-                                              'Package Type',
+                                              'Package Type:',
                                               style: TextStyle(
                                                   color: Colors.blue,
                                                   fontWeight: FontWeight.bold),
@@ -139,7 +139,7 @@ class PackagePage extends StatelessWidget {
                                               height: 8,
                                             ),
                                             Text(
-                                              'Visited Period',
+                                              'Visited Period:',
                                               style: TextStyle(
                                                   color: Colors.blue,
                                                   fontWeight: FontWeight.bold),
@@ -156,7 +156,7 @@ class PackagePage extends StatelessWidget {
                                               height: 8,
                                             ),
                                             Text(
-                                              'Invoice Period',
+                                              'Invoice Period:',
                                               style: TextStyle(
                                                   color: Colors.blue,
                                                   fontWeight: FontWeight.bold),
@@ -201,7 +201,7 @@ class PackagePage extends StatelessWidget {
                                             ),
                                             SizedBox(height: 8),
                                             Text(
-                                              'Fee',
+                                              'Fee:',
                                               style: TextStyle(
                                                   color: Colors.blue,
                                                   fontWeight: FontWeight.bold),

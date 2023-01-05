@@ -116,7 +116,7 @@ class HistoryScreen extends StatelessWidget {
                                                     CrossAxisAlignment.start,
                                                 children: [
                                                   Text(
-                                                    'Kaam',
+                                                    'Kaam:',
                                                     style: TextStyle(
                                                         color: Colors.blue,
                                                         fontWeight:
@@ -140,7 +140,7 @@ class HistoryScreen extends StatelessWidget {
                                                     height: 8,
                                                   ),
                                                   Text(
-                                                    'Expert',
+                                                    'Expert:',
                                                     style: TextStyle(
                                                       color: Colors.blue,
                                                       fontWeight:
@@ -178,7 +178,7 @@ class HistoryScreen extends StatelessWidget {
                                                     height: 5,
                                                   ),
                                                   Text(
-                                                    'Fee',
+                                                    'Fee:',
                                                     style: TextStyle(
                                                         fontWeight:
                                                             FontWeight.bold,
