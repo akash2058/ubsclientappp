@@ -61,7 +61,7 @@ class PackagePage extends StatelessWidget {
                       itemBuilder: (context, index) {
                         return Container(
                             margin: const EdgeInsets.all(8),
-                            padding: const EdgeInsets.all(5),
+                            padding: const EdgeInsets.all(8),
                             child: Container(
                                 child: Card(
                                     elevation: 5,
@@ -73,29 +73,14 @@ class PackagePage extends StatelessWidget {
                                                 CrossAxisAlignment.stretch,
                                             children: [
                                               Text(
-                                                data[index].pid,
-                                                style: TextStyle(),
-                                              ),
-                                              SizedBox(
-                                                height: 5,
-                                              ),
-                                              Text(
-                                                data[index].addedDate,
+                                                'Company Name:',
                                                 style: TextStyle(
+                                                    color: Colors.blue,
                                                     fontWeight:
                                                         FontWeight.bold),
                                               ),
                                               SizedBox(
-                                                height: 5,
-                                              ),
-                                              Text(
-                                                data[index].clientName,
-                                                style: TextStyle(
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              ),
-                                              SizedBox(
-                                                height: 5,
+                                                height: 3,
                                               ),
                                               Text(
                                                 data[index].companyName,
@@ -103,9 +88,53 @@ class PackagePage extends StatelessWidget {
                                                     fontWeight:
                                                         FontWeight.bold),
                                               ),
-                                              SizedBox(
-                                                height: 5,
+                                              SizedBox(height: 8),
+                                              Text(
+                                                'Package Type',
+                                                style: TextStyle(
+                                                    color: Colors.blue,
+                                                    fontWeight:
+                                                        FontWeight.bold),
                                               ),
+                                              SizedBox(
+                                                height: 3,
+                                              ),
+                                              Text(
+                                                data[index].packageType,
+                                                style: TextStyle(
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
+                                              SizedBox(
+                                                height: 8,
+                                              ),
+                                              Text(
+                                                'Visited Period',
+                                                style: TextStyle(
+                                                    color: Colors.blue,
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
+                                              SizedBox(
+                                                height: 3,
+                                              ),
+                                              Text(
+                                                data[index].visit,
+                                                style: TextStyle(
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
+                                              SizedBox(
+                                                height: 8,
+                                              ),
+                                              Text(
+                                                'Invoice Period',
+                                                style: TextStyle(
+                                                    color: Colors.blue,
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
+                                              SizedBox(height: 3),
                                               Text(
                                                 data[index].invoicePeriod,
                                                 style: TextStyle(
@@ -116,22 +145,14 @@ class PackagePage extends StatelessWidget {
                                                 height: 5,
                                               ),
                                               Text(
-                                                data[index].packageType,
+                                                'Start Date:',
                                                 style: TextStyle(
+                                                    color: Colors.blue,
                                                     fontWeight:
                                                         FontWeight.bold),
                                               ),
                                               SizedBox(
-                                                height: 5,
-                                              ),
-                                              Text(
-                                                data[index].price,
-                                                style: TextStyle(
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              ),
-                                              SizedBox(
-                                                height: 5,
+                                                height: 3,
                                               ),
                                               Text(
                                                 data[index].startDate,
@@ -140,23 +161,37 @@ class PackagePage extends StatelessWidget {
                                                         FontWeight.bold),
                                               ),
                                               SizedBox(
-                                                height: 5,
+                                                height: 8,
                                               ),
+                                              Text(
+                                                'End Date:',
+                                                style: TextStyle(
+                                                    color: Colors.blue,
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
+                                              SizedBox(height: 3),
                                               Text(
                                                 data[index].endDate,
                                                 style: TextStyle(
                                                     fontWeight:
                                                         FontWeight.bold),
                                               ),
-                                              SizedBox(
-                                                height: 5,
-                                              ),
+                                              SizedBox(height: 8),
                                               Text(
-                                                data[index].visit,
+                                                'Fee',
+                                                style: TextStyle(
+                                                    color: Colors.blue,
+                                                    fontWeight:
+                                                        FontWeight.bold),
+                                              ),
+                                              SizedBox(height: 3),
+                                              Text(
+                                                data[index].price,
                                                 style: TextStyle(
                                                     fontWeight:
                                                         FontWeight.bold),
-                                              )
+                                              ),
                                             ])))));
                       },
                     );

@@ -61,14 +61,15 @@ class NotificationScreen extends StatelessWidget {
                                       CrossAxisAlignment.stretch,
                                   children: [
                                     Card(
-                                      elevation: 2,
+                                      margin: EdgeInsets.all(8),
+                                      elevation: 10,
                                       shadowColor: Colors.black,
                                       child: Column(
                                         crossAxisAlignment:
                                             CrossAxisAlignment.start,
                                         children: [
                                           Padding(
-                                            padding: EdgeInsets.all(6),
+                                            padding: const EdgeInsets.all(8.0),
                                             child: Text(
                                               data[index]
                                                   .notification_msg
@@ -77,7 +78,7 @@ class NotificationScreen extends StatelessWidget {
                                             ),
                                           ),
                                           Padding(
-                                            padding: EdgeInsets.all(6),
+                                            padding: const EdgeInsets.all(8.0),
                                             child: Text(
                                               data[index]
                                                   .notification_type
@@ -91,7 +92,7 @@ class NotificationScreen extends StatelessWidget {
                                           Row(
                                             children: [
                                               Padding(
-                                                padding: EdgeInsets.all(5),
+                                                padding: EdgeInsets.all(8),
                                                 child: Text(
                                                   data[index]
                                                       .notification_date
