@@ -63,136 +63,157 @@ class PackagePage extends StatelessWidget {
                             margin: const EdgeInsets.all(8),
                             padding: const EdgeInsets.all(8),
                             child: Container(
-                                child: Card(
-                                    elevation: 5,
-                                    color: Colors.white,
-                                    child: Container(
-                                        margin: EdgeInsets.all(10),
-                                        child: Column(
+                                child: InkWell(
+                              onTap: () {
+                                showDialog(
+                                    context: context,
+                                    builder: ((context) {
+                                      return Center(
+                                        child: Container(
+                                          height: 130,
+                                          width: 250,
+                                          child: Dialog(
+                                              child: Column(
                                             crossAxisAlignment:
                                                 CrossAxisAlignment.stretch,
                                             children: [
-                                              Text(
-                                                'Company Name:',
-                                                style: TextStyle(
-                                                    color: Colors.blue,
-                                                    fontWeight:
-                                                        FontWeight.bold),
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.all(8.0),
+                                                child: Text(
+                                                  'Alert',
+                                                  style:
+                                                      TextStyle(fontSize: 25),
+                                                ),
                                               ),
-                                              SizedBox(
-                                                height: 3,
-                                              ),
-                                              Text(
-                                                data[index].companyName,
-                                                style: TextStyle(
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              ),
-                                              SizedBox(height: 8),
-                                              Text(
-                                                'Package Type',
-                                                style: TextStyle(
-                                                    color: Colors.blue,
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              ),
-                                              SizedBox(
-                                                height: 3,
-                                              ),
-                                              Text(
-                                                data[index].packageType,
-                                                style: TextStyle(
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              ),
-                                              SizedBox(
-                                                height: 8,
-                                              ),
-                                              Text(
-                                                'Visited Period',
-                                                style: TextStyle(
-                                                    color: Colors.blue,
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              ),
-                                              SizedBox(
-                                                height: 3,
-                                              ),
-                                              Text(
-                                                data[index].visit,
-                                                style: TextStyle(
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              ),
-                                              SizedBox(
-                                                height: 8,
-                                              ),
-                                              Text(
-                                                'Invoice Period',
-                                                style: TextStyle(
-                                                    color: Colors.blue,
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              ),
-                                              SizedBox(height: 3),
-                                              Text(
-                                                data[index].invoicePeriod,
-                                                style: TextStyle(
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              ),
-                                              SizedBox(
-                                                height: 5,
-                                              ),
-                                              Text(
-                                                'Start Date:',
-                                                style: TextStyle(
-                                                    color: Colors.blue,
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              ),
-                                              SizedBox(
-                                                height: 3,
-                                              ),
-                                              Text(
-                                                data[index].startDate,
-                                                style: TextStyle(
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              ),
-                                              SizedBox(
-                                                height: 8,
-                                              ),
-                                              Text(
-                                                'End Date:',
-                                                style: TextStyle(
-                                                    color: Colors.blue,
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              ),
-                                              SizedBox(height: 3),
-                                              Text(
-                                                data[index].endDate,
-                                                style: TextStyle(
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              ),
-                                              SizedBox(height: 8),
-                                              Text(
-                                                'Fee',
-                                                style: TextStyle(
-                                                    color: Colors.blue,
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              ),
-                                              SizedBox(height: 3),
-                                              Text(
-                                                data[index].price,
-                                                style: TextStyle(
-                                                    fontWeight:
-                                                        FontWeight.bold),
-                                              ),
-                                            ])))));
+                                              Padding(
+                                                padding:
+                                                    const EdgeInsets.all(8.0),
+                                                child: Text('No Visit Data'),
+                                              )
+                                            ],
+                                          )),
+                                        ),
+                                      );
+                                    }));
+                              },
+                              child: Card(
+                                  elevation: 5,
+                                  color: Colors.white,
+                                  child: Container(
+                                      margin: EdgeInsets.all(10),
+                                      child: Column(
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.stretch,
+                                          children: [
+                                            Text(
+                                              'Company Name:',
+                                              style: TextStyle(
+                                                  color: Colors.blue,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            SizedBox(
+                                              height: 3,
+                                            ),
+                                            Text(
+                                              data[index].companyName,
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            SizedBox(height: 8),
+                                            Text(
+                                              'Package Type',
+                                              style: TextStyle(
+                                                  color: Colors.blue,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            SizedBox(
+                                              height: 3,
+                                            ),
+                                            Text(
+                                              data[index].packageType,
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            SizedBox(
+                                              height: 8,
+                                            ),
+                                            Text(
+                                              'Visited Period',
+                                              style: TextStyle(
+                                                  color: Colors.blue,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            SizedBox(
+                                              height: 3,
+                                            ),
+                                            Text(
+                                              data[index].visit,
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            SizedBox(
+                                              height: 8,
+                                            ),
+                                            Text(
+                                              'Invoice Period',
+                                              style: TextStyle(
+                                                  color: Colors.blue,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            SizedBox(height: 3),
+                                            Text(
+                                              data[index].invoicePeriod,
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            SizedBox(
+                                              height: 5,
+                                            ),
+                                            Text(
+                                              'Start Date:',
+                                              style: TextStyle(
+                                                  color: Colors.blue,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            SizedBox(
+                                              height: 3,
+                                            ),
+                                            Text(
+                                              data[index].startDate,
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            SizedBox(
+                                              height: 8,
+                                            ),
+                                            Text(
+                                              'End Date:',
+                                              style: TextStyle(
+                                                  color: Colors.blue,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            SizedBox(height: 3),
+                                            Text(
+                                              data[index].endDate,
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            SizedBox(height: 8),
+                                            Text(
+                                              'Fee',
+                                              style: TextStyle(
+                                                  color: Colors.blue,
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                            SizedBox(height: 3),
+                                            Text(
+                                              data[index].price,
+                                              style: TextStyle(
+                                                  fontWeight: FontWeight.bold),
+                                            ),
+                                          ]))),
+                            )));
                       },
                     );
                   }
